@@ -33,23 +33,20 @@ namespace Assign2
             Object OValue = "abc123";
             Console.WriteLine("Object Value = "+ OValue);
 
-            char CValue = "H";
+            char CValue = 'H';
             Console.WriteLine("Char Value = "+ CValue);
 
             string String = "Hariharan";
             Console.WriteLine("String Value = "+ String);
 
-            decimal DcValue = 2.45;
+            decimal DcValue = 2000;
             Console.WriteLine("Decimal Value = "+ DcValue);
 
-            bool BoValue = "true";
+            bool BoValue = true;
             Console.WriteLine("Bool Value = "+ BoValue);
 
             DateTime DT = DateTime.Now;
             Console.WriteLine("DateTime Value = "+ DT);
-
-            DateSpan DS = DateTime.Now;
-            Console.WriteLine("DateSpan Value = "+ DS);
         }
         public static void Operations()
         {
@@ -68,22 +65,23 @@ namespace Assign2
             else
             {
                 var DivAns = DcValue/IValue;
+                Console.WriteLine("The Division of Decimal Value and Int Value is " + DivAns);
             }
             var MulAns = F1Value * F2Value;
 
-            Console.WriteLine("The sum of Int value and Decimal value is "+ SumAns + "\n The Division of Decimal Value and Int Value is " + DivAns 
+            Console.WriteLine("The sum of Int value and Decimal value is "+ SumAns  
             + "\n The Multiplication of two floats is " + MulAns);
         }
         public static void Details()
         {
             Console.WriteLine("Enter the Id");
-            var Id = Console.ReadLine();
+            var Id = Convert.ToByte(Console.ReadLine());
             Console.WriteLine("Enter the Name");
             var Name = Console.ReadLine();
             Console.WriteLine("Enter the Salary");
-            var Salary = Console.ReadLine();
+            var Salary = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Id: " + (byte)Id + " Name: " + Name + " Salary: " + (int)Salary);
+            Console.WriteLine("Id: " + Id + " Name: " + Name + " Salary: " + Salary);
         }
         public static void Reverse()
         {
@@ -97,7 +95,7 @@ namespace Assign2
                     chars[i] = str[j];  
                     chars[j] = str[i];  
                 }  
-                return new string(chars);
+                 Console.WriteLine(chars);
             }
             else
                 Console.WriteLine("The String must have only 3 characters");
@@ -105,9 +103,9 @@ namespace Assign2
         public static void Calc()
         {
             Console.WriteLine("Enter the first number");
-            var Number1 = Convert.ToInt32(Console.ReadLine);
+            var Number1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the second number");
-            var Number2 = Convert.ToInt32(Console.ReadLine);
+            var Number2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the following number for respective operator /n " + 
             " Add-0 , Sub-1 , Multiply-2 , Division-3");
             var opt = Convert.ToInt32(Console.ReadLine());
