@@ -1,0 +1,5 @@
+C:\Gislen Software\Assign\Day 2\obj\Debug\net5.0\Day 2.csproj.AssemblyReference.cache
+C:\Gislen Software\Assign\Day 2\obj\Debug\net5.0\Day 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\Day 2\obj\Debug\net5.0\Day 2.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\Day 2\obj\Debug\net5.0\Day 2.AssemblyInfo.cs
+C:\Gislen Software\Assign\Day 2\obj\Debug\net5.0\Day 2.csproj.CoreCompileInputs.cache
