@@ -86,16 +86,13 @@ namespace Assign2
         public static void Reverse()
         {
             Console.WriteLine("Enter the three letters");
-            var str = Console.ReadLine();
+            var Str = Console.ReadLine();
             if (str.Length == 3)
             {
-                char[] chars = str.ToCharArray();  
-                for (int i = 0, j = str.Length - 1; i < j; i++, j--) 
-                {  
-                    chars[i] = str[j];  
-                    chars[j] = str[i];  
-                }  
-                 Console.WriteLine(chars);
+                char LastChar = Str[2];
+                char MidChar = Str[1];
+                char FirstChar = Str[0];
+                Console.WriteLine("Reverse String is " + LastChar + MidChar + FirstChar);
             }
             else
                 Console.WriteLine("The String must have only 3 characters");
