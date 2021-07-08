@@ -152,12 +152,18 @@ namespace Assign2
     {
         public static void Main(string[] args)
         {
-            Assign2.Program.PrimitiveData();
+           /* Assign2.Program.PrimitiveData();
             Assign2.Program.Operations();
             Assign2.Program.Details();
             Assign2.Program.Reverse();
             Assign2.Program.Calc();
-            Assign2.Program.Comp();
+            Assign2.Program.Comp();*/
+            string Str = "Res";
+            char MidChar = Str[1];
+            char FirstChar = Str[0];
+            char LastChar = Str[2];
+
+            Console.WriteLine("Reverse String is " + LastChar + MidChar + FirstChar);
         }
     }
 }

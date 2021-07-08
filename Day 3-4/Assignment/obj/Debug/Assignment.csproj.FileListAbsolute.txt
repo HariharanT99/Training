@@ -1,0 +1,7 @@
+C:\Gislen Software\Assign\Day 3-4\Assignment\bin\Debug\Assignment.exe.config
+C:\Gislen Software\Assign\Day 3-4\Assignment\bin\Debug\Assignment.exe
+C:\Gislen Software\Assign\Day 3-4\Assignment\bin\Debug\Assignment.pdb
+C:\Gislen Software\Assign\Day 3-4\Assignment\obj\Debug\Assignment.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\Day 3-4\Assignment\obj\Debug\Assignment.exe
+C:\Gislen Software\Assign\Day 3-4\Assignment\obj\Debug\Assignment.pdb
+C:\Gislen Software\Assign\Day 3-4\Assignment\obj\Debug\Assignment.csprojAssemblyReference.cache
