@@ -28,6 +28,8 @@ namespace Assignment.Entities
         {
             Console.WriteLine("Enter your time zone");
             var TimeZone = Console.ReadLine();
+            Console.WriteLine(TimeZone);
+
         }
     }
 }

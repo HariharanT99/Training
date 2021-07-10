@@ -11,13 +11,13 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
-           // Duplicate.ArrayInt();
-           // Console.WriteLine(CountryState.Country());
+            Duplicate.ArrayInt();
+            Console.WriteLine(CountryState.Country());
             Image ImageObject = new Image();
             ImageObject.Frame();
-           // Customer CustomerObject = new Customer();
-           // CustomerObject.PlaceOrder();
-           // Customer.GetCustomerTimeZone();
+            Customer CustomerObject = new Customer();
+            CustomerObject.PlaceOrder();
+            Customer.GetCustomerTimeZone();
         }
     }
 }
