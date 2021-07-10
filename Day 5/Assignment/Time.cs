@@ -14,7 +14,7 @@ namespace Assignment
             try
             {
                 Console.WriteLine("Enter the time in 24 hours format [hh:mm]");
-                var Time = Convert.ToDateTime(Console.ReadLine());
+                Convert.ToDateTime(Console.ReadLine());
                 Console.WriteLine("Valid Time");
             }
             catch
