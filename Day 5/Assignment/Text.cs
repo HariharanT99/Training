@@ -13,9 +13,14 @@ namespace Assignment
             var Txt = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard";
             var LCount = 0;
             var i = 0;
+
+            //for removing "."
             Char[] SplitTxt = new Char[] { ' ', '.','\'' };
+            
+            // For removing empty entries
             var FinalTxt = Txt.Split(SplitTxt, StringSplitOptions.RemoveEmptyEntries);
             var FinalString = new List<string>();
+
             while (LCount < 20)
             {
                 LCount += FinalTxt[i].Length;

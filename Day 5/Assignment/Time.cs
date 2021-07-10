@@ -10,7 +10,7 @@ namespace Assignment
     {
         public static void TimeCheck()
         {
-
+            // Try to convert the time - If it is successfully converted, It prints "Valid Time" or It prints "Invalid Time"
             try
             {
                 Console.WriteLine("Enter the time in 24 hours format [hh:mm]");
