@@ -15,13 +15,13 @@ namespace Assignment
             var i = 0;
 
             //for removing "."
-            Char[] SplitTxt = new Char[] { ' ', '.','\'' };
+            Char[] SplitTxt = new Char[] { ' ', '.'};
             
             // For removing empty entries
             var FinalTxt = Txt.Split(SplitTxt, StringSplitOptions.RemoveEmptyEntries);
             var FinalString = new List<string>();
 
-            while (LCount < 20)
+            while (LCount < 30)
             {
                 LCount += FinalTxt[i].Length;
                 FinalString.Add(FinalTxt[i]);
