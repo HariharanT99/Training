@@ -23,5 +23,18 @@ namespace Assignment
             this.Y = y;
             this.Z = z;
         }
+        public void Move(int x, int y, int z)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
+            PrintCoordinates();
+        }
+
+        public void PrintCoordinates()
+        {
+            Console.WriteLine($"Coordinates x: {X}, Coordinates y: {Y}, Coordinates z: {Z}");
+        }
+
     }
 }

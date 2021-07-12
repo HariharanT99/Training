@@ -46,11 +46,20 @@ namespace Assignment
             string Operation3 = "Division";
             var DivResult = Calculator.Calculation(DivNumber1, DivNumber2, Operation3);
             Console.WriteLine($"The division result is {DivResult}");
-
+            
             //Decimal to DMS
             Console.WriteLine("Enter the Decimal number");
             double Value = Convert.ToDouble(Console.ReadLine());
             Dms.Minutes(Value);
+            
+
+
+            //Coordinates 
+            var Point = new Coordinates();
+            Coordinates Points = new Coordinates();
+            Points.Move(Point.X,Point.Y,5);
+            Points.Move(2, 5, 6);
+            Points.Move(1, 3, Point.Z);
         }
     }
 }
