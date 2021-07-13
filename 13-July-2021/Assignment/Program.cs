@@ -24,7 +24,8 @@ namespace Assignment
             Obj.Promote(Convert.ToBoolean(Console.ReadLine()));
             Console.WriteLine($"Employee: \n Id: {Obj.EmployeeId} \n Name: {Obj.Name} \n Designation: {Obj.Designation} \n Salary: {Obj.Salary}");
 
-            //HashOject
+
+            //HashObject
             Employee2 HashObject = new Employee2();
             HashObject.Id = 1;
             HashObject.Name = "Hari;";
