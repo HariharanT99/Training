@@ -10,6 +10,7 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
+            
             //Employee salary
             Console.WriteLine("Enter the Salary of the Employee");
             double Salary = Convert.ToDouble(Console.ReadLine());
@@ -23,17 +24,20 @@ namespace Assignment
             Console.WriteLine("Enter true, If the salary hike for this Employee else Enter false");
             Obj.Promote(Convert.ToBoolean(Console.ReadLine()));
             Console.WriteLine($"Employee: \n Id: {Obj.EmployeeId} \n Name: {Obj.Name} \n Designation: {Obj.Designation} \n Salary: {Obj.Salary}");
-
+            
 
             //HashObject
             Employee2 HashObject = new Employee2();
             HashObject.Id = 1;
             HashObject.Name = "Hari;";
+            HashObject[1] = 1;
+            HashObject.Print();
             HashObject.Id = 2;
             HashObject.Name = "Haran;";
-           // HashObject[0, "Hari"] = (1, "Hari");
+            HashObject[2] = 1;
+            HashObject.Print();
             
-
+            
             //Student Class
             DateTime DOB = new DateTime(1999, 03, 26);
             Student StudentObject = new Student(DOB);

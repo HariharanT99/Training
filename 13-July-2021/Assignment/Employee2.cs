@@ -13,11 +13,19 @@ namespace Assignment
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public object[] this[int id, string name]   //Indexers --> having issues on calling indexers in main method
+        public int this[int id]   //Indexers --> having issues on calling indexers in main method
         {
             set
             {
-                EmployeeDetails.Add(id, name);
+                EmployeeDetails[id] = Name;
+            }
+        }
+        public void Print()
+        {
+
+            foreach (DictionaryEntry i in EmployeeDetails)
+            {
+                Console.WriteLine($"Id:{i.Key}, Name: {i.Value}");
             }
         }
     }
