@@ -16,19 +16,20 @@ namespace Assignment
         {
             if (_started == false)
             {
-                this._atStart = DateTime.Now;
-                this._started = true;
+                this._atStart = DateTime.Now; //Set the time
+                this._started = true;  //Set the bool value for to check it is already started or not 
             }
         }
 
         public void Stop()
         {
-            this._difference = _atStart - DateTime.Now;
-            this._started = false;
+            this._difference = _atStart - DateTime.Now; // Get the time difference
+            this._atStart = new DateTime(); //Reset the Time
+            this._started = false; //Reset the bool to 'false' for to menton it's stoped
         }
         public void GetInterval()
         {
-            Console.WriteLine($"Days: {_difference.Days} , Hours: {_difference.Hours} , Minutes: {_difference.Minutes} , Seconds: {_difference.Seconds}");
+            Console.WriteLine($"Days: {_difference.Days} , Hours: {_difference.Hours} , Minutes: {_difference.Minutes} , Seconds: {_difference.Seconds}"); //Print the Time Difference
         }
     }
 }
