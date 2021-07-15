@@ -16,6 +16,16 @@ namespace Assignment
             Laptop LaptopObj = new Laptop();
             LaptopObj.Configuration();
 
+            DockStation DockStationObj = new DockStation();
+            DockStationObj.Configuration();
+
+            Mouse MouseObj = new Mouse();
+            MouseObj.Configuration();
+
+            Headphone HeadphoneObj = new Headphone();
+            HeadphoneObj.Configuration();
+
+            HeadphoneObj.Warranty();     //Base class method
         }
     }
 }
