@@ -10,10 +10,10 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
-            List.Likes();
-            UniqueNumbers.Unique();
+            //List.Likes();
+            //UniqueNumbers.Unique();
             Text.Break();
-            Time.TimeCheck();
+            //Time.TimeCheck();
         }
     }
 }

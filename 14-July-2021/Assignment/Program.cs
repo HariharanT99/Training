@@ -17,6 +17,7 @@ namespace Assignment
             Thread.Sleep(1000);
             Thread.Sleep(1000);
             Thread.Sleep(1000);
+            Object.Start();
             Object.Stop();
             Object.GetInterval();
         }

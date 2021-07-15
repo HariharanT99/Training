@@ -1,0 +1,12 @@
+C:\Gislen Software\Assign\15-July-2021\Customers\bin\Debug\net5.0-windows\Customers.deps.json
+C:\Gislen Software\Assign\15-July-2021\Customers\bin\Debug\net5.0-windows\Customers.dll
+C:\Gislen Software\Assign\15-July-2021\Customers\bin\Debug\net5.0-windows\ref\Customers.dll
+C:\Gislen Software\Assign\15-July-2021\Customers\bin\Debug\net5.0-windows\Customers.pdb
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.AssemblyInfo.cs
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.dll
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\ref\Customers.dll
+C:\Gislen Software\Assign\15-July-2021\Customers\obj\Debug\net5.0-windows\Customers.pdb

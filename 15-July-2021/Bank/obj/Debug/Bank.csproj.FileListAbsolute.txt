@@ -1,0 +1,7 @@
+C:\Gislen Software\Assign\15-July-2021\Bank\bin\Debug\Bank.exe.config
+C:\Gislen Software\Assign\15-July-2021\Bank\bin\Debug\Bank.exe
+C:\Gislen Software\Assign\15-July-2021\Bank\bin\Debug\Bank.pdb
+C:\Gislen Software\Assign\15-July-2021\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\15-July-2021\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\15-July-2021\Bank\obj\Debug\Bank.exe
+C:\Gislen Software\Assign\15-July-2021\Bank\obj\Debug\Bank.pdb

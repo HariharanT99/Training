@@ -10,7 +10,8 @@ namespace Assignment
     {
         public static void Break()
         {
-            var Txt = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard";
+            //var Txt = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard";
+            var Txt = "Lorem ipsum test art Lines, Test string splits        test2 training";
             var LCount = 0;
             var i = 0;
 
@@ -21,7 +22,7 @@ namespace Assignment
             var FinalTxt = Txt.Split(SplitTxt, StringSplitOptions.RemoveEmptyEntries);
             var FinalString = new List<string>();
 
-            while (LCount < 30)
+            while (LCount < 45)
             {
                 LCount += FinalTxt[i].Length;
                 FinalString.Add(FinalTxt[i]);
@@ -30,7 +31,7 @@ namespace Assignment
             
             foreach (var n in FinalString)
             {
-                Console.Write($"{n} ");
+                Console.WriteLine($"{n} ");
             }
         }
     }
