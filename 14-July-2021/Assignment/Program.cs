@@ -13,10 +13,7 @@ namespace Assignment
         {
             StopWatch Object = new StopWatch();
             Object.Start();
-            Thread.Sleep(1000);
-            Thread.Sleep(1000);
-            Thread.Sleep(1000);
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
             Object.Stop();
             Object.GetInterval();
         }
