@@ -14,7 +14,9 @@ namespace Bank
             Console.WriteLine("These are accessible by Manager");
             Manager ManagerObj = new Manager();
             ManagerObj.Access();
+
             Console.WriteLine("\n\n\n");
+
             //Employee access
             Console.WriteLine("These are accessible by Employee");
             Employee EmployeeObj = new Employee();

@@ -5,10 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank.csproj", "{06719367-4A42-4BBE-AE70-7B2AD46D29CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers", "..\Customers\Customers.csproj", "{1E643164-1A0B-42D0-8BB5-D22BB7EFE057}"
-	ProjectSection(ProjectDependencies) = postProject
-		{06719367-4A42-4BBE-AE70-7B2AD46D29CC} = {06719367-4A42-4BBE-AE70-7B2AD46D29CC}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "..\Customer\Customer.csproj", "{12EB85D6-6F43-4B21-BB8F-871F1DC3A4A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +17,10 @@ Global
 		{06719367-4A42-4BBE-AE70-7B2AD46D29CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06719367-4A42-4BBE-AE70-7B2AD46D29CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06719367-4A42-4BBE-AE70-7B2AD46D29CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E643164-1A0B-42D0-8BB5-D22BB7EFE057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E643164-1A0B-42D0-8BB5-D22BB7EFE057}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E643164-1A0B-42D0-8BB5-D22BB7EFE057}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E643164-1A0B-42D0-8BB5-D22BB7EFE057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12EB85D6-6F43-4B21-BB8F-871F1DC3A4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EB85D6-6F43-4B21-BB8F-871F1DC3A4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12EB85D6-6F43-4B21-BB8F-871F1DC3A4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12EB85D6-6F43-4B21-BB8F-871F1DC3A4A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

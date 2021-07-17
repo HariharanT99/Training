@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.exe
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.deps.json
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.runtimeconfig.json
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.runtimeconfig.dev.json
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.dll
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\ref\Assignment.dll
+C:\Gislen Software\Assign\16-July-2021\Assignment\bin\Debug\net5.0\Assignment.pdb
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.AssemblyInfo.cs
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.dll
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\ref\Assignment.dll
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.pdb
+C:\Gislen Software\Assign\16-July-2021\Assignment\obj\Debug\net5.0\Assignment.genruntimeconfig.cache

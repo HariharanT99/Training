@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.exe
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.deps.json
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.runtimeconfig.json
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.runtimeconfig.dev.json
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.dll
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ref\ExtensionMethod.dll
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\bin\Debug\net5.0\ExtensionMethod.pdb
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.AssemblyInfo.cs
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.dll
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ref\ExtensionMethod.dll
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.pdb
+C:\Gislen Software\Assign\16-July-2021\ExtensionMethod\obj\Debug\net5.0\ExtensionMethod.genruntimeconfig.cache
