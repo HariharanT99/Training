@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.exe
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.deps.json
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.runtimeconfig.json
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.runtimeconfig.dev.json
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.dll
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\ref\Constructors.dll
+C:\Gislen Software\Assign\16-July-2021\Constructors\bin\Release\net5.0\Constructors.pdb
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.AssemblyInfo.cs
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.dll
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\ref\Constructors.dll
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.pdb
+C:\Gislen Software\Assign\16-July-2021\Constructors\obj\Release\net5.0\Constructors.genruntimeconfig.cache

@@ -20,7 +20,7 @@ namespace Constructors
 
         public void SalaryAccountStatus()
         {
-            Console.WriteLine($"Salary account created successfully with the following information \n Id: {_id} \n Name: {_name} \n Balance: {_balance}");
+            Console.WriteLine($"Salary account created successfully.\nAccount information \n\t Id: {_id} \n\t Name: {_name} \n\t Balance: {_balance}");
         }
     }
 }

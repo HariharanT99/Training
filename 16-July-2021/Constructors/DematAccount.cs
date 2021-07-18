@@ -17,7 +17,7 @@ namespace Constructors
         public void DematAccountStatus()
         {
             SalaryAccountStatus();
-            Console.WriteLine($"\nDemat account created successfully with the following information \n Pan Number: {_panNumber}");
+            Console.WriteLine($"\n\nDemat account created successfully.\nAccount information \n\t Pan Number: {_panNumber}");
         }
     }
 }
