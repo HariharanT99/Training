@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.AssemblyInfo.cs
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.exe
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.deps.json
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.runtimeconfig.json
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.runtimeconfig.dev.json
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.dll
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\ref\LeapYear.dll
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\bin\Debug\net5.0\LeapYear.pdb
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.dll
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\ref\LeapYear.dll
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.pdb
+C:\Gislen Software\Assign\Execution\3rd Week\LeapYear\obj\Debug\net5.0\LeapYear.genruntimeconfig.cache
