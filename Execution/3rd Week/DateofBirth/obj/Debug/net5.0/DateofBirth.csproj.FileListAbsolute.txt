@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.exe
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.deps.json
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.runtimeconfig.json
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.runtimeconfig.dev.json
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.dll
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\ref\DateofBirth.dll
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\bin\Debug\net5.0\DateofBirth.pdb
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.AssemblyInfo.cs
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.dll
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\ref\DateofBirth.dll
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.pdb
+C:\Gislen Software\Assign\Execution\3rd Week\DateofBirth\obj\Debug\net5.0\DateofBirth.genruntimeconfig.cache

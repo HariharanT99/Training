@@ -8,10 +8,11 @@ namespace DateofBirth
         {
             Console.WriteLine("Enter your Date of Birth in the given format eg.[yyyy/MM/dd]");
             string inputDate = Console.ReadLine();
-            DateTime dateofBirth;
+
             try
             {
-                DateTime.TryParse(inputDate, out dateofBirth);
+                var dateofBirth = DateTime.Parse(inputDate);
+                Age.Calculate(dateofBirth);
             }
             catch
             {
