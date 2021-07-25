@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.exe
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.deps.json
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.runtimeconfig.json
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.runtimeconfig.dev.json
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.dll
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\ref\Event.dll
+C:\Gislen Software\Assign\23-July-2021\Event\bin\Debug\net5.0\Event.pdb
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.AssemblyInfo.cs
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.dll
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\ref\Event.dll
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.pdb
+C:\Gislen Software\Assign\23-July-2021\Event\obj\Debug\net5.0\Event.genruntimeconfig.cache

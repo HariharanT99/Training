@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.exe
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.deps.json
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.runtimeconfig.json
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.runtimeconfig.dev.json
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.dll
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\ref\Insurence.dll
+C:\Gislen Software\Assign\23-July-2021\Insurence\bin\Debug\net5.0\Insurence.pdb
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.AssemblyInfo.cs
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.dll
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\ref\Insurence.dll
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.pdb
+C:\Gislen Software\Assign\23-July-2021\Insurence\obj\Debug\net5.0\Insurence.genruntimeconfig.cache
