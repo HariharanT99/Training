@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.exe
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.deps.json
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.runtimeconfig.json
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.runtimeconfig.dev.json
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.dll
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\ref\Recursion.dll
+C:\Gislen Software\Assign\26-July-2021\Recursion\bin\Debug\net5.0\Recursion.pdb
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.AssemblyInfo.cs
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.dll
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\ref\Recursion.dll
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.pdb
+C:\Gislen Software\Assign\26-July-2021\Recursion\obj\Debug\net5.0\Recursion.genruntimeconfig.cache
