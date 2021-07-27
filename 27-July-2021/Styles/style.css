@@ -1,28 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+
 header
 {
     width: 100%;
     height: 100px;
-    margin: 5px 10px 15px 10px;
-    text-align: center;
+    background-color: #00ACC1;
+    margin-right: 50px;
+    font-family: 'Playfair', 'Times New Roman', Times, serif;
+    display: inline-flex;
+    border-radius: 10px;
 }
 
-header h1
+.heading
 {
-    font-size: 50px;
-    padding-top: 10px;
-    background-color: honeydew;
+    width: 30%;
+    height: 40px;
+    margin-left: 300px;
 }
 
+.heading h1
+{
+    text-align: center;
+    font-size: 3rem;
+}
 .dropdown
 {
     position: relative;
     display: inline-block;
+    margin-left: 350px;
 }
 
 .nav-button
 {
-    position: absolute;
-    clear: left;
+
     font-size: 50px;
     margin: 25px 25px 0 0;
 }
@@ -39,7 +51,7 @@ header h1
     position: fixed;
     top: 16mm;
     right: 23mm;
-    background-color: #333;
+    background-color: #006064;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -50,16 +62,16 @@ header h1
     display: block;
 }
 
-ul 
+.dropdown ul 
 {
     list-style-type: none;
     margin: 25px 5px 15px 0px;
     padding: 0;
-    background-color: #333;
+    background-color: #006064;
 }
 
 
-li a 
+.dropdown ul li a 
 {
     display: block;
     color: white;
@@ -69,7 +81,7 @@ li a
     border-bottom: solid 1px;
 }
 
-li:hover
+.dropdown ul li:hover
 {
     background-color: #111;
 }
@@ -80,23 +92,23 @@ li:hover
     display: inline-block;
 }
 
-.sports li a
+.sports-nav .sports li a
 {
     color: black;
 }
 
-.sports li:hover
+.sports-nav .sports li:hover
 {
     background-color: cornsilk;
 }
 
-.sports
+.sports-nav .sports
 {
     display: none;
     position: fixed;
     top: 28mm;
     right: 65mm;
-    background-color: grey;
+    background-color: #82c4de;
     color: black;
     min-width: 160px;
 }
@@ -109,13 +121,12 @@ li:hover
 .image
 {
     padding: 15px 0px 15px 0px;
-    float: left;
+    width: 10%;
 }
 
 .news
 {
     margin: 5px 10px 10px 10px;
-    background-color: lawngreen;
     height: 450px;
 }
 
@@ -124,41 +135,71 @@ article
     float: left;
     width: 65%;
     height: 400px;
-    background-color: blue;
-    margin: 5px 10px 10px 10px;
+    background-color: #60A0BE;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin: 20px 10px 10px 25px;
+    text-align: center;
+    font-size: 2rem;
 }
 
 section
 {
-    background-color: black;
-    width: 50%;
+    width: 80%;
     height: 200px;
-    margin: 150px auto 5px auto;
+    margin: 40px auto 5px auto;
+    font-size: 1.5rem;
 }
 
 aside
 {
     float: right;
     width: 25%;
-    height: 400px;
-    background-color: blueviolet;
-    margin: 5px 10px 10px 10px;
+    height: 300px;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #60A0BE;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 55px 25px 10px 10px;
+    border-radius: 15px;
 }
+
 
 footer
 {
     width: 100%;
     height: 70px;
-    background-color: indigo;
-
+    display: inline-flex;
+    font-family: 'Playfair';
 }
-.container
+
+.footer-link
 {
-    margin: 0% 5% 0% 5%;
+    list-style-type: none;
+    display: inline-flex;
+    background-color: none;
+    padding: 10px;
+}
+
+.footer-link li a
+{
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+}
+
+footer p 
+{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 300px;
+    color: black;
 }
 
 body
 {
     color: floralwhite;
-    background-color: gray;
+    overflow: hidden;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(#0e313d,#294452) ;
 }
