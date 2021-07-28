@@ -7,20 +7,17 @@ namespace Palindrome
     {
         static void Main(string[] args)
         {
-            string text = "HaaH";
+            string text,str = "";
 
+            text = "HaaH";
             int length = text.Length;
-            Char[] myStr = text.ToCharArray();
 
-            foreach (var i in myStr)
+            for (int i = text.Length-1; i >= 0; i--)
             {
-                myStr[length-1] = i;
-                length--;
+                str += text[i].ToString();
             }
 
-            Char[] str = text.ToCharArray();
-
-            if (str.Equals(myStr))
+            if (str.Equals(text))
                 Console.WriteLine($"{text} is a palindrome");
             else
                 Console.WriteLine($"{text} is not a palindrome");
