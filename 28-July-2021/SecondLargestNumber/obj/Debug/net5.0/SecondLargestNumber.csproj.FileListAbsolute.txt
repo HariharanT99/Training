@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.exe
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.deps.json
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.runtimeconfig.json
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.runtimeconfig.dev.json
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.dll
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\ref\SecondLargestNumber.dll
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\bin\Debug\net5.0\SecondLargestNumber.pdb
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.AssemblyInfo.cs
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.dll
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\ref\SecondLargestNumber.dll
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.pdb
+C:\Gislen Software\Assign\28-July-2021\SecondLargestNumber\obj\Debug\net5.0\SecondLargestNumber.genruntimeconfig.cache

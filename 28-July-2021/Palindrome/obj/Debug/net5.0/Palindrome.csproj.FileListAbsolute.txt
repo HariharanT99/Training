@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.exe
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.deps.json
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.runtimeconfig.json
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.runtimeconfig.dev.json
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.dll
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\ref\Palindrome.dll
+C:\Gislen Software\Assign\28-July-2021\Palindrome\bin\Debug\net5.0\Palindrome.pdb
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.AssemblyInfo.cs
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.dll
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\ref\Palindrome.dll
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.pdb
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.genruntimeconfig.cache
+C:\Gislen Software\Assign\28-July-2021\Palindrome\obj\Debug\net5.0\Palindrome.csprojAssemblyReference.cache
