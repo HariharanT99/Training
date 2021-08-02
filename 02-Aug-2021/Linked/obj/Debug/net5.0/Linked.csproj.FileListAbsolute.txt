@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.exe
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.deps.json
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.runtimeconfig.json
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.runtimeconfig.dev.json
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.dll
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\ref\Linked.dll
+C:\Gislen Software\Assign\02-Aug-2021\Linked\bin\Debug\net5.0\Linked.pdb
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.AssemblyInfo.cs
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.dll
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\ref\Linked.dll
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.pdb
+C:\Gislen Software\Assign\02-Aug-2021\Linked\obj\Debug\net5.0\Linked.genruntimeconfig.cache

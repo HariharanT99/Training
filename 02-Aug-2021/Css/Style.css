@@ -80,7 +80,7 @@ ul li:hover
 
 ul li.checked 
 {
-    background: #64FFDA;
+    background: #00695C ;
     color: #fff;
 }
 
@@ -96,5 +96,13 @@ ul li.checked::before
     transform: rotate(45deg);
     height: 15px;
     width: 7px;
+}
+
+button
+{
+    padding: 10px;
+    align-self: center;
+    background-color: #D50000;
+    border-radius: 5px;
 }
 
