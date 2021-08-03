@@ -1,0 +1,16 @@
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.exe
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.deps.json
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.runtimeconfig.json
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.runtimeconfig.dev.json
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.dll
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\ref\Array.dll
+C:\Gislen Software\Assign\03-Aug-2021\Array\bin\Debug\net5.0\Array.pdb
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.csprojAssemblyReference.cache
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.GeneratedMSBuildEditorConfig.editorconfig
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.AssemblyInfoInputs.cache
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.AssemblyInfo.cs
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.csproj.CoreCompileInputs.cache
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.dll
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\ref\Array.dll
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.pdb
+C:\Gislen Software\Assign\03-Aug-2021\Array\obj\Debug\net5.0\Array.genruntimeconfig.cache

@@ -3,6 +3,8 @@ const task = []
 
 var close = document.getElementsByClassName("close");
 
+
+// Add Task
 document.querySelector('#btnAdd').addEventListener('click', function(){
   if (!(document.getElementById('input').value === ''))
   {
@@ -44,6 +46,7 @@ document.querySelector('#btnAdd').addEventListener('click', function(){
   }
 })
 
+
 var list = document.querySelector('ul');
 list.addEventListener('dblclick', function(ev) {
   if (ev.target.tagName === 'LI') {
@@ -51,6 +54,8 @@ list.addEventListener('dblclick', function(ev) {
   }
 }, false);
 
+
+//Store into the local storage
 function Store(){
   localStorage.setItem('task', JSON.stringify(task))
 }

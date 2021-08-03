@@ -13,6 +13,8 @@
     padding: 20px;
     color: floralwhite;
     text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 0px rgb(41, 40, 40);
 }
 
 h1
@@ -76,6 +78,8 @@ ul li:nth-child(odd)
 ul li:hover 
 {
     background: #00838F;
+    font-size: 22px;
+    transition: 0.2s;
 }   
 
 ul li.checked 
@@ -110,7 +114,6 @@ ul li.checked::before
 .close:hover
 {
     font-size: 20px;
-    
 }
 
 li
