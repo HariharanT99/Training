@@ -1,0 +1,16 @@
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.exe
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.deps.json
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.runtimeconfig.json
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.runtimeconfig.dev.json
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.dll
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\ref\Stack.dll
+D:\Training\Assign\04-Aug-2021\Stack\Stack\bin\Debug\net5.0\Stack.pdb
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.csproj.AssemblyReference.cache
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.AssemblyInfoInputs.cache
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.AssemblyInfo.cs
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.csproj.CoreCompileInputs.cache
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.dll
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\ref\Stack.dll
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.pdb
+D:\Training\Assign\04-Aug-2021\Stack\Stack\obj\Debug\net5.0\Stack.genruntimeconfig.cache
