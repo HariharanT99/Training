@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Array
 {
@@ -37,22 +38,12 @@ namespace Array
                 }
             }
 
+            int sum = myArr.Sum();
 
             for(int i = 0; i < myArr.Length; i++)
             {
-                int _res = 0;
-                for (int j = 0; j < myArr.Length; j++)
-                {
-                    if (i == j)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        _res += myArr[j];
-                    }
-                }
-                result[i] = _res;
+                int res = sum - myArr[i];
+                result[i] = res;
             }
 
             Console.WriteLine("\nResult elements");
