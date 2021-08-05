@@ -1,0 +1,27 @@
+thead
+{
+    font-weight: 700;
+}
+
+table
+{
+    background-color: #6200EE;
+}
+
+body
+{
+    background-image: linear-gradient(#03a9f4, #004d40);
+}
+tbody tr:hover
+{
+    color: black;
+}
+
+h1
+{
+    text-align: center;
+    padding: 20px;
+    background-color: #3700B3;
+    color: floralwhite;
+    margin-bottom: 0;
+}
