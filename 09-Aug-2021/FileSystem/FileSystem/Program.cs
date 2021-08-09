@@ -24,10 +24,11 @@ namespace FileSystem
                 Directory.CreateDirectory(targetFilePath);
 
 
-            string imagePath = @"D:\Training\Assign\09-Aug-2021\FileOperation\Images";
+            //string imagePath = @"D:\Training\Assign\09-Aug-2021\FileOperation\Images";
 
 
-            if (Directory.Exists(imagePath))
+            //Move
+           /* if (Directory.Exists(imagePath))
             {
                 string[] files = Directory.GetFiles(imagePath);
 
@@ -37,7 +38,7 @@ namespace FileSystem
                     var destFile = Path.Combine(sourceFilePath, fileName);
                     //File.Copy(s, destFile, true);
                 }
-            }
+            }*/
 
 
             string[] filesText = Directory.GetFiles(sourceFilePath);
@@ -51,14 +52,14 @@ namespace FileSystem
                 //Console.WriteLine(text);
                 if (Regex.IsMatch(file, @"\.txt$") && text.Contains("Gislen Software"))
                 {
-                    Console.WriteLine(text);
-                    //File.Copy(sourceFilePath, targetFilePath);
+                    var pathString = Path.Combine(targetFilePath, fi.Name);
+                    File.Copy(file, pathString);
                 }
 
                 if (Regex.IsMatch(file, @"\.jpg$|\.png$|\.gif$") && fi.Length <= 2e+6)
                 {
-                    Console.WriteLine(file);
-                    Console.WriteLine(fi.Length);
+                    var pathString = Path.Combine(targetFilePath, fi.Name);
+                    File.Move(file, pathString);
                 }
             }
 
