@@ -1,0 +1,16 @@
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.exe
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.deps.json
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.runtimeconfig.json
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.runtimeconfig.dev.json
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.dll
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\ref\LinkedListQueue.dll
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\bin\Debug\net5.0\LinkedListQueue.pdb
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.csproj.AssemblyReference.cache
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.AssemblyInfoInputs.cache
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.AssemblyInfo.cs
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.csproj.CoreCompileInputs.cache
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.dll
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\ref\LinkedListQueue.dll
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.pdb
+D:\Training\Assign\09-Aug-2021\LinkedList\LinkedList\obj\Debug\net5.0\LinkedListQueue.genruntimeconfig.cache
