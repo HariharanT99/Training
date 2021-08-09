@@ -1,0 +1,16 @@
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.exe
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.deps.json
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.runtimeconfig.json
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.runtimeconfig.dev.json
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.dll
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\ref\FileSystem.dll
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\bin\Debug\net5.0\FileSystem.pdb
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.csproj.AssemblyReference.cache
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.AssemblyInfoInputs.cache
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.AssemblyInfo.cs
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.csproj.CoreCompileInputs.cache
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.dll
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\ref\FileSystem.dll
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.pdb
+D:\Training\Assign\09-Aug-2021\FileSystem\FileSystem\obj\Debug\net5.0\FileSystem.genruntimeconfig.cache

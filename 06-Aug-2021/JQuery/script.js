@@ -2,14 +2,13 @@ const studentList = []
 
 class Student
 {
-    constructor(userName, email, password, firstName, lastName, gender, address)
+    constructor(userName, email, password, firstName, lastName, address)
     {
         this.userName = userName
         this.email = email
         this.password = password
         this.firstName = firstName
         this.lastName = lastName
-        this.gender = gender
         this.address = address
     }
 }
@@ -23,9 +22,8 @@ function StudentDetails()
     let password = document.getElementById('password').value
     let email = document.getElementById('email').value
     let address = document.getElementById('address').value
-    let gender = document.getElementById('gender')
 
-    var details = new Student(userName, email, password, firstName, lastName, gender, address)
+    var details = new Student(userName, email, password, firstName, lastName, address)
 
     studentList.push(details)
 

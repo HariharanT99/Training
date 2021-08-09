@@ -10,7 +10,8 @@ if($registrationForm.length){
               required: true,
           },
           password: {
-              required: true
+              required: true,
+              minlength: 6
           },
           confirm: {
               required: true,
@@ -38,7 +39,8 @@ if($registrationForm.length){
               email: 'Please enter valid email!'
           },
           password: {
-              required: 'Please enter password!'
+              required: 'Please enter password!',
+              minlength: "Password must have atleast 6 characters"
           },
           confirm: {
               required: 'Please enter confirm password!',
