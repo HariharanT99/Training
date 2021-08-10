@@ -1,0 +1,12 @@
+<app-todo-input (onTaskAdded)="onUpdate($event)" ></app-todo-input>
+
+<div class="tasklist">
+    <ul class="list-group">
+        <li class="list-group-item mb-sm-2" *ngFor="let task of taskList; let index = index;" (dblclick)="onDone(index)" >
+            {{task}}  
+            <span class="hover-cursor text-danger pull-right" (click)="onRemove(index)">
+                <i class="fa fa-lg fa-trash-o"></i>
+            </span>
+        </li>
+    </ul>
+</div>

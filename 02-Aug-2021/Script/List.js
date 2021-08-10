@@ -4,7 +4,7 @@ const task = []
 var close = document.getElementsByClassName("close");
 
 document.querySelector('#btnAdd').addEventListener('click', function(){
-  if (!(document.getElementById('input').value === ''))
+  if ((document.getElementById('input').value !== ''))
   {
     var list = document.getElementById('myUl')
     list.innerHTML = ''; 
@@ -17,10 +17,11 @@ document.querySelector('#btnAdd').addEventListener('click', function(){
     {
         var listItem = document.createTextNode(task[i]);
         var li = document.createElement("li");
-     li.appendChild(listItem)
+        // <li>String</li>
+     li.appendChild(listItem)  
      list.append(li)
 
-     var span = document.createElement("SPAN");
+     var span = document.createElement("SPAN"); // <span>x</span>
      var txt = document.createTextNode("\u00D7");
      span.className = "close"
      span.appendChild(txt)
@@ -30,8 +31,8 @@ document.querySelector('#btnAdd').addEventListener('click', function(){
      {
       close[i].onclick = function() 
       {
-        var div = this.parentElement
-        div.style.display = "none"
+        var dv = this.parrentElement
+        dv.style.display = "none"
       }
      }
     }
@@ -45,11 +46,11 @@ document.querySelector('#btnAdd').addEventListener('click', function(){
 })
 
 var list = document.querySelector('ul');
-list.addEventListener('dblclick', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
+list.addEventListener('dblclick', function(item) {
+  if (item.target.tagName === 'LI') {
+    item.target.classList.toggle('checked');
   }
-}, false);
+});
 
 function Store(){
   localStorage.setItem('task', JSON.stringify(task))

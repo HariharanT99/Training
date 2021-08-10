@@ -1,0 +1,8 @@
+<div class="jumbotron mb-2 mt-2" ng-include="todo.component.ts" onload="onLoadDisplay()">
+    <h2 class="text-center">TASK LIST</h2>
+</div>
+
+<div class="input-group mb-2">
+    <input type="text" id="inp" class="form-control" placeholder="Enter the Task..." #addTask [(ngModel)]="task">
+    <button class="btn btn-warning"  (click)="onAdd()"><i class="fa fa-lg fa-plus-circle"    ></i> Add</button>
+</div>
