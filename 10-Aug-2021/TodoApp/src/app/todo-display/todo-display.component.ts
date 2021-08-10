@@ -23,12 +23,13 @@ export class TodoDisplayComponent implements OnInit {
   }
     onRemove(index: number){
       this.taskList.splice(index, 1)
-      sessionStorage.setItem('taskList',JSON.stringify(this.taskList))
+      localStorage.setItem('taskList',JSON.stringify(this.taskList))
     };
 
     onUpdate(task: any)
     {
       this.taskList.push(task)
+      localStorage.setItem('taskList',JSON.stringify(this.taskList))
     }
   
 
