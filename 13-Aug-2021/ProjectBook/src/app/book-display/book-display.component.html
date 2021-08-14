@@ -1,0 +1,85 @@
+<div class="row">
+<table class="table table-bordered bg-light">
+    <thead>
+      <tr>
+        <th scope="col">ISBN_____________</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Author</th>
+        <th scope="col">price</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList; let id = index" >
+        <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="onUpdateId(id)">{{book.isbn}}</a></td>
+        <td>{{book.title}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+        <td>
+            <img class="img img-fluid img-thumbnail" src="{{book.url}}">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h5 class="modal-title" id="exampleModalLabel">Book   Title: {{bookList[id].title}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable">ISBN :</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <label class="col-form-lable">{{bookList[id].isbn}}</label>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable">Author :</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <label class="col-form-lable">{{bookList[id].author}}</label>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="description">Description :</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <textarea type="text" rows="5" class="form-control" name="description" [(ngModel)]="desc" placeholder="Description..." #description>{{bookList[id].description}}</textarea>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-1">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="price">Price $ :</label>
+                    </div>
+                    <div class="form-group col-sm-3 align-self-center">
+                        <input type="number" class="form-control" value="{{bookList[id].price}}" #price>
+                    </div>
+                </div>
+            </form>
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Upload Image</label>
+                <input class="form-control form-control-sm" type="file" name="image" [(ngModel)]="img" (change)="onSelectFile($event)">
+                <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="onUpdateBook(id, this.url, description.value, price.value)">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

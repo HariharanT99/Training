@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body
+{
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+}
+
+.jumbotron
+{
+    color: floralwhite;
+    padding: 10px;
+}
+
+.table
+{
+    border-radius: 5px;
+    border: 0px;
+}
