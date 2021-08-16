@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
-  title = 'ProjectBook';
+export class BookServiceService {
+
+
+  constructor() { }
 
   bookList: {isbn: string,title: string,description: string, author: string, price: number,url: any}[] = 
   [
@@ -24,7 +24,7 @@ export class AppComponent {
       description: 'Two men meet in a seaside resort. What follows is murder. What\'s discovered isn\'t all it seems to be... Arnold Bennett was born in 1867.',
       author: 'Arnold Bennett ',
       price: 40,
-      url: 'ProjectBook\src\app\BookImages\hardy.gif'
+      url: ''
 
     },
     {
@@ -45,17 +45,33 @@ export class AppComponent {
     }
   ];
 
-  onBookAdded(book: {isbn: string,title: string,description: string, author: string, price: number})
+  id: number = 0;
+
+  onBookAdded(isbn: string,title: string,description: string, author: string, price: number)
   {
-    this.bookList.push({isbn:book.isbn, title:book.title, description:book.description, author:book.author, price:book.price,url:''});
+    this.bookList.push({isbn:isbn, title:title, description:description, author:author, price:price,url:''});
     localStorage.setItem('books',JSON.stringify(this.bookList));
   }
 
-  onBookUpdate(book: {id: number,url: any, description: string, price: number})
+  onBookList(){
+    return this.bookList;
+  }
+
+  onBookUpdate(id: number,url: any, description: string, price: number)
   {
-    this.bookList[book.id].description = book.description;
-    this.bookList[book.id].price = book.price;
-    this.bookList[book.id].url = book.url;
+    this.bookList[id].description = description;
+    this.bookList[id].price = price;
+    this.bookList[id].url = url;
     localStorage.setItem('books',JSON.stringify(this.bookList));
+  }
+
+  onUpdateId(id: number)
+  {
+    this.id=id;
+  }
+
+  onId()
+  {
+    return this.id
   }
 }

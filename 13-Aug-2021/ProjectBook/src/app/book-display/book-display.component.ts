@@ -36,7 +36,7 @@ export class BookDisplayComponent implements OnInit {
     this.book.emit({id,url,description,price});
   }
 
-  onSelectFile(event: any) { //Angular 11, for stricter type
+  onSelectFile(event: any) {
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
 			this.msg = 'You must select an image';
 			return;

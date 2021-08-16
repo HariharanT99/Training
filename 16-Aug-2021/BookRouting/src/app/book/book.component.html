@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8">
+        <form>
+            <div class="row align-items-center mt-2">
+              <div class="form-group col-sm-3 align-self-center">
+                  <label class="col-form-lable">Title :</label>
+              </div>
+              <div class="form-group col-sm-8 align-self-center">
+                  <label class="col-form-lable">{{bookList[id].title}}</label>
+              </div>
+            </div>
+              <div class="row align-items-center mt-2">
+                  <div class="form-group col-sm-3 align-self-center">
+                      <label class="col-form-lable">ISBN :</label>
+                  </div>
+                  <div class="form-group col-sm-8 align-self-center">
+                      <label class="col-form-lable">{{bookList[id].isbn}}</label>
+                  </div>
+              </div>
+        
+              <div class="row align-items-center mt-2">
+                  <div class="form-group col-sm-3 align-self-center">
+                      <label class="col-form-lable">Author :</label>
+                  </div>
+                  <div class="form-group col-sm-8 align-self-center">
+                      <label class="col-form-lable">{{bookList[id].author}}</label>
+                  </div>
+              </div>
+        
+              <div class="row align-items-center mt-2">
+                  <div class="form-group col-sm-3 align-self-center">
+                      <label class="col-form-lable" for="description">Description :</label>
+                  </div>
+                  <div class="form-group col-sm-8 align-self-center">
+                      <textarea type="text" rows="5" class="form-control" name="description" [(ngModel)]="desc" placeholder="Description..." value="{{bookList[id].description}}" #description></textarea>
+                  </div>
+              </div>
+        
+              <div class="row align-items-center mt-1">
+                  <div class="form-group col-sm-3 align-self-center">
+                      <label class="col-form-lable" for="price">Price $ :</label>
+                  </div>
+                  <div class="form-group col-sm-3 align-self-center">
+                      <input type="number" class="form-control" value="{{bookList[id].price}}" #price>
+                  </div>
+              </div>
+          </form>
+          <div class="mb-3 mt-4">
+              <label for="formFile" class="form-label">Upload Image</label>
+              <input class="form-control" type="file" name="image" [(ngModel)]="img" (change)="onSelectFile($event)">
+              <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+          </div>        
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-sm-4 offset-4">
+        <button type="button" class="btn btn-warning" (click)="onUpdateBook( this.url, description.value, price.value)">Update Book</button>
+    </div>
+</div>

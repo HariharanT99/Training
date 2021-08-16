@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8">
+        <table class="table table-bordered bg-light">
+            <thead>
+              <tr>
+                <th scope="col">ISBN_____________</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Author</th>
+                <th scope="col">price</th>
+                <th scope="col">Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of bookList; let id = index" >
+                <td><a type="button" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="onUpdateId(id)" routerLink='/book'>{{book.isbn}}</a></td>
+                <td>{{book.title}}</td>
+                <td>{{book.description}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.price}}</td>
+                <td>
+                    <img class="img img-fluid img-thumbnail" src="{{book.url}}">
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
