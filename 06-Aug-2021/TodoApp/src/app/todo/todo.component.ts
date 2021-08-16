@@ -28,7 +28,7 @@ export class TodoComponent implements OnInit {
 
   onDone(index: number){
     this.taskList.forEach(task => {
-      if (this.taskList[index] == task)
+      if (this.taskList[index] == task)  ///foreach(var task in list)
       {
         this.taskList[index]= `✔ ${task}`
       }

@@ -9,7 +9,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 export class AddBookComponent{
 
-  aut = '';
+  aut ='';
   prc = '';
   desc ='';
   ttl ='';

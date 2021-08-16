@@ -42,19 +42,19 @@ export class BookDisplayComponent implements OnInit {
 			return;
 		}
 		
-		var mimeType = event.target.files[0].type;
+		var fileType = event.target.files[0].type;
 		
-		if (mimeType.match(/image\/*/) == null) {
+		if (fileType.match(/image\/*/) == null) {
 			this.msg = "Only images are supported";
 			return;
 		}
 		
-		var reader = new FileReader();
-		reader.readAsDataURL(event.target.files[0]);
+		var path = new FileReader();
+		path.readAsDataURL(event.target.files[0]);
 		
-		reader.onload = (_event) => {
+		path.onload = (_event) => {
 			this.msg = "";
-			this.url = reader.result;
+			this.url = path.result;
 		}
 	}
 
