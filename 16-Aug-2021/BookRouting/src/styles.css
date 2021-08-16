@@ -16,6 +16,12 @@ body
 {
     color:floralwhite;
 }
+
+.books
+{
+    overflow-x: auto;
+}
+
 .rownull
 {
     min-height: 100px;
