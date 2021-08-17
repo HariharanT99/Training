@@ -1,68 +1,88 @@
-<div class="row justify-content-center">
-    <div class="col-12">
-      <form [formGroup]="profileForm" #Form="ngForm" (ngSubmit)="onSubmit('Form')">
-          <div class="form-Group">
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label for="first-name">First Name: </label>
-                      <input id="first-name" type="text" formControlName="firstName" [(ngModel)]="fName">
-                      <div *ngIf="!profileForm.get('firstName').valid && profileForm.get('firstName').touched" class="help-block">First Name is required</div>
-                  </div>
-              </div>
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label for="last-name">Last Name: </label>
-                      <input id="last-name" type="text" formControlName="lastName" [(ngModel)]="lName">
-                      <div *ngIf="!profileForm.get('lastName').valid && profileForm.get('lastName').touched" class="help-block">Last Name is required</div>
-                  </div>
-              </div>
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label for="phone">Phone Number:</label>
-                      <input id="phone" type="number" formControlName="phoneNumber" [(ngModel)]="mobile">
-                      <div *ngIf="!profileForm.get('phoneNumber').valid && profileForm.get('phoneNumber').touched " class="help-block">Phone Number is required</div>
-                      
-                  </div>
-              </div>
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label for="email">Email Address:</label>
-                      <input id="email" type="email" formControlName="emailId" [(ngModel)]="mail">
-                      <div *ngIf="!profileForm.get('emailId').valid && profileForm.get('emailId').touched" class="help-block">Email Id is required</div>
-                  </div>
-              </div>
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label for="address">Residential Address:</label>
-                      <textarea id="address" type="text" formControlName="Address" [(ngModel)]="homeAdd"></textarea> 
-                      <div *ngIf="!profileForm.get('Address').valid && profileForm.get('Address').touched" class="help-block">Address is required</div>
-                  </div>
-              </div>
-              <div class="row justify-content-center mt-3">
-                  <div class="col-sm-4">
-                      <label>Country</label>
-                      <div title="Please select the country">
-                          <select placeholder="Phantasyland" formControlName="Country" (change)="changeCountry($event)" [(ngModel)]="countryName">
-                              <option *ngFor ="let count of countryList" [value]="count.name" >{{count.name}} </option>
-                          </select>
-                      </div>
-  
-                      <label>City</label>
-                      <div title="Please select the city">
-                          <select placeholder="Anycity" formControlName="City" [(ngModel)]="cityName">
-                              <option *ngFor ="let city of cities">{{city}}  </option>
-                          </select>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+          <form [formGroup]="profileForm" #Form="ngForm" (ngSubmit)="onSubmit('Form')">
+              <div class="form-Group">
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label for="first-name" class="col-form-label">First Name: </label>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input id="first-name" class="form-control" type="text" formControlName="firstName" [(ngModel)]="fName" placeholder="First Name">
+                          <div style="color: red;" *ngIf="!profileForm.get('firstName').valid && profileForm.get('firstName').touched" class="help-block">First Name is required</div>
                       </div>
                   </div>
-              </div>
-              <div class="row justify-content-center mt-4">
-                  <div class="col-sm-4">
-                      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label for="last-name" class="col-form-label">Last Name: </label>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <input id="last-name" class="form-control" type="text" formControlName="lastName" [(ngModel)]="lName" placeholder="Last Name">
+                          <div style="color: red;" *ngIf="!profileForm.get('lastName').valid && profileForm.get('lastName').touched" class="help-block">Last Name is required</div>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label for="phone" class="col-form-label">Phone Number:</label>
+                          </div>
+                          <div class="col-12 col-sm-4">
+                          <input id="phone" class="form-control" type="number" formControlName="phoneNumber" [(ngModel)]="mobile" placeholder="Phone Number">
+                          <div style="color: red;" *ngIf="!profileForm.get('phoneNumber').valid && profileForm.get('phoneNumber').touched " class="help-block">Phone Number is required</div>
+                          
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label for="email" class="col-form-label">Email:</label>
+                          </div>
+                          <div class="col-12 col-sm-4">
+                          <input id="email" class="form-control" type="email" formControlName="emailId" [(ngModel)]="mail" placeholder="Email">
+                          <div style="color: red;" *ngIf="!profileForm.get('emailId').valid && profileForm.get('emailId').touched" class="help-block">Email Id is required</div>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label for="address" class="col-form-label">Address:</label>
+                      </div>
+                      <div class="cl-12 col-sm-4">
+                          <textarea id="address" class="form-control" type="text" formControlName="Address" [(ngModel)]="homeAdd"></textarea> 
+                          <div style="color: red;" *ngIf="!profileForm.get('Address').valid && profileForm.get('Address').touched" class="help-block">Address is required</div>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mt-3">
+                      <div class="col-12 col-sm-2">
+                          <label class="col-form-label">Country</label>
+                      </div>
+                      <div class="col-12 col-sm-4">
+                          <div title="Please select the country">
+                              <select class="form-select" formControlName="Country" (change)="changeCountry($event)" [(ngModel)]="countryName">
+                                <option selected>Select the Country</option>  
+                                <option *ngFor ="let count of countryList" [value]="count.name" >{{count.name}} </option>
+                              </select>
+                          </div>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <div class="col-12 col-sm-2">
+                          <label>City</label>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                          <div title="Please select the city">
+                              <select class="form-select" formControlName="City" [(ngModel)]="cityName">
+                                  <option *ngFor ="let city of cities">{{city}}  </option>
+                              </select>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center mt-4">
+                      <div class="col-4 col-sm-2">
+                          <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+                      </div>
                   </div>
               </div>
-          </div>
-      </form>
-  
-    </div>
-  
-  </div>
+          </form>
+      
+        </div>
+      
+      </div>
+</div>

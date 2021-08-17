@@ -11,7 +11,7 @@ export class InputFormComponent implements OnInit {
 
   fName='';
   lName='';
-  mobile=0;
+  mobile='';
   mail='';
   homeAdd='';
   countryName='';
@@ -57,7 +57,7 @@ export class InputFormComponent implements OnInit {
     { name: 'Spain', cities: ['Select State','Barcelona'] },
     { name: 'USA', cities: ['Select State','Downers Grove'] },
     { name: 'Mexico', cities: ['Select State','Puebla'] },
-    { name: 'India', cities: ['Select State','Tamil Nadu','Kerala','Karnataka'] },
+    { name: 'India', cities: ['Select State','Tamil Nadu','Kerala','Karnataka', 'Maharastra', 'Punjab', 'Uttar Pradesh'] },
   ];
 
   cities: Array<any>=[];
@@ -72,7 +72,7 @@ export class InputFormComponent implements OnInit {
   onSubmit(form:any)
   {
     this.lName='';
-    this.mobile=0;
+    this.mobile='';
     this.mail='';
     this.homeAdd='';
     this.countryName='';

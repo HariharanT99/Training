@@ -6,9 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  profileList:any=[];
 
-  
-  //statesAustralia: string
-  
-  title = 'FormProject';
+  onAdd(data:any)
+  {
+    this.profileList.push({
+      type:'profile',
+      firstName:data.firstName,
+      lastName:data.lastName,
+      phone:data.phoneNumber,
+      email:data.emailId,
+      Address:data.Address,
+      Country:data.Country,
+      City:data.City
+    })
+
+  }
 }

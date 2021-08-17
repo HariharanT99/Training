@@ -3,3 +3,30 @@ span
 {
     color: red;
 }
+
+body
+{
+    background-image: linear-gradient(#0e313d,#294452);
+}
+
+h1
+{
+    color: floralwhite;
+}
+
+.header
+{
+    color: floralwhite;
+    padding: 5px;
+    font-family: Pacifico;
+}
+
+.container
+{
+    color:floralwhite;
+}
+
+.books
+{
+    overflow-x: auto;
+}
