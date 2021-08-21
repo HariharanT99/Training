@@ -5,46 +5,89 @@
 </div>
 
 <div class="row justify-content-center header">
-    <form>
-        <div class="row align-items-center mt-2">
-            <div class="form-group col-sm-3 align-self-center">
-                <label class="col-form-lable" for="cname">Company</label>
-            </div>
-            <div class="form-group col-sm-8 align-self-center">
-                <input type="text" class="form-control" name="cname" placeholder="Company Name...">
+    <form [formGroup]="professionalForm" (ngSubmit)="onNext()">
+        <div class="row justify-content-center mt-2">
+            <div class="col-sm-2">
+                <button type="button" (click)="onAddCompany()" class="btn btn-info">Add Company</button>
             </div>
         </div>
-        <div class="row align-items-center mt-2">
-            <div class="form-group col-sm-3 align-self-center">
-                <label class="col-form-lable" for="desgnation">Designation</label>
-            </div>
-            <div class="form-group col-sm-8 align-self-center">
-                <input type="text" class="form-control" name="desgnation" placeholder="Designation..">
+        <div formArrayName="professionalList" *ngFor="let company of professionalForm.get('professionalList')['controls']">
+            <div class="mt-5" formGroupName="0">
+                <div class="row align-items-center mt-2">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="cname">Company</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="cname" formControlName="companyName"
+                            placeholder="Company Name...">
+                    </div>
+                    <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                        <span style="color: floralwhite;"
+                            *ngIf="professionalForm.get('professionalList').errors && (professionalForm.get('professionalList').touched || professionalForm.get('professionalList').dirty)">
+                            Company Name is required.
+                        </span>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-2">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="desgnation">Designation</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="desgnation" formControlName="designation"
+                            placeholder="Designation..">
+                    </div>
+                    <!-- <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="professionalForm.get('desgnation').errors && (professionalForm.get('desgnation').touched || professionalForm.get('desgnation').dirty)">
+                    Designation is required.
+                </span>
+            </div> -->
+                </div>
+                <div class="row align-items-center mt-2">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="sdate">Start Date</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="date" class="form-control" formControlName="startDate" name="sdate">
+                    </div>
+                    <!-- <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="professionalForm.get('startDate').errors && (professionalForm.get('startDate').touched || professionalForm.get('startDate').dirty)">
+                    Date is required.
+                </span>
+            </div> -->
+                </div>
+                <div class="row align-items-center mt-2">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="edate">End Date</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="date" class="form-control" formControlName="endDate" name="edate">
+                    </div>
+                    <!-- <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="professionalForm.get('endDate').errors && (professionalForm.get('endDate').touched || professionalForm.get('endDate').dirty)">
+                    Date is required.
+                </span>
+            </div> -->
+                </div>
+                <div class="row align-items-center mt-2">
+                    <div class="form-group col-sm-3 align-self-center">
+                        <label class="col-form-lable" for="skills">Skills</label>
+                    </div>
+                    <div class="form-group col-sm-8 align-self-center">
+                        <input type="text" class="form-control" name="skills" formControlName="skill"
+                            placeholder="Like C#, Pyhton...">
+                    </div>
+                    <!-- <div class="col-sm-4 offset-sm-3 error mt-1 mb-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="professionalForm.get('skill').errors && (professionalForm.get('skill').touched || professionalForm.get('skill').dirty)">
+                    Date is required.
+                </span>
+            </div> -->
+                </div>
             </div>
         </div>
-        <div class="row align-items-center mt-2">
-            <div class="form-group col-sm-3 align-self-center">
-                <label class="col-form-lable" for="sdate">Start Date</label>
-            </div>
-            <div class="form-group col-sm-8 align-self-center">
-                <input type="date" class="form-control" name="sdate">
+        <div class="row justify-content-center mt-2">
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-warning" routerLink='/attachment'>Next</button>
             </div>
         </div>
-        <div class="row align-items-center mt-2">
-            <div class="form-group col-sm-3 align-self-center">
-                <label class="col-form-lable" for="edate">End Date</label>
-            </div>
-            <div class="form-group col-sm-8 align-self-center">
-                <input type="date" class="form-control" name="edate">
-            </div>
-        </div>
-        <div class="row align-items-center mt-2">
-            <div class="form-group col-sm-3 align-self-center">
-                <label class="col-form-lable" for="skills">Skills</label>
-            </div>
-            <div class="form-group col-sm-8 align-self-center">
-                <input type="text" class="form-control" name="skills" placeholder="Like C#, Pyhton...">
-            </div>
-        </div>
-    </form> 
+    </form>
 </div>

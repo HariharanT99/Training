@@ -5,13 +5,18 @@
 </div>
 
 <div class="row justify-content-center header">
-    <form >
-        <div class="row align-items-center mt-2">
+    <form [formGroup]="inputForm" (ngSubmit)="onNext()">
+        <div class="row align-items-center mt-2" [ngClass]="{'has-error': inputForm.get('firstName').valid}">
             <div class="form-group col-sm-3 align-self-center">
                 <label class="col-form-lable" for="fname">First Name</label>
             </div>
             <div class="form-group col-sm-8 align-self-center">
-                <input type="text" class="form-control" name="fname" placeholder="First Name...">
+                <input type="text" class="form-control" name="fname" formControlName='firstName' placeholder="First Name...">
+            </div>
+            <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="inputForm.get('firstName').errors && (inputForm.get('firstName').touched || inputForm.get('firstName').dirty)">
+                    Frist Name is required.
+                </span>
             </div>
         </div>
         <div class="row align-items-center mt-2">
@@ -19,7 +24,12 @@
                 <label class="col-form-lable" for="lname">Last Name</label>
             </div>
             <div class="form-group col-sm-8 align-self-center">
-                <input type="text" class="form-control" name="lname" placeholder="Last Name...">
+                <input type="text" class="form-control" name="lname" formControlName='lastName' placeholder="Last Name...">
+            </div>
+            <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="inputForm.get('lastName').errors && (inputForm.get('lastName').touched || inputForm.get('lastName').dirty)">
+                    Last Name is required.
+                </span>
             </div>
         </div>
         <div class="row align-items-center mt-2">
@@ -27,7 +37,12 @@
                 <label class="col-form-lable" for="pnumber">Phone Number</label>
             </div>
             <div class="form-group col-sm-8 align-self-center">
-                <input type="number" class="form-control" name="pnumber" placeholder="Phone Number">
+                <input type="number" class="form-control" name="pnumber" formControlName='phoneNumber' placeholder="Phone Number">
+            </div>
+            <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="inputForm.get('phoneNumber').errors && (inputForm.get('phoneNumber').touched || inputForm.get('phoneNumber').dirty)">
+                    Phone Number is required.
+                </span>
             </div>
         </div>
         <div class="row align-items-center mt-2">
@@ -35,7 +50,12 @@
                 <label class="col-form-lable" for="address">Address</label>
             </div>
             <div class="form-group col-sm-8 align-self-center">
-                <textarea type="text" rows="3" class="form-control" name="address" placeholder="Address..."></textarea>
+                <textarea type="text" rows="3" class="form-control" name="address" formControlName='address' placeholder="Address..."></textarea>
+            </div>
+            <div class="col-sm-4 offset-sm-3 error mt-1 bg-danger">
+                <span style="color: floralwhite;" *ngIf="inputForm.get('address').errors && (inputForm.get('address').touched || inputForm.get('address').dirty)">
+                    Address is required.
+                </span>
             </div>
         </div>
         <div class="row align-items-center mt-2">
@@ -44,10 +64,15 @@
             </div>
             <div class="form-group col-sm-8 align-self-center">
                 <div title="Please select the country">
-                    <select class="form-select" (change)="changeCountry($event)">
+                    <select class="form-select" formControlName='country' (change)="changeCountry($event)">
                       <option selected>Select the Country</option>  
-                      <option *ngFor ="let count of countryList" [value]="count.name" >{{count.name}} </option>
+                      <option *ngFor ="let count of countryList">{{count.name}} </option>
                     </select>
+                </div>
+                <div class="col-sm-4 error mt-1 bg-danger">
+                    <span style="color: floralwhite;" *ngIf="inputForm.get('country').errors && (inputForm.get('country').touched || inputForm.get('country').dirty)">
+                        Country is required.
+                    </span>
                 </div>
             </div>
         </div>
@@ -57,11 +82,21 @@
             </div>
             <div class="form-group col-sm-8 align-self-center">
                 <div title="Please select the city">
-                    <select class="form-select" formControlName="City">
+                    <select class="form-select" formControlName="state">
                         <option selected>Select the State</option>
-                        <option *ngFor ="let city of cities">{{city}}  </option>
+                        <option *ngFor ="let state of states">{{state}}  </option>
                     </select>
                 </div>
+                <div class="col-sm-4 error mt-1 mb-1 bg-danger">
+                    <span style="color: floralwhite;" *ngIf="inputForm.get('state').errors && (inputForm.get('state').touched || inputForm.get('state').dirty)">
+                        State is required.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-warning" routerLink='/professional-detail'>Next</button>
             </div>
         </div>
     </form> 
