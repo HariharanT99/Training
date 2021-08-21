@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professional-detail',
@@ -9,7 +10,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class ProfessionalDetailComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private empObj: EmployeeService) { }
+  constructor(private fb: FormBuilder, private empObj: EmployeeService,  private _router: Router) { }
 
 
   professionalForm: FormGroup;
@@ -68,5 +69,7 @@ onAddCompanyGroup(): FormGroup
   {
     this.onPushCompanyList();
     this.empObj.onCompanyDetailTemp(this.CompanyList);
+
+    this._router.navigate(['/attachment']);
   }
 }

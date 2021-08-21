@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-attachment',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AttachmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private empObj: EmployeeService) { }
 
   attachmentForm: FormControl;
 
@@ -37,6 +38,6 @@ export class AttachmentComponent implements OnInit {
 
   onSubmit()
   {
-    
+    this.empObj.onfileTemp(this.file)
   }
 }

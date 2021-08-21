@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { EmployeeService } from '../employee.service';
 })
 export class PersonalDetailComponent implements OnInit {
 
-  constructor(private empObj: EmployeeService) { }
+  constructor(private empObj: EmployeeService, private _router: Router) { }
 
   countryList: Array<any> = [
     { name: 'Germany', states: ['Duesseldorf', 'Leinfelden-Echterdingen', 'Eschborn'] },
@@ -51,6 +52,8 @@ export class PersonalDetailComponent implements OnInit {
     let con=this.inputForm.controls.country.value;
     let state=this.inputForm.controls.state.value;
 
-    this.empObj.onPersonalDetailTemp(fName,lName,pNumber,add,con,state)
+    this.empObj.onPersonalDetailTemp(fName,lName,pNumber,add,con,state);
+
+    this._router.navigate(['/professional-detail']);
   }
 }

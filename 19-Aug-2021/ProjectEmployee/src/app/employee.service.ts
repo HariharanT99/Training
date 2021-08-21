@@ -55,14 +55,16 @@ export class EmployeeService {
 
   onfileTemp(fl: object)
   {
+    
     this.file=fl;
-
+    this.wholeUpload();
   }
 
   wholeUpload()
   {
     this.aplicationDetails.push({firstName:this.fName,lastName:this.lName,phoneNumber:this.pNumber,address:this.add,
     country:this.con,state:this.sta,experienceDetails:this.companyDetails,resume:this.file})
+    console.log(this.aplicationDetails)
   }
 
 }
