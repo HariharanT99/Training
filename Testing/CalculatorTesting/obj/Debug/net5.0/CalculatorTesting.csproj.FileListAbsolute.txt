@@ -1,0 +1,16 @@
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.exe
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.deps.json
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.runtimeconfig.json
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.runtimeconfig.dev.json
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.dll
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\ref\CalculatorTesting.dll
+D:\Training\Assign\Testing\CalculatorTesting\bin\Debug\net5.0\CalculatorTesting.pdb
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.AssemblyInfoInputs.cache
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.AssemblyInfo.cs
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.csproj.CoreCompileInputs.cache
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.dll
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\ref\CalculatorTesting.dll
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.pdb
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.genruntimeconfig.cache
+D:\Training\Assign\Testing\CalculatorTesting\obj\Debug\net5.0\CalculatorTesting.csproj.AssemblyReference.cache

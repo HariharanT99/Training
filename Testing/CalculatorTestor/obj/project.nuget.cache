@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "tYWRpiEIs2XlaUE2u63jPIjSB4dr14/YaimmTqRpyHBhL1M+fPZKTaCTrM+ntYmI40sbKdkLHSAr2uFIjtksgQ==",
+  "success": true,
+  "projectFilePath": "D:\\Training\\Assign\\Testing\\CalculatorTestor\\CalculatorTestor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hariharant\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hariharant\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\hariharant\\.nuget\\packages\\nunit\\3.13.2\\nunit.3.13.2.nupkg.sha512",
+    "C:\\Users\\hariharant\\.nuget\\packages\\nunit3testadapter\\4.0.0\\nunit3testadapter.4.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

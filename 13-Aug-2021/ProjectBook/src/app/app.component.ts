@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ProjectBook';
 
-  bookList: {isbn: string,title: string,description: string, author: string, price: number,url: any}[] = 
+  List: {isbn: string,title: string,description: string, author: string, price: number,url: any}[] = 
   [
     {
       isbn: '1-86092-049-7', 

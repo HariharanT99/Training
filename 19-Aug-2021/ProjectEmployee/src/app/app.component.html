@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+    <div class="d-flex align-items-start">
+        <div class="col-sm-2 mr-5">
+            <div class="nav flex-column nav-pills me-3">
+                <button class="nav-link" type="button" routerLinkActive='active' routerLink='/home'>Home</button>
+                <button class="nav-link" type="button" routerLinkActive='active' routerLink='/personal-detail'>Personal Details</button>
+                <button class="nav-link" type="button" routerLinkActive='active' routerLink='/professional-detail'>Professional Details</button>
+                <button class="nav-link" type="button" routerLinkActive='active' routerLink='/attachment'>Attachments</button>
+            </div>
+        </div>
+        <div class="col-sm-8 offset-sm-1">
+            <div><router-outlet></router-outlet></div>
+        </div>
+    </div>
+</div>

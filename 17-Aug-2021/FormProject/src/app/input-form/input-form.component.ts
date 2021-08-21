@@ -9,13 +9,13 @@ import { FormServiceService } from '../form-service.service';
 })
 export class InputFormComponent implements OnInit {
 
-  fName='';
-  lName='';
-  mobile='';
-  mail='';
-  homeAdd='';
-  countryName='';
-  cityName='';
+  // fN='';
+  // lN='';
+  // mbl='';
+  // ml='';
+  // hA='';
+  // coN='';
+  // cN='';
 
   
 
@@ -35,7 +35,7 @@ export class InputFormComponent implements OnInit {
       // 'profileData':new FormGroup({
       'firstName':new FormControl(null,Validators.required),
       'lastName':new FormControl(null,Validators.required),
-      'phoneNumber':new FormControl(null,Validators.compose([Validators.required,Validators.pattern('[- +()0-9]+')])),
+      'phoneNumber':new FormControl(null,Validators.compose([Validators.required,Validators.pattern('')])),
 
       'emailId':new FormControl(null, Validators.compose([
         Validators.required,
@@ -60,24 +60,24 @@ export class InputFormComponent implements OnInit {
     { name: 'India', cities: ['Select State','Tamil Nadu','Kerala','Karnataka', 'Maharastra', 'Punjab', 'Uttar Pradesh'] },
   ];
 
-  cities: Array<any>=[];
+  cities: any[]=[];
 
   changeCountry(count:any) 
   {
-    this.cities = this.countryList.find(con => con.name == count.target.value).cities;
+    this.cities = this.countryList.find(c => c.name == count.target.value).cities;
     //console.log(this.cities);
   
   }
 
   onSubmit(form:any)
   {
-    this.lName='';
-    this.mobile='';
-    this.mail='';
-    this.homeAdd='';
-    this.countryName='';
-    this.cityName='';
-    this.fName='';
+    // this.fN='';
+    // this.lN='';
+    // this.mbl='';
+    // this.ml='';
+    // this.hA='';
+    // this.coN='';
+    // this.cN='';
     this.Profile.emit(this.profileForm.value)
     console.log(this.profileForm.value)
   }
