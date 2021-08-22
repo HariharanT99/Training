@@ -22,7 +22,7 @@ export class AttachmentComponent implements OnInit {
   file:object;
   onSelectFile(event: any) {
 		if(!event.target.files[0] || event.target.files[0].length == 0) {
-			this.msg = 'You must select an image';
+			this.msg = 'You must select a file';
 			return;
 		}
 		

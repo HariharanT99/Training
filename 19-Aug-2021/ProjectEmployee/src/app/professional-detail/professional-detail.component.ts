@@ -43,14 +43,15 @@ onAddCompanyGroup(): FormGroup
   endDate:Date;
   skill:string;
 
+  i:number=0;
   onPushCompanyList()
   {
-    this.cName=this.professionalForm.get('professionalList').value[0].companyName
-    this.designation=this.professionalForm.get('professionalList').value[0].designation
-    this.startDate=this.professionalForm.get('professionalList').value[0].startDate
-    this.endDate=this.professionalForm.get('professionalList').value[0].endDate
-    this.skill=this.professionalForm.get('professionalList').value[0].skill
-    
+    this.cName=this.professionalForm.get('professionalList').value[this.i].companyName
+    this.designation=this.professionalForm.get('professionalList').value[this.i].designation
+    this.startDate=this.professionalForm.get('professionalList').value[this.i].startDate
+    this.endDate=this.professionalForm.get('professionalList').value[this.i].endDate
+    this.skill=this.professionalForm.get('professionalList').value[this.i].skill
+    this.i++
     this.CompanyList.push({companyName:this.cName,designation:this.designation,startDate:this.startDate,endDate:this.endDate,skill:this.skill})
   }
 

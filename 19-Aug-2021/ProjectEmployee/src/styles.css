@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&display=swap');
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -7,4 +7,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .error
 {
     border-radius: 5px ;
+}
+
+.header
+{
+    color: floralwhite;
+    padding: 15px;
+    font-family: Libre;
+    border-radius: 10px;
+}
+
+.mainheader
+{
+    color: floralwhite;
+    padding: 15px;
+    font-family: Libre;
+    border-radius: 10px;
+}
+
+.content
+{
+    background-image: linear-gradient(#0e313d,#294452);
+    color: floralwhite;
+    min-height: 650px;
 }
