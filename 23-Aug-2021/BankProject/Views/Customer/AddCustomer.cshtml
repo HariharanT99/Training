@@ -7,6 +7,13 @@
 
 @model Customer
 
+<div class="row justify-content-center">
+    <div class="col-auto">
+        <h3>Customer Form</h3>
+    </div>
+</div>
+
+
 <form method="post" asp-action="AddCustomer">
     <div class="row g-3 justify-content-center mt-3 align-items-center">
         <div class="col-4 col-sm-2">
@@ -57,10 +64,8 @@
                 <input class="form-check-input" type="radio" asp-for="Gender" name="gender" id="female" value="Female">
                 <label class="form-check-label" for="inlineRadio2">Female</label>
             </div>
+            <span asp-validation-for="Gender" class="text-danger"></span>
         </div>
-    </div>
-    <div class="row offset-6">
-        <span asp-validation-for="Gender" class="text-danger"></span>
     </div>
 
 
@@ -71,6 +76,9 @@
         <div class="col-6 col-sm-4">
             <input type="text" id="balance" class="form-control" asp-for="OpeningBalance">
         </div>
+    </div>
+    <div class="row offset-6">
+        <span asp-validation-for="OpeningBalance" class="text-danger"></span>
     </div>
 
     <div class="row g-3 justify-content-center mt-3 align-items-end">
