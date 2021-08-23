@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetMQ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Testing
 
             if (side1 <= 0 || side2 <= 0 || side3 <= 0)
             {
-                throw new("Sides should not contains zero and negative values");
+                throw new InvalidException("Sides should not contains zero and negative values");
             }
             else
             {

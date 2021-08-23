@@ -17,6 +17,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 10px;
 }
 
+.navbar
+{
+    min-height: 650px;
+}
+
 .mainheader
 {
     color: floralwhite;
