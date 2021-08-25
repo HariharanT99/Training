@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using Testing;
 using System;
-//using NetMQ;
+using NetMQ;
 
 namespace TestorLibrary
 {
@@ -26,7 +26,7 @@ namespace TestorLibrary
             //var result = _logic.AreaofTraiangle(side1, side2, side3);
 
             //Assert
-            var except = Assert.Catch<NetMQ.InvalidException>(() => _logic.AreaofTraiangle(side1, side2, side3));
+            var except = Assert.Catch<InvalidException>(() => _logic.AreaofTraiangle(side1, side2, side3));
             //var excepted = new Exception("Sides should not contains zero and negative values");
             //Assert.That(except.Message, Is.EqualTo("Sides should not contains zero and negative values"));
             StringAssert.Contains("Sides should not contains zero and negative values",except.Message);
@@ -41,10 +41,10 @@ namespace TestorLibrary
             var side3 = -11;
 
             //Act
-            var result = _logic.AreaofTraiangle(side1, side2, side3);
+            //var result = _logic.AreaofTraiangle(side1, side2, side3);
 
-            //Assert
-            var exception = Assert.Throws<Exception>(() => _logic.AreaofTraiangle(side1, side2, side3));
+            //Assert Act
+            var exception = Assert.Throws<InvalidException>(() => _logic.AreaofTraiangle(side1, side2, side3));
             //var excepted = new Exception("Sides should not contains zero and negative values");
             Assert.That(exception.Message, Is.EqualTo("Sides should not contains zero and negative values"));
         }
