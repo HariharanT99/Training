@@ -19,7 +19,7 @@ namespace EmployeeProject.Controllers
 
         public IActionResult Index()
         {
-            var employeesList = from employees in _dbObj.Employees where employees.Status == true select employees;
+            var employeesList = from employees in _dbObj.Employees where employees.StatusActive == true select employees;
             //IEnumerable<Employee> employeesList = _dbObj.Employees;
 
             return View(employeesList);
@@ -36,7 +36,7 @@ namespace EmployeeProject.Controllers
                 Designation = employeeObj.Designation,
                 DepartmentId = employeeObj.DepartmentId,
                 HireDate = employeeObj.HireDate,
-                Status = !employeeObj.Status
+                StatusActive = !employeeObj.StatusActive
             };
             if (ModelState.IsValid)
             {
