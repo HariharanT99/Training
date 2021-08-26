@@ -390,3 +390,4 @@ D:\Training\Assign\25-Aug-2021\Employee\obj\Debug\net5.0\Razor\Views\Department\
 D:\Training\Assign\25-Aug-2021\Employee\obj\Debug\net5.0\Razor\Views\Employee\Create.cshtml.g.cs
 D:\Training\Assign\25-Aug-2021\Employee\obj\Debug\net5.0\Razor\Views\Department\Create.cshtml.g.cs
 D:\Training\Assign\25-Aug-2021\Employee\obj\Debug\net5.0\Razor\Views\Employee\Update.cshtml.g.cs
+D:\Training\Assign\25-Aug-2021\Employee\obj\Debug\net5.0\Razor\Views\Employee\InActive.cshtml.g.cs

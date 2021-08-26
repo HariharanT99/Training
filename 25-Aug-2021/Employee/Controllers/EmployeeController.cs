@@ -25,6 +25,13 @@ namespace EmployeeProject.Controllers
             return View(employeesList);
         }
 
+        public IActionResult InActive()
+        {
+            var employeesList = from employees in _dbObj.Employees where employees.StatusActive == false select employees;
+            //IEnumerable<Employee> employeesList = _dbObj.Employees;
+
+            return View(employeesList);
+        }
 
         public IActionResult Status(int? id)
         {

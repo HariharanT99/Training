@@ -7,16 +7,16 @@
 
 @model Employee
 
-<form method="post" asp-for="Update">
-    <input hidden asp-for="EmployeeId" />
-    <div class="row g-3 justify-content-center mt-3 align-items-center">
-        <div class="col-4 col-sm-2">
-            <label for="name" class="col-form-label" asp-for="Name"></label>
+    <form method="post" asp-for="Update">
+        <input hidden asp-for="EmployeeId" />
+        <div class="row g-3 justify-content-center mt-3 align-items-center">
+            <div class="col-4 col-sm-2">
+                <label for="name" class="col-form-label" asp-for="Name"></label>
+            </div>
+            <div class="col-6 col-sm-4">
+                <input type="text" id="name" class="form-control" asp-for="Name" placeholder="@Model.Name"></input>
+            </div>
         </div>
-        <div class="col-6 col-sm-4">
-            <input type="text" id="name" class="form-control" asp-for="Name" placeholder="@Model.Name"></input>
-        </div>
-    </div>
 
     <div class="row g-3 justify-content-center mt-3 align-items-center">
         <div class="col-4 col-sm-2">
