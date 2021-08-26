@@ -11,7 +11,7 @@ namespace FileSystem
         {
             // Create source folder
             string sourceFilePath = @"D:\Training\Assign\09-Aug-2021\FileOperation\Source\Source1\Source2";
-            string targetFilePath = @"D:\Training\Assign\09-Aug-2021\FileOperation\Target\Data";
+            string targetFilePath = @"D:\FileSystem";
             string fileName = "testc.txt";
             var pathString1 = System.IO.Path.Combine(targetFilePath, fileName);
 
