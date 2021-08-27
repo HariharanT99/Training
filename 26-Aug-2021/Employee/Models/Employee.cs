@@ -19,13 +19,16 @@ namespace EmployeeProject.Models
         [Required(ErrorMessage = "The Name is required")]
         public string Designation { get; set; }
 
-        [Required(ErrorMessage = "The Department ID is required")]
-        public int DepartmentId { get; set; }
-        [ForeignKey("DepartmentId")]
-
         [Required(ErrorMessage = "The Hire Date is required")]
         public DateTime HireDate { get; set; }
 
         public bool StatusActive { get; set; }
+
+        [Required(ErrorMessage = "The Department ID is required")]
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
+
+        public Department Dept { get; set; }
     }
+
 }

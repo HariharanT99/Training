@@ -61,7 +61,25 @@ namespace EmployeeProject.Migrations
 
                     b.HasKey("EmployeeId");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("EmployeeProject.Models.Employee", b =>
+                {
+                    b.HasOne("EmployeeProject.Models.Department", "Dept")
+                        .WithMany("Emp")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Dept");
+                });
+
+            modelBuilder.Entity("EmployeeProject.Models.Department", b =>
+                {
+                    b.Navigation("Emp");
                 });
 #pragma warning restore 612, 618
         }

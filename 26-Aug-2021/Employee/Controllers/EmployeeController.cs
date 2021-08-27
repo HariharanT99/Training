@@ -1,9 +1,13 @@
 ﻿using EmployeeProject.Data;
 using EmployeeProject.Models;
+using EmployeeProject.ViewModel;
+using FluentNHibernate.Conventions.Inspections;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,7 +23,10 @@ namespace EmployeeProject.Controllers
 
         public IActionResult Index(string sortOrder, string search, int page = 1)
         {
- 
+
+            var employeesList = _dbObj.Employees.Include("Dept").Where(e => e.StatusActive == true);
+
+
             ViewData["EmpIdSortAsc"] = sortOrder == "EmployeeId" ? "empId_desc" : "empId_asc";
             ViewData["EmpIdSortDesc"] = sortOrder == "EmployeeId" ? "empId_asc" : "empId_desc";
             ViewData["EmpNameSortAsc"] = sortOrder == "Name" ? "name_desc" : "name_asc";
@@ -28,7 +35,7 @@ namespace EmployeeProject.Controllers
             ViewData["DeptIdSortDesc"] = sortOrder == "DepartmentId" ? "deptId_asc" : "deptId_desc";
 
 
-            var employeesList = from employees in _dbObj.Employees where employees.StatusActive == true select employees;
+            //var employeesList = from employees in _dbObj.Employees where employees.StatusActive == true select employees;
             //IEnumerable<Employee> employeesList = _dbObj.Employees;
 
             if (!string.IsNullOrEmpty(search))
@@ -61,10 +68,36 @@ namespace EmployeeProject.Controllers
                     break;
             }
 
+            {
+
+            }
+            //List<Department> deptList = _dbObj.Departments.ToList();
 
             var paginatedResult = PaginatedResult(employeesList.ToList(), page, 5);
 
-            return View(paginatedResult);
+            //List<Department> deptList = new List<Department>();
+            //foreach (var item in paginatedResult.ToList())
+            //{
+            //    deptList.Add(_dbObj.Departments
+            //        .Include("Emp")
+            //        .Where(d => d.DepartmentId == item.DepartmentId).
+            //        FirstOrDefault());
+            //}
+
+            //deptList = _dbO
+            //var deptObj = new ApplicationDbContext();
+
+            //var deptList = (from d in deptObj.Departments where d.DepartmentId ==  );
+
+            //var emp = (paginatedResult.Zip(deptList, (e, d) => new { paginatedResult = e, deptList = d })).ToList();
+
+            dynamic obj = new ExpandoObject();
+
+            obj.empList = paginatedResult;
+
+            ViewBag.Data = obj;
+
+            return View();
         }
 
         public IActionResult InActive()

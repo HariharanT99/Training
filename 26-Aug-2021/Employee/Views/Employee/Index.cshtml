@@ -4,7 +4,9 @@
 @{
     ViewData["Title"] = "Index";
 }
-@model IEnumerable<Employee>
+
+@{ 
+}
 
 <div class="row justify-content-end mb-3">
     <div class="col-4">
@@ -14,7 +16,7 @@
                     <input type="text" id="name" class="form-control" name="search" value="@ViewData["searchText"]" />
                 </div>
                 <div class="col-4 col-sm-1 ml-0">
-                    <input type="button" class="btn btn-success" value="Search" />
+                    <input type="submit" class="btn btn-success" value="Search" />
                 </div>
             </div>
         </form>
@@ -54,28 +56,33 @@
                         DepartmentId <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSort"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
+                    <th>DepartmentName</th>
                     <th scope="col" width="10%">HireDate</th>
                     <th scope="col" width="10%">Status Active</th>
                     <th scope="col" width="30%">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var employee in Model)
+                @foreach (var employee in ViewBag.Data.empList)
                 {
-                    <tr>
-                        <td>@employee.EmployeeId</td>
-                        <td>@employee.Name</td>
-                        <td>@employee.Designation</td>
-                        <td>@employee.DepartmentId</td>
-                        <td>@employee.HireDate.ToShortDateString()</td>
-                        <td>@employee.StatusActive</td>
-                        <td>
-                            <a asp-action="Status" asp-route-id="@employee.EmployeeId" class="btn btn-info">In Active</a>
-                            <a asp-action="Update" asp-route-id="@employee.EmployeeId" class="btn btn-warning ml-3"><i class="fas fa-edit"></i> Edit</a>
-                            <a asp-action="Delete" asp-route-id="@employee.EmployeeId" class="btn btn-danger ml-3"
-                               onclick="return confirm('Are you Sure to delete the book')"><i class="fas fa-trash"></i> Delete</a>
-                        </td>
-                    </tr>
+                   // foreach (var item in employee)
+                    {
+                <tr>
+                    <td>@employee.EmployeeId</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Designation</td>
+                    <td>@employee.DepartmentId</td>
+                    <td>@employee.Dept.DepartmentName</td>
+                    <td>@employee.HireDate.ToShortDateString()</td>
+                    <td>@employee.StatusActive</td>
+                    <td>
+                        <a asp-action="Status" asp-route-id="@employee.EmployeeId" class="btn btn-info">In Active</a>
+                        <a asp-action="Update" asp-route-id="@employee.EmployeeId" class="btn btn-warning ml-3"><i class="fas fa-edit"></i> Edit</a>
+                        <a asp-action="Delete" asp-route-id="@employee.EmployeeId" class="btn btn-danger ml-3"
+                           onclick="return confirm('Are you Sure to delete the book')"><i class="fas fa-trash"></i> Delete</a>
+                    </td>
+                </tr>
+                    }
                 }
             </tbody>
         </table>
