@@ -7,16 +7,16 @@
 
 @model Employee
 
-    <form method="post" asp-for="Update">
-        <input hidden asp-for="EmployeeId" />
-        <div class="row g-3 justify-content-center mt-3 align-items-center">
-            <div class="col-4 col-sm-2">
-                <label for="name" class="col-form-label" asp-for="Name"></label>
-            </div>
-            <div class="col-6 col-sm-4">
-                <input type="text" id="name" class="form-control" asp-for="Name" placeholder="@Model.Name" />
-            </div>
+<form method="post" asp-for="Update">
+    <input hidden asp-for="EmployeeId" />
+    <div class="row g-3 justify-content-center mt-3 align-items-center">
+        <div class="col-4 col-sm-2">
+            <label for="name" class="col-form-label" asp-for="Name"></label>
         </div>
+        <div class="col-6 col-sm-4">
+            <input type="text" id="name" class="form-control" asp-for="Name" placeholder="@Model.Name" />
+        </div>
+    </div>
 
     <div class="row g-3 justify-content-center mt-3 align-items-center">
         <div class="col-4 col-sm-2">
@@ -53,6 +53,15 @@
     </div>
     <div class="row offset-6">
         <span asp-validation-for="HireDate" class="text-danger"></span>
+    </div>
+
+    <div class="row g-3 justify-content-center mt-3 align-items-center">
+        <div class="col-4 col-sm-2">
+            <label for="status" class="col-form-label" asp-for="StatusActive"></label>
+        </div>
+        <div class="col-6 col-sm-4">
+            <input type="text" id="status" class="form-control" asp-for="Designation" readonly value="@Model.StatusActive">
+        </div>
     </div>
 
     <div class="row g-3 justify-content-center mt-3 align-items-end">

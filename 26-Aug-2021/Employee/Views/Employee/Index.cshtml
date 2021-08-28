@@ -8,6 +8,8 @@
 @{ 
 }
 
+@model IEnumerable<Employee>
+
 <div class="row justify-content-end mb-3">
     <div class="col-4">
         <form asp-action="Index" method="get">
@@ -43,30 +45,28 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col" width="14%">
-                        EmployeeId <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpIdSortAsc"]"><i class="fa fa-arrow-up"></i></a>
+                    <th scope="col" width="10%" class="text-center">
+                        Employee Id <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpIdSortAsc"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpIdSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
-                    <th scope="col" width="10%">
+                    <th scope="col" width="5%" class="text-center">
                         Name <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpNameSortAsc"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpNameSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
-                    <th scope="col" width="10%">Designation</th>
-                    <th scope="col" width="17%">
-                        DepartmentId <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSort"]"><i class="fa fa-arrow-up"></i></a>
+                    <th scope="col" class="text-center" width="10%"> Designation &emsp;&emsp;</th>
+                    <th scope="col" width="10%" class="text-center">
+                        Department Id <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSort"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
-                    <th>DepartmentName</th>
-                    <th scope="col" width="10%">HireDate</th>
-                    <th scope="col" width="10%">Status Active</th>
-                    <th scope="col" width="30%">Action</th>
+                    <th scope="col" width="10%" class="text-center">Department Name</th>
+                    <th scope="col" width="10%" class="text-center">Hire Date &emsp;&emsp;</th>
+                    <th scope="col" width="5%" class="text-center">Status Active</th>
+                    <th scope="col" class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var employee in ViewBag.Data.empList)
+                @foreach (var employee in Model)
                 {
-                   // foreach (var item in employee)
-                    {
                 <tr>
                     <td>@employee.EmployeeId</td>
                     <td>@employee.Name</td>
@@ -82,7 +82,6 @@
                            onclick="return confirm('Are you Sure to delete the book')"><i class="fas fa-trash"></i> Delete</a>
                     </td>
                 </tr>
-                    }
                 }
             </tbody>
         </table>
