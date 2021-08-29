@@ -1,6 +1,7 @@
 ﻿using EmployeeProject.Data;
 using EmployeeProject.Models;
 using FluentNHibernate.Conventions.Inspections;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,9 @@ namespace EmployeeProject.Controllers
             _dbObj = dbObj;
         }
 
+
+
+        [Authorize]
         public IActionResult Index(string sortOrder, string search, int page = 1)
         {
             var employeesList = _dbObj.Employees.Include("Dept").Where(e => e.StatusActive == true);
