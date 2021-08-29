@@ -14,5 +14,7 @@ namespace EmployeeProject.Models
 
         [Required(ErrorMessage ="Name of the skill is required")]
         public string SkillName { get; set; }
+
+        public ICollection<Employee> Employees { get; set; }
     }
 }

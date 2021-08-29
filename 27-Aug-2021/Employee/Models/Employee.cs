@@ -30,6 +30,8 @@ namespace EmployeeProject.Models
 
         public Department Dept { get; set; }
 
+        public string SkillName { get; set; }
+
         public ICollection<Skill> Skills { get; set; }
     }
 

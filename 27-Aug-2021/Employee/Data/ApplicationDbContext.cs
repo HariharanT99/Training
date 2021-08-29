@@ -18,5 +18,14 @@ namespace EmployeeProject.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Skill> Skills { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>()
+            .HasMany(t => t.Skills)
+            .WithMany(t => t.Employees);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

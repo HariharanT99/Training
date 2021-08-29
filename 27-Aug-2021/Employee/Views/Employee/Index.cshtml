@@ -10,22 +10,6 @@
 
 @model IEnumerable<Employee>
 
-<div class="row justify-content-end mb-3">
-    <div class="col-4">
-        <form asp-action="Index" method="get">
-            <div class="row g-3 justify-content-center mt-3 align-items-center">
-                <div class="col-8 col-sm-6 mr-0">
-                    <input type="text" id="name" class="form-control" name="search" value="@ViewData["searchText"]" />
-                </div>
-                <div class="col-4 col-sm-1 ml-0">
-                    <input type="submit" class="btn btn-success" value="Search" />
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-
 
 
 <div class="row justify-content-end">
@@ -39,13 +23,27 @@
     </div>
 </div>
 
+<div class="row justify-content-end mb-3">
+    <div class="col-4">
+        <form asp-action="Index" method="get">
+            <div class="row g-3 justify-content-center mt-3 align-items-center">
+                <div class="col-8 col-sm-6 mr-0">
+                    <input type="text" id="name" class="form-control" name="search" value="@ViewData["searchText"]" />
+                </div>
+                <div class="col-4 col-sm-1 ml-0">
+                    <input type="submit" class="btn btn-success" value="Search" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>  
 
 <div class="row justify-content-center mt-3">
     <div class="col-12">
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col" width="10%" class="text-center">
+                    <th scope="col" width="7%" class="text-center">
                         Employee Id <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpIdSortAsc"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpIdSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
@@ -54,10 +52,11 @@
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["EmpNameSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
                     <th scope="col" class="text-center" width="10%"> Designation &emsp;&emsp;</th>
-                    <th scope="col" width="10%" class="text-center">
+                    <th scope="col" width="8%" class="text-center">
                         Department Id <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSort"]"><i class="fa fa-arrow-up"></i></a>
                         <a asp-action="Index" asp-route-sortOrder="@ViewData["DeptIdSortDesc"]"><i class="fa fa-arrow-down"></i></a>
                     </th>
+                    <th scope="col" width="5%" class="text-center">Skills</th>
                     <th scope="col" width="10%" class="text-center">Department Name</th>
                     <th scope="col" width="10%" class="text-center">Hire Date &emsp;&emsp;</th>
                     <th scope="col" width="5%" class="text-center">Status Active</th>
@@ -72,6 +71,7 @@
                     <td>@employee.Name</td>
                     <td>@employee.Designation</td>
                     <td>@employee.DepartmentId</td>
+                    <td>@employee.SkillName</td>
                     <td>@employee.Dept.DepartmentName</td>
                     <td>@employee.HireDate.ToShortDateString()</td>
                     <td>@employee.StatusActive</td>

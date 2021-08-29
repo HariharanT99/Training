@@ -67,6 +67,26 @@
 
     <div class="row g-3 justify-content-center mt-3 align-items-center">
         <div class="col-4 col-sm-2">
+            <label for="skill" class="col-form-label" asp-for="Skills"></label>
+        </div>
+        <div class="col-6 col-sm-4" id="skillinput">
+            @foreach (var item in ViewBag.skillList)
+            {
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="@item.SkillName" value="@item.SkillName">
+                    <label class="form-check-label" for="@item.SkillName">@item.SkillName</label>
+                </div>
+            }
+        </div>
+        @Html.HiddenFor(model => model.SkillName)
+
+    </div>
+    <div class="row offset-6">
+        <span asp-validation-for="HireDate" class="text-danger"></span>
+    </div>
+
+    <div class="row g-3 justify-content-center mt-3 align-items-center">
+        <div class="col-4 col-sm-2">
             <label for="status" class="col-form-label" asp-for="StatusActive"></label>
         </div>
         <div class="col-6 col-sm-4">
@@ -77,10 +97,9 @@
         </div>
     </div>
 
-
     <div class="row g-3 justify-content-center mt-3 align-items-end">
         <div class="col-auto">
-            <input type="submit" class="btn btn-info">
+            <input type="submit" class="btn btn-info" onclick="updatemark()">
         </div>
         <div class="col-auto">
             <a asp-action="Index" class="btn btn-danger">Back</a>

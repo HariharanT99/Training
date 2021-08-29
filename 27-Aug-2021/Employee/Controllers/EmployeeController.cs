@@ -113,6 +113,9 @@ namespace EmployeeProject.Controllers
                     Value =  x.DepartmentId.ToString()
                 });
 
+            ViewBag.skillList = _dbObj.Skills.ToList();
+
+
             ViewBag.deptIdDropdown = myDepartments;
 
             return View();

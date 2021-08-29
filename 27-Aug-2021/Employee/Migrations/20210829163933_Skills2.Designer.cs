@@ -4,14 +4,16 @@ using EmployeeProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EmployeeProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210829163933_Skills2")]
+    partial class Skills2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,28 +78,18 @@ namespace EmployeeProject.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SkillName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SkillId");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Skills");
-                });
-
-            modelBuilder.Entity("EmployeeSkill", b =>
-                {
-                    b.Property<int>("EmployeesEmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SklSkillId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EmployeesEmployeeId", "SklSkillId");
-
-                    b.HasIndex("SklSkillId");
-
-                    b.ToTable("EmployeeSkill");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -307,19 +299,11 @@ namespace EmployeeProject.Migrations
                     b.Navigation("Dept");
                 });
 
-            modelBuilder.Entity("EmployeeSkill", b =>
+            modelBuilder.Entity("EmployeeProject.Models.Skill", b =>
                 {
                     b.HasOne("EmployeeProject.Models.Employee", null)
-                        .WithMany()
-                        .HasForeignKey("EmployeesEmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EmployeeProject.Models.Skill", null)
-                        .WithMany()
-                        .HasForeignKey("SklSkillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Skills")
+                        .HasForeignKey("EmployeeId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -376,6 +360,11 @@ namespace EmployeeProject.Migrations
             modelBuilder.Entity("EmployeeProject.Models.Department", b =>
                 {
                     b.Navigation("Emp");
+                });
+
+            modelBuilder.Entity("EmployeeProject.Models.Employee", b =>
+                {
+                    b.Navigation("Skills");
                 });
 #pragma warning restore 612, 618
         }

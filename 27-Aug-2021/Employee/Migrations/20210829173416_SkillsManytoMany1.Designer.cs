@@ -4,14 +4,16 @@ using EmployeeProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EmployeeProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210829173416_SkillsManytoMany1")]
+    partial class SkillsManytoMany1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,9 +58,6 @@ namespace EmployeeProject.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("SkillName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("StatusActive")
                         .HasColumnType("bit");
 
@@ -90,12 +89,12 @@ namespace EmployeeProject.Migrations
                     b.Property<int>("EmployeesEmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SklSkillId")
+                    b.Property<int>("SkillsSkillId")
                         .HasColumnType("int");
 
-                    b.HasKey("EmployeesEmployeeId", "SklSkillId");
+                    b.HasKey("EmployeesEmployeeId", "SkillsSkillId");
 
-                    b.HasIndex("SklSkillId");
+                    b.HasIndex("SkillsSkillId");
 
                     b.ToTable("EmployeeSkill");
                 });
@@ -317,7 +316,7 @@ namespace EmployeeProject.Migrations
 
                     b.HasOne("EmployeeProject.Models.Skill", null)
                         .WithMany()
-                        .HasForeignKey("SklSkillId")
+                        .HasForeignKey("SkillsSkillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

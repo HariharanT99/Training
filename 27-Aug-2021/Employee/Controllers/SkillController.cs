@@ -55,15 +55,6 @@ namespace EmployeeProject.Controllers
 
         public IActionResult Update(int? id)
         {
-            IEnumerable<SelectListItem> mySkills = _dbObj.Skills.Select(x =>
-                new SelectListItem
-                {
-                    Text = x.SkillName.ToString(),
-                    Value = x.SkillName                       ////Mark*********
-                });
-
-            ViewBag.skillDropdown = mySkills;
-
             if (id == null)
             {
                 return NotFound();
