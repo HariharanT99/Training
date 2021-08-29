@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Update skill";
+}
+@model Skill
+
+<form method="post" asp-for="Update">
+    <input hidden asp-for="SkillId" />
+    <div class="row g-3 justify-content-center mt-3 align-items-center">
+        <div class="col-4 col-sm-2">
+            <label for="id" class="col-form-label" asp-for="SkillId"></label>
+        </div>
+        <div class="col-6 col-sm-4">
+            <input type="text" id="id" readonly class="form-control" asp-for="SkillId" placeholder="@Model.SkillId" />
+        </div>
+    </div>
+
+    <div class="row g-3 justify-content-center mt-3 align-items-center">
+        <div class="col-4 col-sm-2">
+            <label for="skill" class="col-form-label" asp-for="SkillName"></label>
+        </div>
+        <div class="col-6 col-sm-4">
+            <input type="text" id="skill" class="form-control" asp-for="SkillName" value="@Model.SkillName">
+        </div>
+    </div>
+    <div class="row offset-6">
+        <span asp-validation-for="SkillName" class="text-danger"></span>
+    </div>
+
+    <div class="row g-3 justify-content-center mt-3 align-items-end">
+        <div class="col-auto">
+            <input type="submit" class="btn btn-info">
+        </div>
+        <div class="col-auto">
+            <a asp-action="Index" class="btn btn-danger">Back</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Departments";
+}
+
+@model IEnumerable<Department>
+
+<div class="row justify-content-end">
+    <div class="col-4 col-sm-4">
+        <h2>Department Details</h2>
+    </div>
+    <div class="col-2 col-sm-6">
+    </div>
+    <div class="col-4 col-sm-2">
+        <a class="btn btn-primary text-white" asp-action="Create"><i class="fas fa-plus"></i> Add Department</a>
+    </div>
+</div>
+
+
+<div class="row justify-content-center mt-3">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" width="40%">Department Id</th>
+                    <th scope="col" width="40%">Department Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var department in Model)
+                {
+                <tr>
+                    <td>@department.DepartmentId</td>
+                    <td>@department.DepartmentName</td>
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
