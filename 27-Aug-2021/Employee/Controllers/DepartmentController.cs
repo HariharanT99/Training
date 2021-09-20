@@ -1,5 +1,6 @@
 ﻿using EmployeeProject.Data;
 using EmployeeProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace EmployeeProject.Controllers
             _dbObj = dbObj;
         }
 
+
+        [Authorize]
         public IActionResult Index()
         {
             IEnumerable<Department> departments = _dbObj.Departments;
@@ -27,6 +30,8 @@ namespace EmployeeProject.Controllers
             return View();
         }
 
+
+        [Authorize]
         [HttpPost]
         public IActionResult Create(Department departmentObj)
         {

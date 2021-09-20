@@ -1,0 +1,44 @@
+	MANAGING STATE IN ANGULAR APPLICATION
+
+Six types of states
+
+- Sever state
+- Persistent state
+- The URL and router state
+- Client State
+- Transient client state
+- Local UI state
+
+SERVER STATE,
+
+stored on server, provided via REST endpoint. 
+
+PERSISTENT STATE                                                            //Doubt
+
+subset of server state stored on client memory
+
+can treat the persistent state as a cache of the server state
+
+CLIENT STATE
+
+Client state is not stored on the server--- (Ex: Filter)
+
+TRANSIENT CLIENT STATE
+
+Transient client state -------------(Ex:Youtube video) 
+	
+
+<----------------------Recommendation: When identifying the type of state, ask yourself the following questions: Can it be shared? What is its lifetime.------------->
+
+Persistent & Server ---- Client & URL stores the same info..	We have to schronize them......One of the most important decision, wthile designing the state management...
+
+
+MANAGES
+
+BackEnd --- manages the persistent state (the talks) and the client state (the filters)
+
+Router --> manages the URL and the router state
+
+Watch service ----> manages the trabsient client state (Watched talks)
+
+Individual Components------> manages the local UI state

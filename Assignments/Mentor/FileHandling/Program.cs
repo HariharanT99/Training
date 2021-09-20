@@ -6,7 +6,9 @@ namespace FileHandling
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            FileDirectoryInfo Obj = new FileDirectoryInfo();
+
+            Obj.Directory();
         }
     }
 }
