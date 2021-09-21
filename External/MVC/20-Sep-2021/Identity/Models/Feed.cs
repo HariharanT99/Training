@@ -8,6 +8,8 @@ namespace Identity.Models
 {
     public class Feed
     {
+        [Key]
+        public int Id { get; set; }
         public string Property { get; set; }
 
         public string Comment { get; set; }

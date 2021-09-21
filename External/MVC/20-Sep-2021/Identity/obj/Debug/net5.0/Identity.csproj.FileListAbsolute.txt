@@ -393,5 +393,4 @@ D:\Training\Assign\External\MVC\20-Sep-2021\Identity\bin\Debug\net5.0\System.Dra
 D:\Training\Assign\External\MVC\20-Sep-2021\Identity\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Training\Assign\External\MVC\20-Sep-2021\Identity\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Training\Assign\External\MVC\20-Sep-2021\Identity\bin\Debug\net5.0\libman.json
-D:\Training\Assign\External\MVC\20-Sep-2021\Identity\obj\Debug\net5.0\Razor\Views\User\Feedback.cshtml.g.cs
 D:\Training\Assign\External\MVC\20-Sep-2021\Identity\obj\Debug\net5.0\Razor\Views\Feed\Feedback.cshtml.g.cs

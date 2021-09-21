@@ -342,50 +342,27 @@ WHERE Place = 'Anna nagar'
 
 /* 34.	Find the course cum place mates of Prabu */
 
-
-
-SELECT S.Place,S.ID FROM Student S
-
+SELECT DISTINCT St.ID FROM Enrollement E
+INNER JOIN Student St
+ON St.ID = E.StudentID
+JOIN(
+SELECT S.Place,S.ID,E.CourseID FROM Student S
 INNER JOIN Enrollement E
 ON E.StudentID = S.ID
-WHERE S.Name = 'Prabu';
+WHERE S.Name = 'Prabu') AS SID ON SID.CourseID = E.CourseID AND SID.Place = St.Place
 
-SELECT EnId.StudentID FROM Student S
-INNER JOIN(
-SELECT En.StudentID FROM Enrollement En
-JOIN (
-SELECT E.CourseID FROM Enrollement E
-JOIN(
-SELECT ID FROM Student
-WHERE Name = 'Prabu') AS STID ON STID.ID = E.StudentID) AS CID ON CID.CourseID = En.CourseID
-GROUP BY En.StudentID) AS EnId ON EnId.StudentID = S.ID
-WHERE S.Place = (SELECT Place FROM Student
-WHERE Name = 'Prabu') ;
-
-SELECT S.ID,S.Name FROM Student S
-WHERE S.Place = (SELECT Place FROM Student
-WHERE Name = 'Prabu')
-
-SELECT * FROM Enrollement
-
-SELECT En.StudentID FROM Enrollement En
-JOIN (
-SELECT E.CourseID FROM Enrollement E
-JOIN(
-SELECT ID FROM Student
-WHERE Name = 'Prabu') AS STID ON STID.ID = E.StudentID) AS CID ON CID.CourseID = En.CourseID
-FULL JOIN(
-SELECT S.ID FROM Student S
-WHERE S.Place = (SELECT Place FROM Student
-WHERE Name = 'Prabu')) AS StID ON StID.ID = En.StudentID;
 
 /* 35.	Find the students who have the same education as those who have taken the VB */
 
-SELECT S.ID FROM Student S
-JOIN(
-SELECT E.StudentID FROM Enrollement E
-JOIN(
-SELECT CourseID FROM Course
-WHERE CourseName = 'VB') AS CID ON CID.CourseID = E.CourseID) AS EID ON EID.StudentID = S.ID
-GROUP BY Qualification
-HAVING COUNT(S.ID) > 1;
+SELECT S.Name, S.Qualification, C.CourseName FROM Student S
+INNER JOIN Enrollement E ON S.ID = E.StudentId
+INNER JOIN Course C ON C.CourseId = E.CourseId
+WHERE C.CourseName = 'VB' AND S.Qualification = (
+SELECT S.Qualification FROM Student S
+INNER JOIN Enrollement E ON S.ID = E.StudentId
+INNER JOIN Course C ON C.CourseId = E.CourseId
+WHERE C.CourseName = 'VB'
+GROUP BY S.Qualification
+HAVING COUNT(S.Qualification) > 1);
+
+
