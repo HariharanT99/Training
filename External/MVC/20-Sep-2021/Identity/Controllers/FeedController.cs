@@ -1,4 +1,5 @@
-﻿using Identity.Models;
+﻿using Identity.Data;
+using Identity.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,13 @@ namespace Identity.Controllers
 {
     public class FeedController : Controller
     {
+        private readonly AppDbContext _dbObj;
+        public FeedController(AppDbContext dbObj)
+        {
+            _dbObj = dbObj;
+        }
+
+
         public IActionResult Feedback()
         {
             return View();
@@ -18,7 +26,14 @@ namespace Identity.Controllers
         [HttpPost]
         public IActionResult Feedback(Feed feed)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _dbObj.Feedbacks.Add(feed);
+                _dbObj.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View(feed);
         }
     }
 }
