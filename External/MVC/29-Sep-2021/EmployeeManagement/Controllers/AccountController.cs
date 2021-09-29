@@ -6,23 +6,36 @@ using System.Threading.Tasks;
 using BussinessObject.Model;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Identity;
+using BusinessLogic;
 
 namespace EmployeeManagement.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly AccountDAL _accountDAL;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly AccountBL _accountBL;
 
-        public AccountController(AccountDAL accountDAL, SignInManager<IdentityUser> signInManager)
+        public AccountController(AccountBL accountBL)
         {
-            this._accountDAL = accountDAL;
-            this._signInManager = signInManager;
-
+            this._accountBL = accountBL;
         }
         public IActionResult Login()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(Login model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _accountBL.CheckUser(model);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("index", "Home");
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+            }
+            return View(model);
         }
 
         public IActionResult Register()
@@ -33,9 +46,9 @@ namespace EmployeeManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(Register model)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var result = await _accountDAL.CreateUser(model);
+                var result = await _accountBL.CreateUser(model);
 
 
                 if (result.Succeeded)

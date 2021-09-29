@@ -7380,9 +7380,10 @@
     "net5.0": [
       "BusinessLogic >= 1.0.0",
       "BussinessObject >= 1.0.0",
-      "DataAccess >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.10",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.8",
-      "Microsoft.EntityFrameworkCore.Design >= 5.0.10"
+      "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10"
     ]
   },
   "packageFolders": {
@@ -7422,9 +7423,6 @@
             },
             "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj": {
               "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj"
-            },
-            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -7439,6 +7437,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.10, )"
+          },
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
             "version": "[5.0.8, )"
@@ -7446,6 +7448,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[5.0.10, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.10, )"
           }

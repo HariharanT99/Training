@@ -11,20 +11,20 @@ namespace DataAccess.Data
     public class AppDbContext : IdentityDbContext
     {
 
-        public class OptionsBuild
-        {
-            public OptionsBuild()
-            {
-                settings = new AppConfiguration();
-                opsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-                opsBuilder.UseSqlServer(settings.sqlConnectionString);
-                dbOptions = opsBuilder.Options;
-            }
+        //public class OptionsBuild
+        //{
+        //    public OptionsBuild()
+        //    {
+        //        settings = new AppConfiguration();
+        //        opsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+        //        opsBuilder.UseSqlServer(settings.sqlConnectionString);
+        //        dbOptions = opsBuilder.Options;
+        //    }
 
-            public DbContextOptionsBuilder<AppDbContext> opsBuilder { get; set; }
-            public DbContextOptions<AppDbContext> dbOptions { get; set; }
-            private AppConfiguration settings { get; set; }
-        }
+        //    public DbContextOptionsBuilder<AppDbContext> opsBuilder { get; set; }
+        //    public DbContextOptions<AppDbContext> dbOptions { get; set; }
+        //    private AppConfiguration settings { get; set; }
+        //}
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
         {
 
