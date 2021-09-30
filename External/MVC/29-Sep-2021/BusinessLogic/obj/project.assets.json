@@ -1921,31 +1921,34 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "BussinessObject/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/BussinessObject.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BussinessObject.dll": {}
-        }
-      },
-      "DataAccess/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "BussinessObject": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0"
+          "Microsoft.Extensions.Configuration.Json": "5.0.0",
+          "Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DataAccess.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
         }
       }
     }
@@ -6711,20 +6714,20 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "BussinessObject/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../BussinessObject/BussinessObject.csproj",
-      "msbuildProject": "../BussinessObject/BussinessObject.csproj"
+      "path": "../DataAccess/DAL.csproj",
+      "msbuildProject": "../DataAccess/DAL.csproj"
     },
-    "DataAccess/1.0.0": {
+    "Model/1.0.0": {
       "type": "project",
-      "path": "../DataAccess/DataAccess.csproj",
-      "msbuildProject": "../DataAccess/DataAccess.csproj"
+      "path": "../BussinessObject/Model.csproj",
+      "msbuildProject": "../BussinessObject/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "DataAccess >= 1.0.0"
+      "DAL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6734,9 +6737,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BusinessLogic.csproj",
-      "projectName": "BusinessLogic",
-      "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BusinessLogic.csproj",
+      "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BL.csproj",
+      "projectName": "BL",
+      "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BL.csproj",
       "packagesPath": "C:\\Users\\hariharant\\.nuget\\packages\\",
       "outputPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
@@ -6759,8 +6762,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DataAccess.csproj"
+            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DAL.csproj": {
+              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\DataAccess\\DAL.csproj"
             }
           }
         }

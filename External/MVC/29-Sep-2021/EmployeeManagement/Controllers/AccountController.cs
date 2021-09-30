@@ -14,9 +14,11 @@ namespace EmployeeManagement.Controllers
     {
         private readonly AccountBL _accountBL;
 
-        public AccountController(AccountBL accountBL)
+        private readonly SignInManager<IdentityUser> _signInManager;
+        public AccountController(AccountBL accountBL, SignInManager<IdentityUser> signInManager)
         {
             this._accountBL = accountBL;
+            this._signInManager = signInManager;
         }
         public IActionResult Login()
         {
@@ -62,6 +64,14 @@ namespace EmployeeManagement.Controllers
                 }
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

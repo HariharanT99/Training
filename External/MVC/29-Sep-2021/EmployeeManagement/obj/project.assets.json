@@ -2152,44 +2152,47 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "BusinessLogic/1.0.0": {
+      "BL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "DataAccess": "1.0.0"
+          "DAL": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/BusinessLogic.dll": {}
+          "bin/placeholder/BL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BusinessLogic.dll": {}
+          "bin/placeholder/BL.dll": {}
         }
       },
-      "BussinessObject/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/BussinessObject.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BussinessObject.dll": {}
-        }
-      },
-      "DataAccess/1.0.0": {
+      "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "BussinessObject": "1.0.0",
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0"
+          "Microsoft.Extensions.Configuration.Json": "5.0.0",
+          "Model": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DataAccess.dll": {}
+          "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
         }
       }
     }
@@ -7360,30 +7363,28 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "BusinessLogic/1.0.0": {
+    "BL/1.0.0": {
       "type": "project",
-      "path": "../BusinessLogic/BusinessLogic.csproj",
-      "msbuildProject": "../BusinessLogic/BusinessLogic.csproj"
+      "path": "../BusinessLogic/BL.csproj",
+      "msbuildProject": "../BusinessLogic/BL.csproj"
     },
-    "BussinessObject/1.0.0": {
+    "DAL/1.0.0": {
       "type": "project",
-      "path": "../BussinessObject/BussinessObject.csproj",
-      "msbuildProject": "../BussinessObject/BussinessObject.csproj"
+      "path": "../DataAccess/DAL.csproj",
+      "msbuildProject": "../DataAccess/DAL.csproj"
     },
-    "DataAccess/1.0.0": {
+    "Model/1.0.0": {
       "type": "project",
-      "path": "../DataAccess/DataAccess.csproj",
-      "msbuildProject": "../DataAccess/DataAccess.csproj"
+      "path": "../BussinessObject/Model.csproj",
+      "msbuildProject": "../BussinessObject/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "BusinessLogic >= 1.0.0",
-      "BussinessObject >= 1.0.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.10",
+      "BL >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.10"
+      "Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7393,9 +7394,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\EmployeeManagement\\EmployeeManagement.csproj",
-      "projectName": "EmployeeManagement",
-      "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\EmployeeManagement\\EmployeeManagement.csproj",
+      "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\EmployeeManagement\\Presentation.csproj",
+      "projectName": "Presentation",
+      "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\EmployeeManagement\\Presentation.csproj",
       "packagesPath": "C:\\Users\\hariharant\\.nuget\\packages\\",
       "outputPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\EmployeeManagement\\obj\\",
       "projectStyle": "PackageReference",
@@ -7418,11 +7419,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BusinessLogic.csproj"
+            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BL.csproj": {
+              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BusinessLogic\\BL.csproj"
             },
-            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj": {
-              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj"
+            "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj": {
+              "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj"
             }
           }
         }
@@ -7437,10 +7438,6 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[5.0.10, )"
-          },
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",
             "version": "[5.0.8, )"
@@ -7448,10 +7445,6 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
-            "target": "Package",
-            "version": "[5.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.10, )"
           }

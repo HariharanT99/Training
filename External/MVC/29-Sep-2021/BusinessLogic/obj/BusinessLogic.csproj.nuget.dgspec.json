@@ -66,12 +66,12 @@
         }
       }
     },
-    "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj": {
+    "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj",
-        "projectName": "BussinessObject",
-        "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj",
+        "projectUniqueName": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj",
         "packagesPath": "C:\\Users\\hariharant\\.nuget\\packages\\",
         "outputPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\obj\\",
         "projectStyle": "PackageReference",
@@ -152,8 +152,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj": {
-                "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\BussinessObject.csproj"
+              "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj": {
+                "projectPath": "D:\\Training\\Assign\\External\\MVC\\29-Sep-2021\\BussinessObject\\Model.csproj"
               }
             }
           }
