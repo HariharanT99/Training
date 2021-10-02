@@ -32,7 +32,7 @@ namespace EmployeeManagement.Controllers
                 var result = await _accountBL.CheckUser(model);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("index", "Home");
+                    return RedirectToAction("Index", "Employee");
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");

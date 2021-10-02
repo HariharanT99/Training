@@ -1,4 +1,6 @@
+using BL;
 using BusinessLogic;
+using DAL.Access;
 using DataAccess.Access;
 using DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
@@ -9,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Model.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +47,9 @@ namespace EmployeeManagement
 
             services.AddScoped<AccountBL>();
             services.AddScoped<AccountDAL>();
+            services.AddScoped<EntryBL>();
+            services.AddScoped<EntryDAL>();
+            services.AddScoped<ThreeTierContext>();
 
         }
 
@@ -74,7 +80,7 @@ namespace EmployeeManagement
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Employee}/{action=Index}/{id?}");
             });
         }
     }
