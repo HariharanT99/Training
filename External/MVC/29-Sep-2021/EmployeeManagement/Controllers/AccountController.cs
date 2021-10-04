@@ -3,12 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BussinessObject.Model;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Identity;
-using BusinessLogic;
-using Model.ViewModel;
-using Model.Model;
+using DAL.Models;
+using DAL.ViewModel;
+using BL;
 
 namespace EmployeeManagement.Controllers
 {

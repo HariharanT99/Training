@@ -1,4 +1,6 @@
 
+use NTireApp;
+
 CREATE PROC uspGetEmployee
 @Email nvarchar(50)
 as
@@ -12,6 +14,7 @@ BEGIN
 	from AspNetUsers 
 	Where @Email IS NULL OR Email = @Email
 END
+
 
 CREATE PROC uspInsertEntry
 @Date date,

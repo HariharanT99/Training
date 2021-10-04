@@ -39,7 +39,6 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
-          "Model": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "5.0.0.0",
@@ -2110,27 +2109,15 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Model": "1.0.0"
+          "Microsoft.Extensions.Configuration.Json": "5.0.0"
         },
         "runtime": {
           "DAL.dll": {}
         },
         "compile": {
           "DAL.dll": {}
-        }
-      },
-      "Model/1.0.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
-        },
-        "runtime": {
-          "Model.dll": {}
-        },
-        "compile": {
-          "Model.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4922,11 +4909,6 @@
       "sha512": ""
     },
     "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

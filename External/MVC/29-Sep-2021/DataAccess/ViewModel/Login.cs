@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussinessObject.Model
+namespace DAL.ViewModel
 {
     public class Login
     {

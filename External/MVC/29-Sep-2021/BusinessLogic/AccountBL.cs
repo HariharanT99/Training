@@ -1,16 +1,14 @@
-﻿using BussinessObject.Model;
-using DAL.Access;
+﻿using DAL.Access;
+using DAL.ViewModel;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Identity;
-using Model.Model;
-using Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic
+namespace BL
 {
     public class AccountBL
     {

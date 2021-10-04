@@ -1,12 +1,12 @@
 ﻿using BL;
-using BusinessLogic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using DAL.Models;
 using DAL.ViewModel;
-using DAL.Migrations;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 
 namespace Presentation.Controllers
 {
@@ -19,10 +19,18 @@ namespace Presentation.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            AspNetUser user = await _entryBL.GetUser(User.Identity.Name);
-            return View(user);
+            ViewBag.User = _entryBL.GetUser(User.Identity.Name);
+            return View();
+        }
+
+        public IActionResult StartWork(string id)
+        {
+            var time = DateTime.Now.ToString("HH:mm:ss");
+            var date = DateTime.Now.ToString("yyyy-MM-dd");
+            _entryBL.SetInTime(time, date, id);
+            return View();
         }
         public IActionResult CreateEntry()
         {
@@ -52,8 +60,8 @@ namespace Presentation.Controllers
 
         public IActionResult Dashboard()
         {
-            IEnumerable<Entry> entries = new List<Entry>(2);
-            return View(entries);
+            //var entries = _entryBL.GetEntry(id)
+            return View();
         }
     }
 }

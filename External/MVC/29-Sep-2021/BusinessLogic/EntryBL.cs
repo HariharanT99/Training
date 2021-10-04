@@ -1,6 +1,7 @@
 ﻿using DAL.Access;
 using DAL.Migrations;
 using DAL.Models;
+using DAL.Repository;
 using DataAccess.Access;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,17 @@ namespace BL
     public class EntryBL
     {
         private readonly EntryDAL _entryDAL;
-        private readonly AccountDAL _accountDAL;
+        private readonly NTireFacade _facade;
 
-        public EntryBL(EntryDAL entryDAL, AccountDAL accountDAL)
+        public EntryBL(EntryDAL entryDAL, NTireFacade facade)
         {
             this._entryDAL = entryDAL;
-            this._accountDAL = accountDAL;
+            this._facade = facade;
         }
-
-        public List<Entry> GetEntry()
+        //Get Entries
+        public List<Entry> GetEntry(string id)
         {
-            var entries = _entryDAL.GetEntry();
+            var entries = _facade.GetEntry(id);
 
             return entries;
         }
@@ -38,11 +39,24 @@ namespace BL
             _entryDAL.SetBreak(brk);
         }
 
-        public async Task<AspNetUser> GetUser(string name)
+        public async Task<AspNetUser> GetUsers(string name)
         {
             AspNetUser user = await _entryDAL.GetUser(name);
 
             return user;
         }
+
+        //Get the logged in user
+        public AspNetUser GetUser(string name)
+        {
+            return _facade.GetUser(name);
+        }
+
+        //Set the InTime
+        public void SetInTime(string time, string date, string id)
+        {
+            _facade.SetInTime(time, date, id);
+        }
+
     }
 }

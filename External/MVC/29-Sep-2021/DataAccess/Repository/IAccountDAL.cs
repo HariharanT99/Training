@@ -1,12 +1,11 @@
-﻿using BussinessObject.Model;
-using Microsoft.AspNetCore.Identity;
-using Model.ViewModel;
+﻿using Microsoft.AspNetCore.Identity;
 using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.ViewModel;
 
 namespace DAL.Repository
 {

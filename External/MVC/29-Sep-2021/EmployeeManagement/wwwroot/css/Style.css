@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@200&display=swap');
+
+body {
     background: rgb(255,0,0);
     background: linear-gradient(90deg, rgba(255,0,0,1) 64%, rgba(255,255,255,1) 64%);
 }
@@ -144,4 +146,24 @@
 }
 .val{
     color: floralwhite;
+}
+
+#usercard {
+    position: relative;
+    background-color: inherit;
+    width: 40rem;
+    margin: 4rem 8rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.7);
+    font-family: 'IBM+Plex+Serif', sans-serif;
+}
+
+#usercard .card-title{
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#usercard .card-text{
+    font-size: 1.5em;
+    font-weight: 500;
 }

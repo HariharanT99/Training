@@ -1927,29 +1927,15 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.2.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Model": "1.0.0"
+          "Microsoft.Extensions.Configuration.Json": "5.0.0"
         },
         "compile": {
           "bin/placeholder/DAL.dll": {}
         },
         "runtime": {
           "bin/placeholder/DAL.dll": {}
-        }
-      },
-      "Model/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
-        },
-        "compile": {
-          "bin/placeholder/Model.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Model.dll": {}
         }
       }
     }
@@ -6719,11 +6705,6 @@
       "type": "project",
       "path": "../DataAccess/DAL.csproj",
       "msbuildProject": "../DataAccess/DAL.csproj"
-    },
-    "Model/1.0.0": {
-      "type": "project",
-      "path": "../BussinessObject/Model.csproj",
-      "msbuildProject": "../BussinessObject/Model.csproj"
     }
   },
   "projectFileDependencyGroups": {

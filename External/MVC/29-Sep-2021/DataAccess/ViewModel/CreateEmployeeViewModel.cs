@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.ViewModel
+namespace DAL.ViewModel
 {
     public class CreateEmployeeViewModel
     {
@@ -29,7 +29,7 @@ namespace Model.ViewModel
 
         //Employee Form
 
-        [Required(ErrorMessage ="Name is required")]
+        [Required(ErrorMessage = "Name is required")]
         [StringLength(50)]
         public string Name { get; set; }
 
@@ -43,6 +43,5 @@ namespace Model.ViewModel
         [Required(ErrorMessage = "Address is required")]
         [MinLength(10)]
         public string Address { get; set; }
-
     }
 }

@@ -1,7 +1,8 @@
 using BL;
-using BusinessLogic;
 using DAL.Access;
 using DAL.Data;
+using DAL.Models;
+using DAL.Repository;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Model.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +52,9 @@ namespace EmployeeManagement
             services.AddScoped<EntryBL>();
             services.AddScoped<EntryDAL>();
             services.AddScoped<NTireAppContext>();
+            services.AddScoped<NTireFacade>();
+            services.AddScoped<IAccountDAL , AccountDAL>();
+            services.AddScoped<IEntryDAL, EntryDAL>();
 
         }
 

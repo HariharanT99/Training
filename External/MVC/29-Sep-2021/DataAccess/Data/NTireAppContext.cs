@@ -5,6 +5,8 @@ using DAL.Models;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using System.Linq;
+using System.Collections.Generic;
+using System.Data;
 
 #nullable disable
 
@@ -58,11 +60,6 @@ namespace DAL.Data
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public IQueryable<AspNetUser> GetUser(string name)
-        {
-            SqlParameter pName = new SqlParameter("@Email", name);
-            var user = AspNetUsers.FromSqlRaw("EXECUTE uspGetEmployee @Email", pName);
-            return user;
-        }
+
     }
 }

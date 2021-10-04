@@ -4,10 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BussinessObject.Model;
-using Model.ViewModel;
 using DAL.Models;
 using DAL.Repository;
+using DAL.ViewModel;
 
 namespace DataAccess.Access
 {
