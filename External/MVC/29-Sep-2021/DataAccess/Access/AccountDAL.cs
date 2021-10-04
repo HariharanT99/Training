@@ -5,26 +5,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BussinessObject.Model;
+using Model.ViewModel;
+using DAL.Models;
+using DAL.Repository;
 
 namespace DataAccess.Access
 {
-    public class AccountDAL
+    public class AccountDAL: IAccountDAL
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountDAL(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountDAL(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
         }
 
-        public async Task<IdentityResult> CreateUser(Register model)
+        public async Task<IdentityResult> CreateUser(CreateEmployeeViewModel model)
         {
-            var user = new IdentityUser
+            var user = new ApplicationUser
             {
                 UserName = model.Email,
-                Email = model.Email
+                Email = model.Email,
+                Name = model.Name,
+                Gender = model.Gender,
+                DateOfBirth = model.DateOfBirth,
+                Address = model.Address
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -44,6 +51,13 @@ namespace DataAccess.Access
 
             var res = SignInResult.Failed;
             return res;
+        }
+
+        public async Task<ApplicationUser> GetUser(string name)
+        {
+            ApplicationUser user = await _userManager.FindByNameAsync(name);
+
+            return user;
         }
     }
 }

@@ -7,6 +7,8 @@ using BussinessObject.Model;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Identity;
 using BusinessLogic;
+using Model.ViewModel;
+using Model.Model;
 
 namespace EmployeeManagement.Controllers
 {
@@ -14,8 +16,8 @@ namespace EmployeeManagement.Controllers
     {
         private readonly AccountBL _accountBL;
 
-        private readonly SignInManager<IdentityUser> _signInManager;
-        public AccountController(AccountBL accountBL, SignInManager<IdentityUser> signInManager)
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        public AccountController(AccountBL accountBL, SignInManager<ApplicationUser> signInManager)
         {
             this._accountBL = accountBL;
             this._signInManager = signInManager;
@@ -32,7 +34,7 @@ namespace EmployeeManagement.Controllers
                 var result = await _accountBL.CheckUser(model);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Employee");
+                    return RedirectToAction("Index", "Employee",result);
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
@@ -40,18 +42,18 @@ namespace EmployeeManagement.Controllers
             return View(model);
         }
 
-        public IActionResult Register()
+        public IActionResult CreateEmployee()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(Register model)
+        public async Task<IActionResult> CreateEmployee(CreateEmployeeViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var result = await _accountBL.CreateUser(model);
 
+                var result = await _accountBL.CreateUser(model);
 
                 if (result.Succeeded)
                 {
@@ -63,8 +65,10 @@ namespace EmployeeManagement.Controllers
                     ModelState.AddModelError(String.Empty, error.Description);
                 }
             }
+
             return View(model);
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Logout()

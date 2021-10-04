@@ -33,8 +33,15 @@ using Microsoft.AspNetCore.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\Views\_ViewImports.cshtml"
+using Model.Model;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ddb6bffa5a9b264bf8f89038bf03c234083fd3", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a438abb455ce872e5fe241c70018e289f3369ba7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"13f9fbc921e59b48582d9a1c71f84f8d5d58b006", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

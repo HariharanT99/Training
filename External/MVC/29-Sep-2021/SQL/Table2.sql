@@ -34,10 +34,12 @@ FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
 
 CREATE TABLE Entry(
 ID int Identity,
-[Date] date,
+EmployeeId nvarchar(450), 
+[Date] date Unique,
 InTime time,
 OutTime time,
-PRIMARY KEY(ID)
+PRIMARY KEY(ID),
+FOREIGN KEY(EmployeeId) REFERENCES AspNetUsers(Id)
 )
 
 CREATE TABLE [Break](

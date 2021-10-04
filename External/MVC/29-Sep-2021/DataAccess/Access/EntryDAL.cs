@@ -1,5 +1,8 @@
-﻿using Model.Data;
-using Model.Model;
+﻿using DAL.Data;
+using DAL.Migrations;
+using DAL.Models;
+using DAL.Repository;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace DAL.Access
 {
-    public class EntryDAL
+    public class EntryDAL: IEntryDAL
     {
-        private readonly ThreeTierContext _db;
-        public EntryDAL(ThreeTierContext db)
+        private readonly NTireAppContext _db;
+        public EntryDAL(NTireAppContext db)
         {
             this._db = db;
         }
@@ -35,6 +38,13 @@ namespace DAL.Access
             {
                 _db.Breaks.Add(brk);
             }
+        }
+
+        public async Task<AspNetUser> GetUser(string name)
+        {
+            AspNetUser user = await _db.AspNetUsers.FindAsync(name);
+
+            return user;
         }
     }
 }

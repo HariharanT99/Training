@@ -1,8 +1,8 @@
 using BL;
 using BusinessLogic;
 using DAL.Access;
+using DAL.Data;
 using DataAccess.Access;
-using DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Model.Data;
+using Model.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +32,10 @@ namespace EmployeeManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<UserManager<ApplicationUser>>();
 
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 10;
                 options.Password.RequireUppercase = false;
@@ -49,7 +51,7 @@ namespace EmployeeManagement
             services.AddScoped<AccountDAL>();
             services.AddScoped<EntryBL>();
             services.AddScoped<EntryDAL>();
-            services.AddScoped<ThreeTierContext>();
+            services.AddScoped<NTireAppContext>();
 
         }
 

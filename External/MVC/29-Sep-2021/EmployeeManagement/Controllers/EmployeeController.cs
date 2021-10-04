@@ -2,9 +2,11 @@
 using BusinessLogic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Model.Data;
-using Model.Model;
-using Model.ViewModel;
+using DAL.Models;
+using DAL.ViewModel;
+using DAL.Migrations;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Presentation.Controllers
 {
@@ -17,9 +19,10 @@ namespace Presentation.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            AspNetUser user = await _entryBL.GetUser(User.Identity.Name);
+            return View(user);
         }
         public IActionResult CreateEntry()
         {
@@ -27,6 +30,7 @@ namespace Presentation.Controllers
             entry.BreakList.Add(new Break() { EntryId = 1 });
             return View(entry);
         }
+
         [HttpPost]
         public IActionResult CreateEntry(EntryViewModel model)
         {
@@ -44,6 +48,12 @@ namespace Presentation.Controllers
             _entryBL.SetEntry(entry);
 
             return View("Index");
+        }
+
+        public IActionResult Dashboard()
+        {
+            IEnumerable<Entry> entries = new List<Entry>(2);
+            return View(entries);
         }
     }
 }

@@ -1,0 +1,99 @@
+﻿
+@model IEnumerable<DAL.Models.Entry>
+
+@{
+    Layout = null;
+}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] - EmployeeManagement</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/css/Dashboard.css" rel="stylesheet" />
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-sm-2">
+        <nav class="navbar-expand-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand mt-2 ml-3 mb-2" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-chart-line"> Dashboard</i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="mt-3">
+                    <ul class="text-center">
+                        <li class="">
+                            <a asp-area="" asp-controller="Employee" asp-action="Index"><i class="fa fa-lg fa-home"> Home</i></a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="" asp-action=""><i class="fa fa-lg fa-calendar-alt"> Month</i></a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="" asp-action="CreateEntry"><i class="fa fa-lg fa-folder-plus"> Entry</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+    <div class="col-sm-10 mt-3">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>Month:</h4>
+            </div>
+            <div class="col-sm-4 text-right">
+                <h4>Total Working Days:</h4>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.InTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.OutTime)
+                    </th>
+                    <th>
+                        Total Break Time
+                    </th>
+                    <th>
+                        Total Working Time
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.InTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OutTime)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,6 +1,9 @@
 ﻿using BussinessObject.Model;
+using DAL.Access;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Identity;
+using Model.Model;
+using Model.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +19,7 @@ namespace BusinessLogic
         {
             this._accountDAL = accountDAL;
         }
-        public Task<IdentityResult> CreateUser(Register model)
+        public Task<IdentityResult> CreateUser(CreateEmployeeViewModel model)
         {
             var result = _accountDAL.CreateUser(model);
             return result;

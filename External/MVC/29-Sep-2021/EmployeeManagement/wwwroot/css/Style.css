@@ -1,0 +1,147 @@
+﻿body {
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 64%, rgba(255,255,255,1) 64%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-200{
+    background-color: #E9ECEF !important;
+    color: #212529;
+    width: fit-content;
+    min-height : 400px;
+}
+
+.text-floral{
+    color: floralwhite;
+}
+
+.text-lg{
+    font-size: 1.2em;
+}
+
+.quotes_side_panel {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    height: 100%;
+}
+
+.footer-content {
+    background-color: #212529;
+    color: #ADB5BD;
+}
+
+.footer-non-editable {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #ADB5BD;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 5px;
+  width: 230px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px 0px 0px 20px;
+  box-shadow: 0px 10px 15px 0px #212529;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.button-start {
+    border-radius: 4px;
+    background: #2C3E50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 5px;
+    width: 230px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 0px 0px 20px;
+    box-shadow: 0px 10px 15px 0px #212529;
+}
+
+.button-emp {
+    border-radius: 4px;
+    background: #9CECFB; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 5px;
+    width: 230px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px 0px 0px 20px;
+    box-shadow: 0px 5px 10px 0px #212529;
+}
+
+.bta {
+    background-color: #f6f304;
+    width: auto;
+    height: 35px;
+}
+
+.btd {
+    background-color: #02f1ff;
+    width: auto;
+    height: 35px;
+}
+
+.bts {
+    background-color: #5b04f0;
+    font-weight: 600;
+    width: 70px;
+    height:auto;
+    outline-color: floralwhite;
+    color: floralwhite;
+}
+
+.bts:hover{
+    background-color: floralwhite;
+}
+.val{
+    color: floralwhite;
+}

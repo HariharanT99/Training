@@ -1,5 +1,7 @@
 ﻿using DAL.Access;
-using Model.Model;
+using DAL.Migrations;
+using DAL.Models;
+using DataAccess.Access;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +13,12 @@ namespace BL
     public class EntryBL
     {
         private readonly EntryDAL _entryDAL;
-        public EntryBL(EntryDAL entryDAL)
+        private readonly AccountDAL _accountDAL;
+
+        public EntryBL(EntryDAL entryDAL, AccountDAL accountDAL)
         {
             this._entryDAL = entryDAL;
+            this._accountDAL = accountDAL;
         }
 
         public List<Entry> GetEntry()
@@ -31,6 +36,13 @@ namespace BL
         public void SetBreak(IList<Break> brk)
         {
             _entryDAL.SetBreak(brk);
+        }
+
+        public async Task<AspNetUser> GetUser(string name)
+        {
+            AspNetUser user = await _entryDAL.GetUser(name);
+
+            return user;
         }
     }
 }

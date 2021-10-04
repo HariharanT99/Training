@@ -2123,6 +2123,7 @@
       },
       "Model/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10"
         },
         "runtime": {
