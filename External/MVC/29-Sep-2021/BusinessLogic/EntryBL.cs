@@ -2,6 +2,7 @@
 using DAL.Migrations;
 using DAL.Models;
 using DAL.Repository;
+using DAL.ViewModel;
 using DataAccess.Access;
 using System;
 using System.Collections.Generic;
@@ -28,10 +29,20 @@ namespace BL
 
             return entries;
         }
-
-        public void SetEntry(Entry entry)
+        
+        //Set Previous Entry
+        public void SetEntry(EntryViewModel model)
         {
-            _entryDAL.SetEntry(entry);
+            Entry entry = new Entry
+            {
+                Id = model.Id,
+                EmployeeId = model.EmployeeId,
+                Date = model.Date,
+                InTime = model.InTime,
+                OutTime = model.OutTime
+            };
+
+            _facade.SetEntry(entry);
         }
 
         public void SetBreak(IList<Break> brk)

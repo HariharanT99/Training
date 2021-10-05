@@ -103,11 +103,21 @@ namespace DAL.Access
         //Set Intime
         public void SetInTime(string time, string date, string id)
         {
-            SqlParameter pTime = new SqlParameter("@Date", date);
-            SqlParameter pDate = new SqlParameter("@Id", id);
-            SqlParameter pId = new SqlParameter("@Intime", time);
+            SqlParameter pDate = new SqlParameter("@Date", date);
+            SqlParameter pInTime = new SqlParameter("@Intime", time);
+            SqlParameter pId = new SqlParameter("@Id", id);
 
-            _db.AspNetUsers.FromSqlRaw($"EXEC uspInsertEntry @Date,@Id,@Intime", date, id, time);
+            _db.AspNetUsers.FromSqlRaw("EXEC uspInsertEntry @Date,@Id,@Intime", pDate, pId, pInTime);
+        }
+
+        //Set Previous Entry
+        public void SetEntry(Entry entry)
+        {
+            SqlParameter pDate = new SqlParameter("@Date", entry.Date);
+            SqlParameter pId = new SqlParameter("@Id", entry.EmployeeId);
+            SqlParameter pInTime = new SqlParameter("@Intime", entry.InTime);
+            SqlParameter pOutTime = new SqlParameter("@Intime", entry.OutTime);
+            _db.Entries.FromSqlRaw("EXEC uspInsertPeviousEntry @Date, @Id, @InTime, @OutTime", pDate, pId, pInTime, pOutTime);
         }
     }
 }

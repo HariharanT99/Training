@@ -12,7 +12,6 @@ namespace Presentation.Controllers
 {
     public class EmployeeController : Controller
     {
-        //private string _id;
         private readonly EntryBL _entryBL;
         public EmployeeController(AccountBL accBL, EntryBL entryBL )
         {
@@ -37,6 +36,8 @@ namespace Presentation.Controllers
         {
             EntryViewModel entry = new EntryViewModel();
             entry.BreakList.Add(new Break() { EntryId = 1 });
+
+            ViewBag.User = _entryBL.GetUser(User.Identity.Name);
             return View(entry);
         }
 
@@ -47,16 +48,9 @@ namespace Presentation.Controllers
 
             _entryBL.SetBreak(breakList);
 
-            Entry entry = new Entry
-            {
-                Date = model.Date,
-                InTime = model.InTime,
-                OutTime = model.OutTime,
-            };
+            _entryBL.SetEntry(model);
 
-            _entryBL.SetEntry(entry);
-
-            return View("Index");
+            return RedirectToAction("Index", "Employee");
         }
 
         public IActionResult Dashboard(string id)

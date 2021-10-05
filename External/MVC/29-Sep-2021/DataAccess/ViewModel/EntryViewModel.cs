@@ -15,6 +15,9 @@ namespace DAL.ViewModel
         [Key]
         [Column("ID")]
         public int Id { get; set; }
+
+        public string EmployeeId { get; set; }
+
         [Column(TypeName = "date")]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Date is required")]
