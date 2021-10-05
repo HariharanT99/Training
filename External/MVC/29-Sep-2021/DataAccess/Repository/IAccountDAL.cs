@@ -16,5 +16,7 @@ namespace DAL.Repository
         Task<SignInResult> CheckUser(Login model);
 
         Task<ApplicationUser> GetUser(string name);
+
+        Task<IdentityResult> CreateRole(CreateRoleViewModel model);
     }
 }

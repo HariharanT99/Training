@@ -14,13 +14,16 @@ namespace DataAccess.Access
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountDAL(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountDAL(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             this._userManager = userManager;
             this._signInManager = signInManager;
+            this._roleManager = roleManager;
         }
 
+        //Create User
         public async Task<IdentityResult> CreateUser(CreateEmployeeViewModel model)
         {
             var user = new ApplicationUser
@@ -37,6 +40,7 @@ namespace DataAccess.Access
             return result;
         }
 
+        //Login Check User
         public async Task<SignInResult> CheckUser(Login model)
         {
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -52,11 +56,25 @@ namespace DataAccess.Access
             return res;
         }
 
+        //GetUser
         public async Task<ApplicationUser> GetUser(string name)
         {
             ApplicationUser user = await _userManager.FindByNameAsync(name);
 
             return user;
+        }
+
+        //Create User
+        public async Task<IdentityResult> CreateRole(CreateRoleViewModel model)
+        {
+            IdentityRole role = new IdentityRole
+            {
+                Name = model.RoleName
+            };
+
+            var result = await _roleManager.CreateAsync(role);
+
+            return result;
         }
     }
 }

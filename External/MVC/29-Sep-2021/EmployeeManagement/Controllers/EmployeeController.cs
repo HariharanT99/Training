@@ -12,6 +12,7 @@ namespace Presentation.Controllers
 {
     public class EmployeeController : Controller
     {
+        //private string _id;
         private readonly EntryBL _entryBL;
         public EmployeeController(AccountBL accBL, EntryBL entryBL )
         {
@@ -21,8 +22,8 @@ namespace Presentation.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            ViewBag.User = _entryBL.GetUser(User.Identity.Name);
-            return View();
+            AspNetUser user = _entryBL.GetUser(User.Identity.Name);
+            return View(user);
         }
 
         public IActionResult StartWork(string id)
@@ -58,9 +59,17 @@ namespace Presentation.Controllers
             return View("Index");
         }
 
-        public IActionResult Dashboard()
+        public IActionResult Dashboard(string id)
         {
-            //var entries = _entryBL.GetEntry(id)
+            if (id != null)
+            {
+                var entries = _entryBL.GetEntry(id);
+
+                return View(entries);
+            }
+
+            ViewBag.ErrorMessage = "Id Should not be null";
+
             return View();
         }
     }

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using DAL.ViewModel;
 
 namespace DAL.Access
 {
@@ -23,11 +25,36 @@ namespace DAL.Access
             this._db = db;
         }
 
+        //Create User
+        public Task<IdentityResult> CreateUser(CreateEmployeeViewModel model)
+        {
+            var result = _accountDAL.CreateUser(model);
+
+            return result;
+        }
+
+        //Log in
+        public Task<SignInResult> CheckUser(Login model)
+        {
+            var result = _accountDAL.CheckUser(model);
+
+            return result;
+        }
+
+        //Create Role
+        public Task<IdentityResult> CreateRole(CreateRoleViewModel model)
+        {
+            var result = _accountDAL.CreateRole(model);
+
+            return result;
+        }
+
+
         //Get Entries
         public List<Entry> GetEntry(string id)
         {
             SqlParameter pId = new SqlParameter("@Id", id);
-            var entries = _db.Entries.FromSqlRaw($"select Date, InTime, OutTime from Entry where Id = @Id", pId).ToList();
+            var entries = _db.Entries.FromSqlRaw($"select Id, Date, InTime, OutTime from Entry where EmployeeId = @Id", pId).ToList();
 
             return entries;
         }

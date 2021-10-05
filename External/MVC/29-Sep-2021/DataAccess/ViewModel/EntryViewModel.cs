@@ -23,12 +23,12 @@ namespace DAL.ViewModel
 
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "InTime is required")]
-        public DateTime? InTime { get; set; }
+        public TimeSpan? InTime { get; set; }
         [Column(TypeName = "datetime")]
 
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "OutTime is required")]
-        public DateTime? OutTime { get; set; }
+        public TimeSpan? OutTime { get; set; }
 
         public List<Break> BreakList { get; set; } = new List<Break>();
     }

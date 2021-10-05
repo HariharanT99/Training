@@ -8,23 +8,19 @@
 }
 
 @{ 
-    var id = new Dictionary<string, string>
-    {
-        {"Id", ViewBag.User.Id }
-    };
 }
 
 @model DAL.Models.AspNetUser
 
 <div class="row justify-content-center justify-content-sm-start">
     <div class="col-12 col-sm-2">
-        <a type="button" class="button btn-warning" asp-action="Dashboard"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
+        <a type="button" class="button btn-warning" asp-action="Dashboard" asp-route-id="@Model.Id"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
     </div>
     <div class="col-12 col-sm-4 offset-sm-1 mt-5">
         <h1>Emloyee Login</h1>
     </div>
     <div class="col-12 col-sm-2 offset-sm-1 mt-2">
-        <a type="button" class="button button-start btn-warning" asp-action="StartWork" asp-all-route-data="id"><span><i class="fa fa-sign-in-alt"> Get Start</i> </span></a>
+        <a type="button" class="button button-start btn-warning" asp-action="StartWork" asp-route-id="@Model.Id"><span><i class="fa fa-sign-in-alt"> Get Start</i> </span></a>
     </div>
 </div>
 
@@ -32,9 +28,9 @@
     <div class="col-12 col-sm-8 align-items-center">
         <div class="card" id="usercard">
             <div class="card-body text-center">
-                <p class="card-title">NAME: @ViewBag.User.Name</p>
-                <p class="card-title">EMAIL: @ViewBag.User.Email</p>
-                <h5 class="card-text">ID: @ViewBag.User.Id</h5>
+                <p class="card-title">NAME: @Model.Name</p>
+                <p class="card-title">EMAIL: @Model.Email</p>
+                <h5 class="card-text">ID: @Model.Id</h5>
             </div>
         </div>
     </div>

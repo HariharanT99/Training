@@ -12,20 +12,32 @@ namespace BL
 {
     public class AccountBL
     {
-        private readonly AccountDAL _accountDAL;
-        public AccountBL( AccountDAL accountDAL)
+        private readonly NTireFacade _facade;
+        public AccountBL(NTireFacade facade)
         {
-            this._accountDAL = accountDAL;
+            this._facade = facade;
         }
+
+        //Create User
         public Task<IdentityResult> CreateUser(CreateEmployeeViewModel model)
         {
-            var result = _accountDAL.CreateUser(model);
+            var result = _facade.CreateUser(model);
+
             return result;
         }
 
+        //Log in
         public Task<SignInResult> CheckUser(Login model)
         {
-            var result = _accountDAL.CheckUser(model);
+            var result = _facade.CheckUser(model);
+
+            return result;
+        }
+
+        //Create Role
+        public Task<IdentityResult> CreateRole(CreateRoleViewModel model)
+        {
+            var result = _facade.CreateRole(model);
 
             return result;
         }

@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Create New Role";
+}
+
+@model DAL.ViewModel.CreateRoleViewModel
+
+@using (Html.BeginForm("CreateRole", "Administration", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row justify-content-center mt-2">
+            <div class="col-8 col-sm-4">
+                <h1 class="text-center">Create New Role</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center m-3">
+            <div class="col-8 col-sm-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RoleName, new { @class = "control-lable" })
+                    @Html.TextBoxFor(model => model.RoleName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RoleName,"", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 col-sm-4">
+                <input type="submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}

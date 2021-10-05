@@ -24,16 +24,16 @@ namespace DAL.Models
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Date is required")]
         public DateTime? Date { get; set; }
-        [Column(TypeName = "datetime")]
 
+        [Column(TypeName = "timespan")]
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "InTime is required")]
-        public DateTime? InTime { get; set; }
-        [Column(TypeName = "datetime")]
+        public TimeSpan? InTime { get; set; }
 
+        [Column(TypeName = "timespan")]
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "OutTime is required")]
-        public DateTime? OutTime { get; set; }
+        public TimeSpan? OutTime { get; set; }
 
         [InverseProperty(nameof(Break.Entry))]
         public virtual ICollection<Break> Breaks { get; set; }
