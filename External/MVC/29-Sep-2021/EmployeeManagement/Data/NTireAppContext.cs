@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using DAL.Models;
+using Presentation.Models;
 
 #nullable disable
 
-namespace DAL.Data
+namespace Presentation.Data
 {
     public partial class NTireAppContext : DbContext
     {
@@ -18,7 +18,6 @@ namespace DAL.Data
         {
         }
 
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<Break> Breaks { get; set; }
@@ -37,27 +36,52 @@ namespace DAL.Data
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<AspNetRole>(entity =>
-            {
-                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedName] IS NOT NULL)");
-            });
-
             modelBuilder.Entity<AspNetUser>(entity =>
             {
+                entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
+
                 entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
                     .IsUnique()
                     .HasFilter("([NormalizedUserName] IS NOT NULL)");
+
+                entity.Property(e => e.Address).HasMaxLength(50);
+
+                entity.Property(e => e.DateOfBirth)
+                    .HasColumnType("date")
+                    .HasColumnName("Date_Of_Birth");
+
+                entity.Property(e => e.Email).HasMaxLength(256);
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
+
+                entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
+
+                entity.Property(e => e.UserName).HasMaxLength(256);
             });
 
             modelBuilder.Entity<AspNetUserRole>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.RoleId });
+
+                entity.HasIndex(e => e.RoleId, "IX_AspNetUserRoles_RoleId");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.AspNetUserRoles)
+                    .HasForeignKey(d => d.UserId);
             });
 
             modelBuilder.Entity<Break>(entity =>
             {
+                entity.ToTable("Break");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.EntryId).HasColumnName("EntryID");
+
                 entity.HasOne(d => d.Entry)
                     .WithMany(p => p.Breaks)
                     .HasForeignKey(d => d.EntryId)
@@ -66,6 +90,17 @@ namespace DAL.Data
 
             modelBuilder.Entity<Entry>(entity =>
             {
+                entity.ToTable("Entry");
+
+                entity.HasIndex(e => e.Date, "UQ__Entry__77387D0787BDF0A8")
+                    .IsUnique();
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Date).HasColumnType("date");
+
+                entity.Property(e => e.EmployeeId).HasMaxLength(450);
+
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Entries)
                     .HasForeignKey(d => d.EmployeeId)

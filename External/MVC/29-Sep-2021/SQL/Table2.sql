@@ -51,6 +51,9 @@ PRIMARY KEY(ID),
 FOREIGN KEY(EntryID)REFERENCES Entry(ID)
 )
 
-
+--Scaffold
+/* Scaffold-DbContext 'Server=TRAINEE-05; Database=NTireApp; User Id=SA; Password=harant@26031999'
+Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models" -ContextDir "Data" -DataAnnotations
+-Tables  AspNetUsers, AspNetUserRoles, AspNetRoles, Entry, Break -f */
 
 

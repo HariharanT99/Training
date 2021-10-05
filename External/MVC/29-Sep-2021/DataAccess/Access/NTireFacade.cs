@@ -54,7 +54,10 @@ namespace DAL.Access
         public List<Entry> GetEntry(string id)
         {
             SqlParameter pId = new SqlParameter("@Id", id);
-            var entries = _db.Entries.FromSqlRaw($"select Id, Date, InTime, OutTime from Entry where EmployeeId = @Id", pId).ToList();
+#nullable enable
+            List<Entry> entries = _db.Entries.FromSqlRaw($"select * from Entry where EmployeeId = @Id", pId).ToList();
+            //List<Entry> entries = new List<Entry>();
+            //entries.Add(entry);
 
             return entries;
         }
@@ -93,7 +96,7 @@ namespace DAL.Access
             //var users = AspNetUsers.FromSqlRaw("uspGetEmployee @Email", pName).ToList();
 
             SqlParameter pName = new SqlParameter("@Email", name);
-            var existingUser = _db.AspNetUsers.FromSqlRaw($"select * from aspnetusers where Email = @Email", pName).FirstOrDefault();
+            AspNetUser existingUser = _db.AspNetUsers.FromSqlRaw("Select * from aspnetusers Where Email = @Email", pName).FirstOrDefault();
             return existingUser;
         }
 

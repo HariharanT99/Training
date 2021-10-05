@@ -14,14 +14,15 @@ namespace DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
+
         [Column("EntryID")]
         public int? EntryId { get; set; }
-        [Column(TypeName = "datetime")]
+
         [DataType(DataType.Time)]
-        public DateTime? BreakIn { get; set; }
-        [Column(TypeName = "datetime")]
+        public TimeSpan? BreakIn { get; set; }
+
         [DataType(DataType.Time)]
-        public DateTime? BreakOut { get; set; }
+        public TimeSpan? BreakOut { get; set; }
 
         [ForeignKey(nameof(EntryId))]
         [InverseProperty("Breaks")]

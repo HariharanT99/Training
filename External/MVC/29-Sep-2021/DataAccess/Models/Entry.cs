@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DAL.Models
 {
     [Table("Entry")]
+    [Index(nameof(Date), Name = "UQ__Entry__77387D0787BDF0A8", IsUnique = true)]
     public partial class Entry
     {
         public Entry()
@@ -20,20 +21,22 @@ namespace DAL.Models
         [Column("ID")]
         public int Id { get; set; }
 
+        [StringLength(450)]
+        public string EmployeeId { get; set; }
+
         [Column(TypeName = "date")]
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Date is required")]
         public DateTime? Date { get; set; }
 
-        [Column(TypeName = "timespan")]
         [DataType(DataType.Time)]
-        [Required(ErrorMessage = "InTime is required")]
         public TimeSpan? InTime { get; set; }
 
-        [Column(TypeName = "timespan")]
         [DataType(DataType.Time)]
-        [Required(ErrorMessage = "OutTime is required")]
         public TimeSpan? OutTime { get; set; }
+
+        [ForeignKey(nameof(EmployeeId))]
+        [InverseProperty(nameof(AspNetUser.Entries))]
+        public virtual AspNetUser Employee { get; set; }
 
         [InverseProperty(nameof(Break.Entry))]
         public virtual ICollection<Break> Breaks { get; set; }
