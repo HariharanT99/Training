@@ -18,7 +18,7 @@ namespace Presentation.Controllers
             this._entryBL = entryBL;
         }
 
-        [Authorize]
+        [Authorize(Roles ="Employee")]
         public IActionResult Index()
         {
             AspNetUser user = _entryBL.GetUser(User.Identity.Name);

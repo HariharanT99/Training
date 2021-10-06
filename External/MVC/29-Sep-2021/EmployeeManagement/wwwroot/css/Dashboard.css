@@ -11,6 +11,10 @@
     font-size: x-large;
 }
 
+.navbar-brand{
+    cursor: default;
+}
+
 nav {
     position: fixed;
     width: 200px;

@@ -7,11 +7,18 @@ using System.Threading.Tasks;
 
 namespace DAL.ViewModel
 {
-    public class CreateRoleViewModel
+    public class EditRoleViewModel
     {
+        public EditRoleViewModel()
+        {
+            Users = new List<string>();
+        }
+
         public string Id { get; set; }
-        [Required]
-        [Display(Name = "Role")]
+
+        [Required(ErrorMessage = "Role Name is required")]
         public string RoleName { get; set; }
+
+        public List<string> Users { get; set; }
     }
 }

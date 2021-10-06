@@ -41,5 +41,65 @@ namespace Presentation.Controllers
             }
             return View(model);
         }
+
+        //Get Roles
+        public IActionResult GetRoles()
+        {
+            var roles = _accountBL.GetRoles();
+            return View(roles);
+        }
+
+        //Edit Roles
+        public async Task<IActionResult> EditRole(string id)
+        {
+            var model = await _accountBL.EditRole(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditRole(EditRoleViewModel model)
+        {
+            var result = await _accountBL.UpdateRole(model);
+
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ListRoles");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
+        }
+        
+        public async Task<IActionResult> EditUserInRole(string roleId)
+        {
+            ViewBag.roleId = roleId;
+
+            var model = await _accountBL.EditUsersInRole(roleId);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUserInRole(List<UserRoleViewModel> model, string roleId)
+        {
+            if (model.Any())
+            {
+                var result = await _accountBL.PostUsersInRole(model, roleId);
+
+                if (result == true)
+                {
+                    return RedirectToAction("EditRole", new { Id = roleId });
+                }
+            }
+
+            return RedirectToAction("EditRole", new { Id = roleId });
+        }
+
     }
 }

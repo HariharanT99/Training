@@ -41,5 +41,45 @@ namespace BL
 
             return result;
         }
+
+        //Get Roles
+        public List<IdentityRole> GetRoles()
+        {
+            var roles = _facade.GetRoles();
+
+            return roles;
+        }
+
+        //Edit Role
+        public Task<EditRoleViewModel> EditRole(string id)
+        {
+            var model = _facade.EditRole(id);
+
+            return model;
+        }
+
+        //Update Role
+        public Task<IdentityResult> UpdateRole(EditRoleViewModel model)
+        {
+            var role = _facade.UpdateRole(model);
+
+            return role;
+        }
+
+        //Add User to the Roles
+        public Task<List<UserRoleViewModel>> EditUsersInRole(string roleId)
+        {
+            var model = _facade.EditUsersInRole(roleId);
+
+            return model;
+        }
+
+        //Set user to the roles
+        public Task<bool> PostUsersInRole(List<UserRoleViewModel> model, string roleId)
+        {
+            var result = _facade.PostUsersInRole(model, roleId);
+
+            return result;
+        }
     }
 }

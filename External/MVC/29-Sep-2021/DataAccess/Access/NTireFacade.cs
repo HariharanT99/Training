@@ -49,6 +49,45 @@ namespace DAL.Access
             return result;
         }
 
+        //Get Roles
+        public List<IdentityRole> GetRoles()
+        {
+            var roles = _accountDAL.GetRoles();
+
+            return roles;
+        }
+
+        //Edit Roles
+        public Task<EditRoleViewModel> EditRole(string id)
+        {
+            var model = _accountDAL.EditRole(id);
+
+            return model;
+        }
+
+        //Update Role
+        public Task<IdentityResult> UpdateRole(EditRoleViewModel model)
+        {
+            var role = _accountDAL.UpdateRole(model);
+
+            return role;
+        }
+
+        //Add User to the Roles
+        public Task<List<UserRoleViewModel>> EditUsersInRole(string roleId)
+        {
+            var model = _accountDAL.EditUsersInRole(roleId);
+
+            return model;
+        }
+
+        //Set user to the roles
+        public Task<bool> PostUsersInRole(List<UserRoleViewModel> model, string roleId)
+        {
+            var result = _accountDAL.PostUsersInRole(model, roleId);
+
+            return result;
+        }
 
         //Get Entries
         public List<Entry> GetEntry(string id)

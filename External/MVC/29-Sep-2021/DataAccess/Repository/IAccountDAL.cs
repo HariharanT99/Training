@@ -18,5 +18,15 @@ namespace DAL.Repository
         Task<ApplicationUser> GetUser(string name);
 
         Task<IdentityResult> CreateRole(CreateRoleViewModel model);
+
+        List<IdentityRole> GetRoles();
+
+        Task<EditRoleViewModel> EditRole(string id);
+
+        Task<IdentityResult> UpdateRole(EditRoleViewModel model);
+
+        Task<List<UserRoleViewModel>> EditUsersInRole(string roleId);
+
+        Task<bool> PostUsersInRole(List<UserRoleViewModel> model, string roleId);
     }
 }
