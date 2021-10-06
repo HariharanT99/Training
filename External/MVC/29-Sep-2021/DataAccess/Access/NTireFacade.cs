@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using DAL.ViewModel;
+using System.Data;
+using Dapper;
 
 namespace DAL.Access
 {
@@ -18,11 +20,14 @@ namespace DAL.Access
         public readonly IAccountDAL _accountDAL;
         public readonly IEntryDAL _entryDAL;
         private readonly NTireAppContext _db;
-        public NTireFacade(IAccountDAL accountDAL, IEntryDAL entryDAL, NTireAppContext db)
+        private readonly IDapper _dapper;
+
+        public NTireFacade(IAccountDAL accountDAL, IEntryDAL entryDAL, NTireAppContext db, IDapper dapper)
         {
             this._accountDAL = accountDAL;
             this._entryDAL = entryDAL;
             this._db = db;
+            this._dapper = dapper;
         }
 
         //Create User
@@ -92,11 +97,7 @@ namespace DAL.Access
         //Get Entries
         public List<Entry> GetEntry(string id)
         {
-            SqlParameter pId = new SqlParameter("@Id", id);
-#nullable enable
-            List<Entry> entries = _db.Entries.FromSqlRaw($"select * from Entry where EmployeeId = @Id", pId).ToList();
-            //List<Entry> entries = new List<Entry>();
-            //entries.Add(entry);
+            List<Entry> entries = _dapper.GetEntry(id);
 
             return entries;
         }
@@ -104,59 +105,67 @@ namespace DAL.Access
         //Get the Logged in user
         public AspNetUser GetUser(string name)
         {
-            //using (SqlConnection cnn = new SqlConnection("Server = TRAINEE - 05; Database = NTireApp; User Id = SA; Password = harant@26031999"))
-            //{
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd.Connection = cnn;
-            //    cmd.CommandType = CommandType.Text;
-            //    cmd.CommandText = $"EXECUTE uspGetEmployee @Email = {pName}";
+            var user = _dapper.GetUser(name);
 
-            //    cnn.Open();
-
-            //    SqlDataReader reader = cmd.ExecuteReader();
-
-            //    AspNetUser user = new AspNetUser();
-
-            //    user.Id = reader.GetString(0);
-            //    user.Name = reader.GetString(1);
-            //    user.Email = reader.GetString(2);
-            //    user.Gender = reader.GetString(3);
-            //    user.DateOfBirth = reader.GetDateTime(4);
-            //    user.Address = reader.GetString(5);
-
-            //    return user;
-            //}
-
-
-
-
-            //SqlParameter pName = new SqlParameter("@Email", name);
-            //var user = AspNetUsers.FromSqlRaw<AspNetUser>("EXECUTE uspGetEmployee @Email").FirstOrDefault();
-            //var users = AspNetUsers.FromSqlRaw("uspGetEmployee @Email", pName).ToList();
-
-            SqlParameter pName = new SqlParameter("@Email", name);
-            AspNetUser existingUser = _db.AspNetUsers.FromSqlRaw("Select * from aspnetusers Where Email = @Email", pName).FirstOrDefault();
-            return existingUser;
+            return user;
         }
+
+
+        //Get the Logged in user
+        //        public AspNetUser GetUser(string name)
+        //        {
+
+        //            AspNetUser user = new();
+
+        //            using (SqlConnection connection = new SqlConnection(""))
+        //            {
+        //                AspNetUser? aspNetUser = connection.Query<AspNetUser>($"EXEC EXECUTE uspGetEmployee @Email= {name}").FirstOrDefault();
+        //                user = aspNetUser;
+
+
+        //                //SqlCommand cmd = new SqlCommand();
+        //                //cmd.Connection = cnn;
+        //                //cmd.CommandType = CommandType.Text;
+        //                //cmd.CommandText = $"EXECUTE uspGetEmployee {name}";
+
+        //                //cnn.Open();
+
+        //                //SqlDataReader reader = cmd.ExecuteReader();
+
+        //                //AspNetUser user = new AspNetUser();
+
+        //                //user.Id = reader.GetString(0);
+        //                //user.Name = reader.GetString(1);
+        //                //user.Email = reader.GetString(2);
+        //                //user.Gender = reader.GetString(3);
+        //                //user.DateOfBirth = reader.GetDateTime(4);
+        //                //user.Address = reader.GetString(5);
+        //            }
+
+        //#pragma warning disable CS8603 // Possible null reference return.
+        //            return user;
+        //#pragma warning restore CS8603 // Possible null reference return.
+
+        //            //SqlParameter pName = new SqlParameter("@Email", name);
+
+        //            //var user = AspNetUsers.FromSqlRaw<AspNetUser>("EXECUTE uspGetEmployee @Email").FirstOrDefault();
+        //            //var users = AspNetUsers.FromSqlRaw("uspGetEmployee @Email", pName).ToList();
+
+        //            //SqlParameter pName = new SqlParameter("@Email", name);
+        //            //AspNetUser existingUser = _db.AspNetUsers.FromSqlRaw("Select * from aspnetusers Where Email = @Email", pName).FirstOrDefault();
+        //            //return existingUser;
+        //        }
 
         //Set Intime
         public void SetInTime(string time, string date, string id)
         {
-            SqlParameter pDate = new SqlParameter("@Date", date);
-            SqlParameter pInTime = new SqlParameter("@Intime", time);
-            SqlParameter pId = new SqlParameter("@Id", id);
-
-            _db.AspNetUsers.FromSqlRaw("EXEC uspInsertEntry @Date,@Id,@Intime", pDate, pId, pInTime);
+            _dapper.SetInTime(time, date, id);
         }
 
         //Set Previous Entry
         public void SetEntry(Entry entry)
         {
-            SqlParameter pDate = new SqlParameter("@Date", entry.Date);
-            SqlParameter pId = new SqlParameter("@Id", entry.EmployeeId);
-            SqlParameter pInTime = new SqlParameter("@Intime", entry.InTime);
-            SqlParameter pOutTime = new SqlParameter("@Intime", entry.OutTime);
-            _db.Entries.FromSqlRaw("EXEC uspInsertPeviousEntry @Date, @Id, @InTime, @OutTime", pDate, pId, pInTime, pOutTime);
+            _dapper.SetEntry(entry);
         }
     }
 }

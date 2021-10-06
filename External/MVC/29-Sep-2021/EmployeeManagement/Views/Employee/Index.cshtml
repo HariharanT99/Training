@@ -2,23 +2,39 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
+@inject SignInManager<ApplicationUser> signInManager
 
 @{
     ViewBag.Title = "Home";
 }
 
-@{ 
+@{
 }
 
 @model DAL.Models.AspNetUser
 
 <div class="row justify-content-center justify-content-sm-start">
-    <div class="col-12 col-sm-2">
-        <a type="button" class="button btn-warning" asp-action="Dashboard" asp-route-id="@Model.Id"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
-    </div>
-    <div class="col-12 col-sm-4 offset-sm-1 mt-5">
-        <h1>Emloyee Login</h1>
-    </div>
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Employee"))
+    {
+        <div class="col-12 col-sm-2">
+            <a type="button" class="button btn-warning" asp-action="Dashboard" asp-route-id="@Model.Id"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
+        </div>
+        <div class="col-12 col-sm-4 offset-sm-1 mt-5 mr-sm-3">
+            <h1>Emloyee Login</h1>
+        </div>
+    }
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <div class="col-12 col-sm-1">
+            <a type="button" class="button btn-warning" asp-action="AdminDashboard" asp-route-id="@Model.Id"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
+        </div>
+        <div class="col-12 col-sm-3 offset-sm-1 mt-5">
+            <h1 class="text-sm-center">Admin Login</h1>
+        </div>
+        <div class="col-12 col-sm-2 ml-sm-3">
+            <a type="button" class="button btn-warning" asp-controller="Administration" asp-action="GetRoles" asp-route-id="@Model.Id"><span><i class="fa fa-user-tie"> Manage Roles</i> </span></a>
+        </div>
+    }
     <div class="col-12 col-sm-2 offset-sm-1 mt-2">
         <a type="button" class="button button-start btn-warning" asp-action="StartWork" asp-route-id="@Model.Id"><span><i class="fa fa-sign-in-alt"> Get Start</i> </span></a>
     </div>
@@ -34,16 +50,16 @@
         </div>
     </div>
     <div class="col-12 col-sm-4">
-        <div class="d-grid gap-2">
+        <div class="d-grid gap-2 ml-sm-3">
             <button class="button button-start btn-warning"><span><i class="fa fa-users"> Discussion</i> </span></button>
         </div>
-        <div class="d-grid gap-2 mt-5">
+        <div class="d-grid gap-2 mt-5 ml-sm-3">
             <button class="button button-start btn-warning"><span><i class="fa fa-tasks"> Task</i> </span></button>
         </div>
-        <div class="d-grid gap-2 mt-5">
+        <div class="d-grid gap-2 mt-5 ml-sm-3">
             <a type="button" class="button button-start btn-warning" asp-controller="Employee" asp-action="CreateEntry"><span><i class="fa fa-folder-plus"> Entry</i> </span></a>
         </div>
-        <div class="d-grid gap-2 mt-5">
+        <div class="d-grid gap-2 mt-5 ml-sm-3">
             <button class="button button-start btn-warning"><span><i class="fa fa-user-cog"> Seetings</i> </span></button>
         </div>
     </div>

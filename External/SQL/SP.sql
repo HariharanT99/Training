@@ -31,25 +31,22 @@ BEGIN
 			Insert INTO [Entry] ([Date], EmployeeId)
 			Values (@Date, @Id)
 		END
+		IF (@Intime IS NOT NULL)
+		BEGIN
+			Update Entry
+			Set Intime = @Intime
+			Where Date = @date And EmployeeId = @Id
+		END
 		ELSE
 		BEGIN
-			IF (@Intime IS NOT NULL)
-			BEGIN
-				Update Entry
-				Set Intime = @Intime
-				Where Date = @date And EmployeeId = @Id
-			END
-			ELSE
-			BEGIN
-				Update Entry
-				Set Outtime = @Outtime
-				Where [Date] = @Date AND EmployeeId = @Id
-			END
+			Update Entry
+			Set Outtime = @Outtime
+			Where [Date] = @Date AND EmployeeId = @Id
 		END
 	END
 END
 
-EXEC uspInsertEntry @Date = '2020-12-16',@Id= 'f62ffc69-6b9b-4a5a-b230-63f385d1d0bf', @Intime = '8:30' 
+EXEC uspInsertEntry @Date = '2020-12-18',@Id= '4027c6f0-2bed-4120-8454-e8bf00f00451', @Intime = '8:30' 
 
 --Insert Previous Entry
 
@@ -68,7 +65,7 @@ BEGIN
 	END
 END
 
-EXEC uspInsertPeviousEntry '2020-12-17', 'f62ffc69-6b9b-4a5a-b230-63f385d1d0bf', '08:00', '18:30'
+EXEC uspInsertPeviousEntry '2020-12-17', '4027c6f0-2bed-4120-8454-e8bf00f00451', '08:00', '18:30'
 --Get Entry by ID
 
 CREATE PROC uspGetEntryByID

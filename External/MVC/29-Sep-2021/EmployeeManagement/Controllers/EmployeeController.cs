@@ -10,6 +10,7 @@ using System;
 
 namespace Presentation.Controllers
 {
+    [Authorize(Roles = "Employee,Admin")]
     public class EmployeeController : Controller
     {
         private readonly EntryBL _entryBL;
@@ -18,7 +19,6 @@ namespace Presentation.Controllers
             this._entryBL = entryBL;
         }
 
-        [Authorize(Roles ="Employee")]
         public IActionResult Index()
         {
             AspNetUser user = _entryBL.GetUser(User.Identity.Name);
@@ -53,7 +53,23 @@ namespace Presentation.Controllers
             return RedirectToAction("Index", "Employee");
         }
 
+        [Authorize(Roles = "Employee")]
         public IActionResult Dashboard(string id)
+        {
+            if (id != null)
+            {
+                var entries = _entryBL.GetEntry(id);
+
+                return View(entries);
+            }
+
+            ViewBag.ErrorMessage = "Id Should not be null";
+
+            return View();
+        }
+
+        [Authorize(Roles ="Admin")]
+        public IActionResult AdminDashboard(string id)
         {
             if (id != null)
             {

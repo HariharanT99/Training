@@ -1,0 +1,112 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] - EmployeeManagement</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/css/AdminDashboard.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Admin Dashboard";
+
+    Layout = null;
+}
+
+
+<div class="d-flex" id="wrapper">
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+            <i class="fas fa-lg fa-user-circle me-2"> Admin</i>
+        </div>
+        <div class="list-group list-group-flush my-3">
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active">
+                <i class="fas fa-lg fa-chart-line me-2"> Dashboard</i>
+            </a>
+            <a asp-controller="Employee" asp-action="Index" class="list-group-item list-group-item-action bg-transparent second-text">
+                <i class="fas fa-lg fa-home me-2"> Home</i>
+            </a>
+            <a asp-controller="" asp-action="CreateEntry" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class="fas fa-lg fa-folder-plus me-2"> Entry</i>
+            </a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle" on-click="NavbarToggle()"></i>
+                <h2 class="fs-2 m-0 ml-2">Dashboard</h2>
+            </div>
+        </nav>
+
+        <div class="container-fluid px-4">
+            <div class="row g-3 my-2">
+                <div class="col-8 col-sm-4 offset-sm-1">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">0</h3>
+                            <p class="fs-5 lable-text">Employees present today</p>
+                        </div>
+                        <i class="fas fa-lg f fa-clipboard-list fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    </div>
+                </div>
+
+                <div class="col-8 col-sm-4 offset-sm-2">
+                    <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div>
+                            <h3 class="fs-2">0</h3>
+                            <p class="fs-5 lable-text">Active Employees</p>
+                        </div>
+                        <i class="fas fa-lg fa-user-check fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="fs-4 mt-3 ml-4 mb-0">Employees</h3>
+        <div class="row my-2 ml-2">
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" width="50">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Total Working Time</th>
+                            <th scope="col">Total Break Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+
+        var el = document.getElementById("wrapper");
+
+        function NavbarToggle() {
+            el.classList.toggle("toggled");
+        };
+
+
+
+
+        @await RenderSectionAsync("Scripts", required: false)
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}

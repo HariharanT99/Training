@@ -34,6 +34,8 @@ namespace EmployeeManagement
             services.AddControllersWithViews();
             services.AddScoped<UserManager<ApplicationUser>>();
 
+            services.AddTransient<IDapper>(f => new DAL.Access.Dapper("Server=TRAINEE-05; Database=NTireApp;User Id=SA; Password=harant@26031999;Trusted_Connection=false;MultipleActiveResultSets=true;"));
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {

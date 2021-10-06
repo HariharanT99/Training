@@ -35,7 +35,7 @@ FOREIGN KEY (EmployeeID) REFERENCES Employee(ID)
 CREATE TABLE Entry(
 ID int Identity,
 EmployeeId nvarchar(450), 
-[Date] date Unique,
+[Date] date,
 InTime time,
 OutTime time,
 PRIMARY KEY(ID),

@@ -446,3 +446,5 @@ D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Razor\Views\Administration\GetRoles.cshtml.g.cs
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Razor\Views\Administration\EditRole.cshtml.g.cs
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Razor\Views\Administration\EditUserInRole.cshtml.g.cs
+D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Razor\Views\Employee\AdminDashboard.cshtml.g.cs
+D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\bin\Debug\net5.0\Dapper.dll

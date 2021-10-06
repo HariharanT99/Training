@@ -7,6 +7,10 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+.hover-cursor{
+    cursor: pointer;
+}
+
 .container .navbar-brand {
     font-size: x-large;
 }

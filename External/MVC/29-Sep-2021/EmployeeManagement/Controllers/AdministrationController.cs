@@ -1,6 +1,7 @@
 ﻿using BL;
 using DAL.Models;
 using DAL.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Presentation.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdministrationController : Controller
     {
         private readonly AccountBL _accountBL;
@@ -65,7 +67,7 @@ namespace Presentation.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("ListRoles");
+                return RedirectToAction("GetRoles");
             }
 
             foreach (var error in result.Errors)
