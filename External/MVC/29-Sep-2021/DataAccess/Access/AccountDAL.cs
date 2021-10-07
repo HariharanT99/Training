@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DAL.Models;
-using DAL.Repository;
 using DAL.ViewModel;
+using DAL.Interfaces;
 
 namespace DataAccess.Access
 {

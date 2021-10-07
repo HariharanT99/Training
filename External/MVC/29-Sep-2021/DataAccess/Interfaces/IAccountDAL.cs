@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.ViewModel;
 
-namespace DAL.Repository
+namespace DAL.Interfaces
 {
     public interface IAccountDAL
     {

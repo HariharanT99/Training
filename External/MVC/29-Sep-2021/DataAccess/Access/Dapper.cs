@@ -1,5 +1,5 @@
-﻿using DAL.Models;
-using DAL.Repository;
+﻿using DAL.Interfaces;
+using DAL.Models;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;

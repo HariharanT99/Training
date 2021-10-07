@@ -1,7 +1,7 @@
 ﻿using DAL.Data;
+using DAL.Interfaces;
 using DAL.Migrations;
 using DAL.Models;
-using DAL.Repository;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

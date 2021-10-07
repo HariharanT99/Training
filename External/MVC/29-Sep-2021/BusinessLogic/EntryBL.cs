@@ -1,7 +1,6 @@
 ﻿using DAL.Access;
 using DAL.Migrations;
 using DAL.Models;
-using DAL.Repository;
 using DAL.ViewModel;
 using DataAccess.Access;
 using System;

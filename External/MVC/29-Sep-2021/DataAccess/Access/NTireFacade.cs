@@ -1,6 +1,5 @@
 ﻿using DAL.Data;
 using DAL.Models;
-using DAL.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using System;
@@ -12,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using DAL.ViewModel;
 using System.Data;
 using Dapper;
+using DAL.Interfaces;
 
 namespace DAL.Access
 {

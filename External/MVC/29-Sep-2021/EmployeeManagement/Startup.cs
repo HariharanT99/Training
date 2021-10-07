@@ -1,8 +1,8 @@
 using BL;
 using DAL.Access;
 using DAL.Data;
+using DAL.Interfaces;
 using DAL.Models;
-using DAL.Repository;
 using DataAccess.Access;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

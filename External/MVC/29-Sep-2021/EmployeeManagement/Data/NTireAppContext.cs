@@ -18,6 +18,7 @@ namespace Presentation.Data
         {
         }
 
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<Break> Breaks { get; set; }
@@ -28,7 +29,7 @@ namespace Presentation.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=TRAINEE-05; Database=NTireApp; User Id=SA; Password=harant@26031999");
+                optionsBuilder.UseSqlServer("Server=TRAINEE-05; Database=NTireApp;User Id=SA; Password=harant@26031999;Trusted_Connection=false;MultipleActiveResultSets=true;");
             }
         }
 
@@ -36,75 +37,43 @@ namespace Presentation.Data
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
+            modelBuilder.Entity<AspNetRole>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedName] IS NOT NULL)");
+            });
+
             modelBuilder.Entity<AspNetUser>(entity =>
             {
-                entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
-
                 entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
                     .IsUnique()
                     .HasFilter("([NormalizedUserName] IS NOT NULL)");
-
-                entity.Property(e => e.Address).HasMaxLength(50);
-
-                entity.Property(e => e.DateOfBirth)
-                    .HasColumnType("date")
-                    .HasColumnName("Date_Of_Birth");
-
-                entity.Property(e => e.Email).HasMaxLength(256);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
-
-                entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
-
-                entity.Property(e => e.UserName).HasMaxLength(256);
             });
 
             modelBuilder.Entity<AspNetUserRole>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.RoleId });
-
-                entity.HasIndex(e => e.RoleId, "IX_AspNetUserRoles_RoleId");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.AspNetUserRoles)
-                    .HasForeignKey(d => d.UserId);
             });
 
             modelBuilder.Entity<Break>(entity =>
             {
-                entity.ToTable("Break");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.EntryId).HasColumnName("EntryID");
+                entity.Property(e => e.TotalBreakTime).HasComputedColumnSql("(datediff(minute,[BreakIn],[BreakOut]))", false);
 
                 entity.HasOne(d => d.Entry)
                     .WithMany(p => p.Breaks)
                     .HasForeignKey(d => d.EntryId)
-                    .HasConstraintName("FK__Break__EntryID__6754599E");
+                    .HasConstraintName("FK__Break__EntryID__2CF2ADDF");
             });
 
             modelBuilder.Entity<Entry>(entity =>
             {
-                entity.ToTable("Entry");
-
-                entity.HasIndex(e => e.Date, "UQ__Entry__77387D0787BDF0A8")
-                    .IsUnique();
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.Date).HasColumnType("date");
-
-                entity.Property(e => e.EmployeeId).HasMaxLength(450);
+                entity.Property(e => e.TotalWorkingTime).HasComputedColumnSql("(datediff(minute,[InTime],[OutTime]))", false);
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Entries)
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK__Entry__EmployeeI__6477ECF3");
+                    .HasConstraintName("FK__Entry__EmployeeI__2739D489");
             });
 
             OnModelCreatingPartial(modelBuilder);
