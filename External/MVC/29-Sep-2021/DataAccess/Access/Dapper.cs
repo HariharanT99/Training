@@ -1,5 +1,7 @@
-﻿using DAL.Interfaces;
+﻿using DAL.DataViewModel;
+using DAL.Interfaces;
 using DAL.Models;
+using DAL.ViewModel;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System;
@@ -35,14 +37,13 @@ namespace DAL.Access
         }
 
         //Get Entries
-        public List<Entry> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id)
         {
-            List<Entry> entries = new();
+            List<EntryInptViewModel> entries = new();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                entries = connection.Query<Entry>("execute uspGetEntryByID @id", new { @id = id }).ToList();
+                entries = connection.Query<EntryInptViewModel>("execute uspGetEntryByID @id", new { @id = id }).ToList();
             }
-
             return entries;
         }
 
@@ -61,6 +62,13 @@ namespace DAL.Access
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Query("execute uspInsertPeviousEntry @date,@id,@intime,@outtime", new { @date = entry.Date, @id = entry.EmployeeId, @intime = entry.InTime, @outtime = entry.OutTime });
+
+                var entryId = connection.Query<Entry>("execute uspGetEntryByID_Date @Id,@Date", new { @Id = entry.EmployeeId, @Date = entry.Date }).FirstOrDefault();
+
+                foreach (var brk in entry.Breaks)
+                {
+                    connection.Query("execute uspSetFormBreak @EntryId,@BreakIn,@BreakOut", new { @EntryId = entryId.Id, @BreakIn = brk.BreakIn, @BreakOut = brk.BreakOut });
+                }
             }
         }
     }

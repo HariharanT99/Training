@@ -66,24 +66,44 @@ BEGIN
 END
 
 EXEC uspInsertPeviousEntry '2020-12-17', '4027c6f0-2bed-4120-8454-e8bf00f00451', '08:00', '18:30'
+
 --Get Entry by ID
 
 CREATE PROC uspGetEntryByID
 @Id nvarchar(450)
 as
 BEGIN
-	Select ID
-	,EmployeeId
-	,[Date]
-	,InTime
-	,OutTime
-	from [Entry]
-	Where EmployeeId = @Id
+	Select e.ID
+	,e.EmployeeId
+	,e.[Date]
+	,e.InTime
+	,e.OutTime
+	,e.[TotalWorkingTime]
+	,b.BreakIn
+	,b.BreakOut
+	,b.TotalBreakTime
+	from [Entry] e
+	Join [Break] b
+	on e.ID = b.EntryID AND e.EmployeeId = @Id
 END
 
+exec uspGetEntryByID '4027c6f0-2bed-4120-8454-e8bf00f00451'
 
-select au.Id, au.Name, au.Email, ar.Name from AspNetUsers au
-Join AspNetUserRoles aur
-on au.Id = aur.UserId and au.Email = 'harit@gmail.com'
-join AspNetRoles ar
-on aur.RoleId = ar.Id
+
+	Select e.ID
+	,e.EmployeeId
+	,e.[Date]
+	,e.InTime
+	,e.OutTime
+	,e.[TotalWorkingTime]
+	,SUM(b.TotalBreakTime) as 'TotalBreakTime'
+	from [Entry] e
+	Join [Break] b
+	on e.ID = b.EntryID AND e.EmployeeId = '4027c6f0-2bed-4120-8454-e8bf00f00451'
+	Group By b.EntryID
+	,e.ID
+	,e.EmployeeId
+	,e.[Date]
+	,e.InTime
+	,e.OutTime
+	,e.[TotalWorkingTime]

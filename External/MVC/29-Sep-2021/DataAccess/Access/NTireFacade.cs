@@ -12,6 +12,7 @@ using DAL.ViewModel;
 using System.Data;
 using Dapper;
 using DAL.Interfaces;
+using DAL.DataViewModel;
 
 namespace DAL.Access
 {
@@ -95,9 +96,9 @@ namespace DAL.Access
         }
 
         //Get Entries
-        public List<Entry> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id)
         {
-            List<Entry> entries = _dapper.GetEntry(id);
+            List<EntryInptViewModel> entries = _dapper.GetEntry(id);
 
             return entries;
         }

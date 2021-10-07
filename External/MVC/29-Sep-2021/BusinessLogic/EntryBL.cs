@@ -1,4 +1,5 @@
 ﻿using DAL.Access;
+using DAL.DataViewModel;
 using DAL.Migrations;
 using DAL.Models;
 using DAL.ViewModel;
@@ -22,7 +23,7 @@ namespace BL
             this._facade = facade;
         }
         //Get Entries
-        public List<Entry> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id)
         {
             var entries = _facade.GetEntry(id);
 
@@ -38,7 +39,9 @@ namespace BL
                 EmployeeId = model.EmployeeId,
                 Date = model.Date,
                 InTime = model.InTime,
-                OutTime = model.OutTime
+                OutTime = model.OutTime,
+                Breaks = model.BreakList,
+                
             };
 
             _facade.SetEntry(entry);

@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using DAL.DataViewModel;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace DAL.Interfaces
     {
         AspNetUser GetUser(string name);
 
-        List<Entry> GetEntry(string id);
+        List<EntryInptViewModel> GetEntry(string id);
 
         void SetInTime(string time, string date, string id);
 

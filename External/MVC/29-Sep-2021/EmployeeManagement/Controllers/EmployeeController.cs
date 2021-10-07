@@ -44,9 +44,9 @@ namespace Presentation.Controllers
         [HttpPost]
         public IActionResult CreateEntry(EntryViewModel model)
         {
-            var breakList = model.BreakList;
+            //var breakList = model.BreakList;
 
-            _entryBL.SetBreak(breakList);
+            //_entryBL.SetBreak(breakList);
 
             _entryBL.SetEntry(model);
 
@@ -59,6 +59,13 @@ namespace Presentation.Controllers
             if (id != null)
             {
                 var entries = _entryBL.GetEntry(id);
+
+                foreach (var item in entries)
+                {
+                    DateTime date = (DateTime)item.Date;
+                    ViewBag.Month = date.Month;
+                    break;
+                }
 
                 return View(entries);
             }
