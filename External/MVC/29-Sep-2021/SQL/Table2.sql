@@ -38,7 +38,7 @@ EmployeeId nvarchar(450),
 [Date] date,
 InTime time,
 OutTime time,
-TotalWorkingTime AS DATEDIFF(minute, InTime, OutTime),
+TotalWorkingTime AS CONVERT(decimal(5,1),DATEDIFF(minute, InTime, OutTime)/60.0),
 PRIMARY KEY(ID),
 FOREIGN KEY(EmployeeId) REFERENCES AspNetUsers(Id)
 )
@@ -48,7 +48,7 @@ ID int Identity,
 EntryID int,
 BreakIn time,
 BreakOut time,
-TotalBreakTime AS DATEDIFF(minute, BreakIn, BreakOut),
+TotalBreakTime AS CONVERT(decimal(5,1),(DATEDIFF( minute, BreakIn, BreakOut)/60.0)),
 PRIMARY KEY(ID),
 FOREIGN KEY(EntryID)REFERENCES Entry(ID)
 )
