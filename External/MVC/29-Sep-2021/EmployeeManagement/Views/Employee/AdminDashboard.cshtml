@@ -14,6 +14,7 @@
     Layout = null;
 }
 
+@model IEnumerable<DAL.DataViewModel.AdminDashboardViewModel>
 
 <div class="d-flex" id="wrapper">
     <div class="bg-white" id="sidebar-wrapper">
@@ -46,7 +47,7 @@
                 <div class="col-8 col-sm-4 offset-sm-1">
                     <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                         <div>
-                            <h3 class="fs-2">0</h3>
+                            <h3 class="fs-2">@ViewBag.Count</h3>
                             <p class="fs-5 lable-text">Employees present today</p>
                         </div>
                         <i class="fas fa-lg f fa-clipboard-list fs-1 primary-text border rounded-full secondary-bg p-3"></i>
@@ -65,19 +66,59 @@
             </div>
         </div>
 
-        <h3 class="fs-4 mt-3 ml-4 mb-0">Employees</h3>
+        <h3 class="fs-4 mt-3 ml-sm-5 mb-0">Employees</h3>
         <div class="row my-2 ml-2">
-            <div class="col">
+            <div class="col-sm-11 ml-sm-4">
                 <table class="table bg-white rounded shadow-sm  table-hover">
                     <thead>
                         <tr>
-                            <th scope="col" width="50">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Total Working Time</th>
-                            <th scope="col">Total Break Time</th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.InTime)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.OutTime)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.TotalBreakTime)
+                            </th>
+                            <th scope="col">
+                                @Html.DisplayNameFor(model => model.TotalWorkingTime)
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
+                        @if(Model.Any())
+                        {
+                          @foreach (var item in Model)
+                          {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item.InTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item.OutTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item.TotalBreakTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => item.TotalWorkingTime)
+                                </td>
+                            </tr>
+                          }
+                        }
+                        else 
+                        {
+                            <tr>
+                                <td>There is no Record for the given date</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

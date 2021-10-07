@@ -71,5 +71,21 @@ namespace BL
             _facade.SetInTime(time, date, id);
         }
 
+        //Get Entry by Date for Admin DashBoard
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        {
+            var employeeEntry = _facade.GetEmployeeEntry(date);
+
+            return employeeEntry;
+        }
+
+        //Get Employees Present Today (Admin dashboard)
+        public int PresentEmployeesCount()
+        {
+            var count = _facade.PresentEmployeesCount();
+
+            return count;
+        }
+
     }
 }

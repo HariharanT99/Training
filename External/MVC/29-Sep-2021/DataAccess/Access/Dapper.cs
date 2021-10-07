@@ -71,5 +71,29 @@ namespace DAL.Access
                 }
             }
         }
+
+        //Get Entry by Date (Admin dashboard)
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        {
+            List < AdminDashboardViewModel > employeeentry = new();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                employeeentry = connection.Query<AdminDashboardViewModel>("execute uspGetEmployeesByDate @date", new { @date = date }).ToList();
+            }
+
+            return employeeentry;
+        }
+
+        //Get Employees Present Today (Admin dashboard)
+        public int PresentEmployeesCount()
+        {
+            int count;
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                count = connection.Query<int>("execute uspEmployeePresentToday").FirstOrDefault();
+            }
+
+            return count;
+        }
     }
 }

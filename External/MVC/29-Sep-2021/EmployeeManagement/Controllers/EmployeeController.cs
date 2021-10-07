@@ -76,18 +76,15 @@ namespace Presentation.Controllers
         }
 
         [Authorize(Roles ="Admin")]
-        public IActionResult AdminDashboard(string id)
+        public IActionResult AdminDashboard()
         {
-            if (id != null)
-            {
-                var entries = _entryBL.GetEntry(id);
+            DateTime date = new DateTime(2021,10,07);
 
-                return View(entries);
-            }
+            var employeeEntry = _entryBL.GetEmployeeEntry(date);
 
-            ViewBag.ErrorMessage = "Id Should not be null";
+            ViewBag.Count = _entryBL.PresentEmployeesCount();
 
-            return View();
+            return View(employeeEntry);
         }
     }
 }

@@ -26,7 +26,7 @@
     @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
     {
         <div class="col-12 col-sm-1">
-            <a type="button" class="button btn-warning" asp-action="AdminDashboard" asp-route-id="@Model.Id"><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
+            <a type="button" class="button btn-warning" asp-action="AdminDashboard" asp-route-id=""><span><i class="fa fa-chart-line"> Dashboard</i> </span></a>
         </div>
         <div class="col-12 col-sm-3 offset-sm-1 mt-5">
             <h1 class="text-sm-center">Admin Login</h1>

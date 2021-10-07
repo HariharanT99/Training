@@ -391,7 +391,6 @@ D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\ref\Presentation.dll
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Presentation.pdb
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Presentation.genruntimeconfig.cache
-D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\obj\Debug\net5.0\Razor\Views\Employee\Entry12.cshtml.g.cs
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\Training\Assign\External\MVC\29-Sep-2021\EmployeeManagement\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll

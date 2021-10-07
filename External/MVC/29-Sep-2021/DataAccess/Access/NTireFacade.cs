@@ -168,5 +168,21 @@ namespace DAL.Access
         {
             _dapper.SetEntry(entry);
         }
+
+        //Get Entry by Date for Admin DashBoard
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        {
+            var employeeEntry = _dapper.GetEmployeeEntry(date);
+
+            return employeeEntry;
+        }
+
+        //Get Employees Present Today (Admin dashboard)
+        public int PresentEmployeesCount()
+        {
+            var count = _dapper.PresentEmployeesCount();
+
+            return count;
+        }
     }
 }

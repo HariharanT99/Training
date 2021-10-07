@@ -17,5 +17,9 @@ namespace DAL.Interfaces
         void SetInTime(string time, string date, string id);
 
         void SetEntry(Entry entry);
+
+        List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date);
+
+        int PresentEmployeesCount();
     }
 }
