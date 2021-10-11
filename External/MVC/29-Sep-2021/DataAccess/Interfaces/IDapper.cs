@@ -23,6 +23,8 @@ namespace DAL.Interfaces
 
         int PresentEmployeesCount();
 
+        int ActiveEmployeesCount();
+
         void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime);
     }
 }

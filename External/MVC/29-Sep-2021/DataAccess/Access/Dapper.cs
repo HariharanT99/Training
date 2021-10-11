@@ -97,6 +97,20 @@ namespace DAL.Access
             return count;
         }
 
+
+        //Get Number of Active Employees (Admin Dashboard)
+        public int ActiveEmployeesCount()
+        {
+            int activeCount;
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                activeCount = connection.Query<int>("execute uspGetActiveEmployee").FirstOrDefault();
+            }
+
+            return activeCount;
+        }
+
+
         //Set Break (Current day entry)
         public void SetCurrentBreak(StartWorkViewModel model,string date,string workOffTime)
         {

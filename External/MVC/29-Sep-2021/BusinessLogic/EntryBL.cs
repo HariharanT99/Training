@@ -81,6 +81,7 @@ namespace BL
             return employeeEntry;
         }
 
+
         //Get Employees Present Today (Admin dashboard)
         public int PresentEmployeesCount()
         {
@@ -88,6 +89,16 @@ namespace BL
 
             return count;
         }
+
+
+        //Get Number of Active Employees (Admin Dashboard)
+        public int ActiveEmployeesCount()
+        {
+            var activeCount = _facade.ActiveEmployeesCount();
+
+            return activeCount;
+        }
+
 
         //Set Break (Current day entry)
         public void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime)

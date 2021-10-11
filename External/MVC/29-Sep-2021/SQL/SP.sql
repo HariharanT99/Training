@@ -71,7 +71,8 @@ EXEC uspInsertPeviousEntry '2020-12-17', '4027c6f0-2bed-4120-8454-e8bf00f00451',
 --Get Entry by ID
 
 CREATE PROC uspGetEntryByID
-@Id nvarchar(450)
+@Id nvarchar(450),
+@Month int
 as
 BEGIN
 	With cteBreak (EntryId, TotalBreakTime)
@@ -84,14 +85,14 @@ BEGIN
 		Select e.[Date]
 		,e.InTime
 		,e.OutTime
-		,e.TotalWorkingTime
+		,(e.TotalWorkingTime - b.TotalBreakTime) as TotalWorkingTime
 		,b.TotalBreakTime
 		from [Entry] e
 		Join cteBreak b
-		on e.ID = b.EntryId AND e.EmployeeId = @Id
+		on e.ID = b.EntryId AND e.EmployeeId = @Id And DATEPART(month,e.[Date]) = @Month
 END
 
-exec uspGetEntryByID '4027c6f0-2bed-4120-8454-e8bf00f00451'
+exec uspGetEntryByID '4027c6f0-2bed-4120-8454-e8bf00f00451', 10
 
 
 --Get Entry By EmployeeId and Break
@@ -107,7 +108,7 @@ BEGIN
 	Where EmployeeId = @Id AND Date = @Date;
 END
 
-exec uspGetEntryByID_Date '4027c6f0-2bed-4120-8454-e8bf00f00451','2021-09-30'
+exec uspGetEntryByID_Date '4027c6f0-2bed-4120-8454-e8bf00f00451','2021-10-11'
 
 --Set Break
 
@@ -174,5 +175,36 @@ BEGIN
 	Values(@EntryId,@StartTime)
 END
 
+--Set Workoff Time
+
+CREATE PROC uspSetWorkOff
+@WorkOff time,
+@Emp_Id nvarchar(450),
+@Date date
+as
+BEGIN
+	Update [Entry]
+	Set OutTime = @WorkOff
+	Where [Date] = @Date AND EmployeeId = @Emp_Id
+END
 
 
+--Get the active employees
+
+CREATE PROC uspGetActiveEmployee
+as 
+BEGIN
+	WITH ActiveEmployeecte (EntryId)
+	as(
+		Select Distinct b.EntryID
+		from [Break] b
+		Join [Entry] e
+		On b.EntryID = e.ID AND e.[Date] = CONVERT(date, getdate())
+		Where (b.BreakIn IS NULL OR b.BreakOut IS NOT NULL))
+
+		Select COUNT(EntryId) as ActiveEmployees
+		from ActiveEmployeecte
+END
+
+
+EXEC uspGetActiveEmployee

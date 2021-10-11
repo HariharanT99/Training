@@ -140,6 +140,16 @@ namespace DAL.Access
             return count;
         }
 
+
+        //Get Number of Active Employees (Admin Dashboard)
+        public int ActiveEmployeesCount()
+        {
+            var activeCount = _dapper.ActiveEmployeesCount();
+
+            return activeCount;
+        }
+
+
         //Set Break (Current day entry)
         public void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime)
         {

@@ -111,6 +111,8 @@ namespace Presentation.Controllers
 
             ViewBag.Count = _entryBL.PresentEmployeesCount();
 
+            ViewBag.ActiveEmployeesCount = _entryBL.ActiveEmployeesCount();
+
             return View();
         }
 
