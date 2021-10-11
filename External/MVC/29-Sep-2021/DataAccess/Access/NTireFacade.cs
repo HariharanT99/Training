@@ -95,10 +95,11 @@ namespace DAL.Access
             return result;
         }
 
+
         //Get Entries
-        public List<EntryInptViewModel> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id, int? month)
         {
-            List<EntryInptViewModel> entries = _dapper.GetEntry(id);
+            List<EntryInptViewModel> entries = _dapper.GetEntry(id, month);
 
             return entries;
         }
@@ -110,52 +111,6 @@ namespace DAL.Access
 
             return user;
         }
-
-
-        //Get the Logged in user
-        //        public AspNetUser GetUser(string name)
-        //        {
-
-        //            AspNetUser user = new();
-
-        //            using (SqlConnection connection = new SqlConnection(""))
-        //            {
-        //                AspNetUser? aspNetUser = connection.Query<AspNetUser>($"EXEC EXECUTE uspGetEmployee @Email= {name}").FirstOrDefault();
-        //                user = aspNetUser;
-
-
-        //                //SqlCommand cmd = new SqlCommand();
-        //                //cmd.Connection = cnn;
-        //                //cmd.CommandType = CommandType.Text;
-        //                //cmd.CommandText = $"EXECUTE uspGetEmployee {name}";
-
-        //                //cnn.Open();
-
-        //                //SqlDataReader reader = cmd.ExecuteReader();
-
-        //                //AspNetUser user = new AspNetUser();
-
-        //                //user.Id = reader.GetString(0);
-        //                //user.Name = reader.GetString(1);
-        //                //user.Email = reader.GetString(2);
-        //                //user.Gender = reader.GetString(3);
-        //                //user.DateOfBirth = reader.GetDateTime(4);
-        //                //user.Address = reader.GetString(5);
-        //            }
-
-        //#pragma warning disable CS8603 // Possible null reference return.
-        //            return user;
-        //#pragma warning restore CS8603 // Possible null reference return.
-
-        //            //SqlParameter pName = new SqlParameter("@Email", name);
-
-        //            //var user = AspNetUsers.FromSqlRaw<AspNetUser>("EXECUTE uspGetEmployee @Email").FirstOrDefault();
-        //            //var users = AspNetUsers.FromSqlRaw("uspGetEmployee @Email", pName).ToList();
-
-        //            //SqlParameter pName = new SqlParameter("@Email", name);
-        //            //AspNetUser existingUser = _db.AspNetUsers.FromSqlRaw("Select * from aspnetusers Where Email = @Email", pName).FirstOrDefault();
-        //            //return existingUser;
-        //        }
 
         //Set Intime
         public void SetInTime(string time, string date, string id)
@@ -170,7 +125,7 @@ namespace DAL.Access
         }
 
         //Get Entry by Date for Admin DashBoard
-        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime? date)
         {
             var employeeEntry = _dapper.GetEmployeeEntry(date);
 
@@ -183,6 +138,12 @@ namespace DAL.Access
             var count = _dapper.PresentEmployeesCount();
 
             return count;
+        }
+
+        //Set Break (Current day entry)
+        public void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime)
+        {
+            _dapper.SetCurrentBreak(model, date, workOffTime);
         }
     }
 }

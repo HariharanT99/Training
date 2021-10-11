@@ -22,10 +22,12 @@ namespace BL
             this._entryDAL = entryDAL;
             this._facade = facade;
         }
+
+
         //Get Entries
-        public List<EntryInptViewModel> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id, int? month)
         {
-            var entries = _facade.GetEntry(id);
+            var entries = _facade.GetEntry(id, month);
 
             return entries;
         }
@@ -72,7 +74,7 @@ namespace BL
         }
 
         //Get Entry by Date for Admin DashBoard
-        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime? date)
         {
             var employeeEntry = _facade.GetEmployeeEntry(date);
 
@@ -85,6 +87,12 @@ namespace BL
             var count = _facade.PresentEmployeesCount();
 
             return count;
+        }
+
+        //Set Break (Current day entry)
+        public void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime)
+        {
+            _facade.SetCurrentBreak(model, date, workOffTime);
         }
 
     }

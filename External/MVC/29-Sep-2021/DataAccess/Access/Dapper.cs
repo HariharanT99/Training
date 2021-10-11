@@ -36,13 +36,14 @@ namespace DAL.Access
             return user;
         }
 
+
         //Get Entries
-        public List<EntryInptViewModel> GetEntry(string id)
+        public List<EntryInptViewModel> GetEntry(string id, int? month)
         {
             List<EntryInptViewModel> entries = new();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                entries = connection.Query<EntryInptViewModel>("execute uspGetEntryByID @id", new { @id = id }).ToList();
+                entries = connection.Query<EntryInptViewModel>("execute uspGetEntryByID @id, @Month", new { @id = id, @Month = month }).ToList();
             }
             return entries;
         }
@@ -73,7 +74,7 @@ namespace DAL.Access
         }
 
         //Get Entry by Date (Admin dashboard)
-        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date)
+        public List<AdminDashboardViewModel> GetEmployeeEntry(DateTime? date)
         {
             List < AdminDashboardViewModel > employeeentry = new();
             using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -94,6 +95,25 @@ namespace DAL.Access
             }
 
             return count;
+        }
+
+        //Set Break (Current day entry)
+        public void SetCurrentBreak(StartWorkViewModel model,string date,string workOffTime)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Query("execute uspSetWorkOff @WorkOff,@Emp_Id,@Date", new { @WorkOff = workOffTime, @Emp_Id = model.EmployeeId, @Date = date });
+
+                var entryId = connection.Query<int>("execute uspGetEntryByID_Date @Id,@Date", new { @Id = model.EmployeeId, @Date = date }).FirstOrDefault();
+
+                foreach (var brk in model.BreakList)
+                {
+                    if (brk.BreakIn != null)
+                    {
+                        connection.Query("execute uspSetFormBreak @EntryId,@BreakIn,@BreakOut", new { @EntryId = entryId, @BreakIn = brk.BreakIn, @BreakOut = brk.BreakOut });
+                    }
+                }
+            }
         }
     }
 }

@@ -5,4 +5,127 @@
     ViewBag.Title = "Work";
 }
 
+@model DAL.ViewModel.StartWorkViewModel
+
 <h2>Start Work</h2>
+
+<div class="container">
+    <form action="StartWork" method="post">
+        <div class="row">
+            <div class="invisible">
+                <input hidden asp-for="EmployeeId" value="@ViewBag.UserId" />
+                <table id="BreakTable" class="table table-borderless table-sm">
+                    <tbody>
+                        @for (int i = 0; i < Model.BreakList.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.EditorFor(model => model.BreakList[i].BreakIn, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                                <td>
+                                    @Html.EditorFor(model => model.BreakList[i].BreakOut, new { htmlAttributes = new { @class = "form-control" } })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-6">
+                <button type="button" id="breakbtn-start" onclick="BreakStart()" class="btn btn-warning btn-lg">Break Start</button>
+                <button type="button" id="breakbtn-end" onclick="BreakEnd()" class="btn btn-warning btn-lg" disabled>Break End</button>
+                <button type="submit" id="btn-workoff" onclick="Save()" class="btn btn-warning btn-lg">Work off</button>
+            </div>
+
+            <input type="hidden" id="hasLastIndex" value="0" />
+
+
+        </div>
+    </form>
+</div>
+
+@section Scripts{ 
+
+    <script type="text/javascript">
+        var i = 0;
+
+
+        function BreakStart() {
+            $('#breakbtn-start').attr('disabled', true);
+            $('#breakbtn-end').attr('disabled', false);
+            $('#btn-workoff').attr('disabled', true);
+
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+            var table = document.getElementById('BreakTable');
+            var rows = table.getElementsByTagName('tr');
+
+            var rowOuterHtml = rows[rows.length - 1].outerHTML;
+
+            var lastrowIdx = document.getElementById('hasLastIndex').value;
+            i = lastrowIdx;
+            var nextrowIdx = eval(lastrowIdx) + 1;
+
+            document.getElementById('hasLastIndex').value = nextrowIdx;
+
+            rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx + '_', '_' + nextrowIdx + '_');
+            rowOuterHtml = rowOuterHtml.replaceAll('[' + lastrowIdx + ']', '[' + nextrowIdx + ']');
+            rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx, '_' + nextrowIdx);
+
+            var start = document.getElementById(`BreakList_${lastrowIdx}__BreakIn`);
+            start.type = "text";
+            start.value = time;
+            var newRow = table.insertRow();
+            newRow.innerHTML = rowOuterHtml;
+        }
+
+        function BreakEnd() {
+            $('#breakbtn-start').attr('disabled', false);
+            $('#breakbtn-end').attr('disabled', true);
+            $('#btn-workoff').attr('disabled', false);
+
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+            var start = document.getElementById(`BreakList_${i}__BreakOut`);
+            start.type = "text";
+            start.value = time;
+        }
+
+        //function BreakStart() {
+        //    var today = new Date();
+        //    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        //
+        //    var input = document.createElement("input");
+        //    input.type = "text";
+        //    input.name = `start${i}`
+        //    input.value = time;
+        //    document.getElementById('hidden').appendChild(input);
+        //
+        //    i++;
+        //    console.log(`done${i}`)
+        //}
+        //function BreakStart() {
+        //    $('#breakbtn-start').attr('disabled', true);
+        //    $('#breakbtn-end').attr('disabled', false);
+        //    $('#btn-workoff').attr('disabled', true);
+        //    var today = new Date();
+        //    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        //    localStorage.setItem(`start${i}`, time);
+        //}
+
+        //function BreakEnd() {
+        //    $('#breakbtn-start').attr('disabled', false);
+        //    $('#breakbtn-end').attr('disabled', true);
+        //    $('#btn-workoff').attr('disabled', false);
+        //    var today = new Date();
+        //    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+        //    localStorage.setItem(`end${i}`, time);
+        //    i++;
+        //}
+
+    </script>
+}

@@ -4,14 +4,3 @@
 // Write your JavaScript code.
 
 
-function ActivateBreak() {
-    var btnBreak = $('#btnbreak');
-    var btnOffWork = $("#btnoffwork");
-    btnBreak.addClass('visible');
-    btnBreak.removeClass('invisible');
-
-    setTimeout(function () {
-        btnOffWork.addClass('visible');
-        btnOffWork.removeClass('invisible');
-    }, 5000); //60*60*4000 for 4hrs
-}

@@ -15,6 +15,8 @@ namespace DAL.DataViewModel
 
         public string EmployeeId { get; set; }
 
+        public int Month { get; set; }
+
         [DataType(DataType.Date)]
         public DateTime? Date { get; set; }
 
@@ -30,5 +32,6 @@ namespace DAL.DataViewModel
         public TimeSpan? BreakOut { get; set; }
 
         public float? TotalBreakTime { get; set; }
+
     }
 }

@@ -14,7 +14,7 @@
     Layout = null;
 }
 
-@model IEnumerable<DAL.DataViewModel.AdminDashboardViewModel>
+@model DAL.DataViewModel.DashboardMonthViewModel
 
 <div class="d-flex" id="wrapper">
     <div class="bg-white" id="sidebar-wrapper">
@@ -35,12 +35,19 @@
     </div>
 
     <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-            <div class="d-flex align-items-center">
-                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle" on-click="NavbarToggle()"></i>
-                <h2 class="fs-2 m-0 ml-2">Dashboard</h2>
-            </div>
-        </nav>
+        <form action="AdminDashboard" method="get">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle" on-click="NavbarToggle()"></i>
+                    <h2 class="fs-2 m-0 ml-2">Dashboard</h2>
+                </div>
+                <div class="d-flex align-items-center ml-sm-5">
+                    <label class="col-form-label ml-sm-5 mr-sm-2">Date: </label>
+                    <input type="date" asp-for="Date" class="form-control mr-sm-2" />
+                    <button class="btn btn-sm btn-info" type="submit">Get</button>
+                </div>
+            </nav>
+        </form>
 
         <div class="container-fluid px-4">
             <div class="row g-3 my-2">
@@ -73,42 +80,52 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                @Html.DisplayNameFor(model => model.Name)
+                                @*@Html.DisplayNameFor(model => model.Name)*@
+                                Name
                             </th>
                             <th scope="col">
-                                @Html.DisplayNameFor(model => model.InTime)
+                                @*@Html.DisplayNameFor(model => model.InTime)*@
+                                InTime
                             </th>
                             <th scope="col">
-                                @Html.DisplayNameFor(model => model.OutTime)
+                                @*@Html.DisplayNameFor(model => model.OutTime)*@
+                                OutTime
                             </th>
                             <th scope="col">
-                                @Html.DisplayNameFor(model => model.TotalBreakTime)
+                                @*@Html.DisplayNameFor(model => model.TotalBreakTime)*@
+                                TotalBreakTime
                             </th>
                             <th scope="col">
-                                @Html.DisplayNameFor(model => model.TotalWorkingTime)
+                                @*@Html.DisplayNameFor(model => model.TotalWorkingTime)*@
+                                TotalWorkingTime
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if(Model.Any())
+                        @if(ViewBag.EntriesCount > 0)
                         {
-                          @foreach (var item in Model)
+                          @foreach (var item in ViewBag.Entries)
                           {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(model => item.Name)
+                                    @*@Html.DisplayFor(model => item.Name)*@
+                                    @item.Name
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(model => item.InTime)
+                                    @*@Html.DisplayFor(model => item.InTime)*@
+                                    @item.InTime
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(model => item.OutTime)
+                                    @*@Html.DisplayFor(model => item.OutTime)*@
+                                    @item.OutTime
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(model => item.TotalBreakTime)
+                                    @*@Html.DisplayFor(model => item.TotalBreakTime)*@
+                                    @item.TotalBreakTime
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(model => item.TotalWorkingTime)
+                                    @*@Html.DisplayFor(model => item.TotalWorkingTime)*@
+                                    @item.TotalWorkingTime
                                 </td>
                             </tr>
                           }

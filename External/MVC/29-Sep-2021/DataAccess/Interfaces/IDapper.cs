@@ -1,5 +1,6 @@
 ﻿using DAL.DataViewModel;
 using DAL.Models;
+using DAL.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,16 @@ namespace DAL.Interfaces
     {
         AspNetUser GetUser(string name);
 
-        List<EntryInptViewModel> GetEntry(string id);
+        List<EntryInptViewModel> GetEntry(string id, int? month);
 
         void SetInTime(string time, string date, string id);
 
         void SetEntry(Entry entry);
 
-        List<AdminDashboardViewModel> GetEmployeeEntry(DateTime date);
+        List<AdminDashboardViewModel> GetEmployeeEntry(DateTime? date);
 
         int PresentEmployeesCount();
+
+        void SetCurrentBreak(StartWorkViewModel model, string date, string workOffTime);
     }
 }

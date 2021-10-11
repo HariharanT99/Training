@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using DAL.DataViewModel;
 
 namespace Presentation.Controllers
 {
@@ -19,19 +20,42 @@ namespace Presentation.Controllers
             this._entryBL = entryBL;
         }
 
+
+        //Index
         public IActionResult Index()
         {
             AspNetUser user = _entryBL.GetUser(User.Identity.Name);
             return View(user);
         }
 
+
+        //Start work for Current Day
         public IActionResult StartWork(string id)
         {
             var time = DateTime.Now.ToString("HH:mm:ss");
             var date = DateTime.Now.ToString("yyyy-MM-dd");
             _entryBL.SetInTime(time, date, id);
-            return View();
+            ViewBag.UserId = id;
+
+            StartWorkViewModel entry = new();
+            entry.BreakList.Add(new BreakViewModel() { Id = 1 });
+
+            return View(entry);
         }
+
+        [HttpPost]
+        public IActionResult StartWork(StartWorkViewModel model)
+        {
+            var workOffTime = DateTime.Now.ToString("H:mm:ss");
+            var date = DateTime.Now.ToString("yyyy-MM-dd");
+
+            _entryBL.SetCurrentBreak(model, date, workOffTime);
+
+            return RedirectToAction("Index", "Employee");
+        }
+
+
+        // Create Entry for Previous Day
         public IActionResult CreateEntry()
         {
             EntryViewModel entry = new EntryViewModel();
@@ -53,38 +77,43 @@ namespace Presentation.Controllers
             return RedirectToAction("Index", "Employee");
         }
 
+
+        //Dashboard
         [Authorize(Roles = "Employee")]
-        public IActionResult Dashboard(string id)
+        [HttpGet]
+        public IActionResult Dashboard(string id, DashboardMonthViewModel? model)
         {
-            if (id != null)
+            ViewBag.Id = id;
+
+            if (id != null )
             {
-                var entries = _entryBL.GetEntry(id);
-
-                foreach (var item in entries)
-                {
-                    DateTime date = (DateTime)item.Date;
-                    ViewBag.Month = date.Month;
-                    break;
-                }
-
-                return View(entries);
+                var entries = _entryBL.GetEntry(id, model.Month);
+                ViewBag.Count = entries.Count;
+                ViewBag.Entries = entries;
+                return View();
             }
 
             ViewBag.ErrorMessage = "Id Should not be null";
 
+            List<EntryInptViewModel> ent = new();
+            ViewBag.Entries = ent;
             return View();
         }
 
         [Authorize(Roles ="Admin")]
-        public IActionResult AdminDashboard()
+        [HttpGet]
+        public IActionResult AdminDashboard(DashboardMonthViewModel? model)
         {
-            DateTime date = new DateTime(2021,10,07);
 
-            var employeeEntry = _entryBL.GetEmployeeEntry(date);
+            var employeeEntry = _entryBL.GetEmployeeEntry(model.Date);
+            ViewBag.Entries = employeeEntry;
+            ViewBag.EntriesCount = employeeEntry.Count;
 
             ViewBag.Count = _entryBL.PresentEmployeesCount();
 
-            return View(employeeEntry);
+            return View();
         }
+
+
     }
 }

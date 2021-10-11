@@ -162,12 +162,17 @@ END
 
 exec uspEmployeePresentToday 
 
-		IF NOT EXISTS (Select date from [Entry] Where ([Date] = '2021-10-07' AND EmployeeId = 'f62ffc69-6b9b-4a5a-b230-63f385d1d0bf'))
-		BEGIN
-			print('1')
-		END
-		ELSE
-		BEGIN
-			print('2')
-		END
+
+--Set Break Start Time (Current day entry)
+
+CREATE PROC uspSetBreakStart
+@EntryId int,
+@StartTime time
+as
+BEGIN
+	Insert INTO [Break](EntryID,BreakIn)
+	Values(@EntryId,@StartTime)
+END
+
+
 
