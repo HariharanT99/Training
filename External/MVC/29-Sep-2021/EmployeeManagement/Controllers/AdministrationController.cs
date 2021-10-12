@@ -33,7 +33,7 @@ namespace Presentation.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("GetRoles");
                 }
 
                 foreach (var error in result.Errors)
@@ -103,5 +103,24 @@ namespace Presentation.Controllers
             return RedirectToAction("EditRole", new { Id = roleId });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string id)
+        {
+            var result = await _accountBL.DeleteRole(id);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("GetRoles");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+
+            return View("GetRoles");
+        }
     }
+
 }
+

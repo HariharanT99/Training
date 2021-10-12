@@ -81,5 +81,13 @@ namespace BL
 
             return result;
         }
+
+        //Delete Role
+        public Task<IdentityResult> DeleteRole(string id)
+        {
+            var result = _facade.DeleteRole(id);
+
+            return result;
+        }
     }
 }

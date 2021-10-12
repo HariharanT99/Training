@@ -226,5 +226,23 @@ namespace DataAccess.Access
             }
             return false;
         }
+
+        //Delete Role
+        public async Task<IdentityResult> DeleteRole(string id)
+        {
+            var role = await _roleManager.FindByIdAsync(id);
+
+            if (role == null)
+            {
+                var res = new IdentityResult();
+                return res;
+            }
+            else
+            {
+                var result = await _roleManager.DeleteAsync(role);
+
+                return result;
+            }
+        }
     }
 }

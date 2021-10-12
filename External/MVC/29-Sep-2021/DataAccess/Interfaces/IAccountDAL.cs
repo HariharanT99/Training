@@ -28,5 +28,7 @@ namespace DAL.Interfaces
         Task<List<UserRoleViewModel>> EditUsersInRole(string roleId);
 
         Task<bool> PostUsersInRole(List<UserRoleViewModel> model, string roleId);
+
+        Task<IdentityResult> DeleteRole(string id);
     }
 }

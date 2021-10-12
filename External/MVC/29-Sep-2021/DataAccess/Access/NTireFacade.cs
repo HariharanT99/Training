@@ -96,6 +96,15 @@ namespace DAL.Access
         }
 
 
+        //Delete Role
+        public Task<IdentityResult> DeleteRole(string id)
+        {
+            var result = _accountDAL.DeleteRole(id);
+
+            return result;
+        }
+
+
         //Get Entries
         public List<EntryInptViewModel> GetEntry(string id, int? month)
         {
