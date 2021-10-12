@@ -19,7 +19,7 @@
     </div>
 </div>
 
-    <div class="row">
+<div class="row">
     <div class="col-12 col-sm-8">
         <form method="post" asp-controller="Employee" asp-action="CreateEntry">
             <div class="container">
@@ -34,9 +34,9 @@
                         @Html.LabelFor(model => model.Date, new { @class = "control-lable text-lg" })
                     </div>
                     <div class="col-12 col-sm-3 mr-5">
-                        <input class="form-control" type="date" data-val="true" data-val-required="Date is Required" id="date" name="date" />
+                        <input class="form-control" type="date" data-val="true" data-val-required="Date is Required" onchange="DateValidation(value)" id="date" name="date" />
                     </div>
-                    <span class="val" asp-validation-for="Date"></span>
+                    <span class="text-white" asp-validation-for="Date"></span>
                 </div>
 
                 <div class="row justify-content-center mt-3">
@@ -54,7 +54,7 @@
                         @Html.LabelFor(model => model.OutTime, new { @class = "control-lable text-lg" })
                     </div>
                     <div class="col-12 col-sm-3 mr-5">
-                        <input class="form-control" type="time" data-val="true" data-val-required="OutTime is Required" id="outtime" name="outtime" />
+                        <input class="form-control" type="time" data-val="true" data-val-required="OutTime is Required" onchange="OutTimeValidation(value)" id="outtime" name="outtime" />
                     </div>
                     @Html.ValidationMessageFor(model => model.OutTime, "", new { @class = "text-white" })
                 </div>
@@ -92,11 +92,11 @@
                                         </td>
                                         <td>
 
-                                            <button type="button" id="btnadd-@i" class="btn btn-sm btn-info btn-outline-dark visible bta"
+                                            <button type="button" id="btnadd_@i" class="btn btn-sm btn-info btn-outline-dark visible bta"
                                                     onclick="AddItem(this)">
                                                 <i class="fa fa-plus"> Add</i>
                                             </button>
-                                            <button type="button" id="btnremove-@i" class="btn btn-sm btn-danger btn-outline-dark btd invisible"
+                                            <button type="button" id="btnremove_@i" class="btn btn-sm btn-danger btn-outline-dark btd invisible"
                                                     onclick="DeleteItem(this)">
                                                 <i class="fa fa-trash-alt"> Delete</i>
                                             </button>
@@ -108,7 +108,7 @@
                     </div>
 
                     <input type="hidden" id="hasLastIndex" value="0" />
-                    <input type="hidden" asp-for="EmployeeId" value="@ViewBag.User.Id" /> 
+                    <input type="hidden" asp-for="EmployeeId" value="@ViewBag.User.Id" />
                 </div>
 
                 <div class="row justify-content-center">
@@ -133,7 +133,10 @@
 </div>
 
 @section Scripts{
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
 
     <script type="text/javascript">
 
@@ -164,6 +167,7 @@
 
             var btnDeleteID = btnAddID.replaceAll('btnadd', 'btnremove');
 
+
             var delbtn = document.getElementById(btnDeleteID);
             delbtn.classList.add('visible');
             delbtn.classList.remove('invisible');
@@ -172,6 +176,39 @@
             addbtn.classList.remove('visible');
             addbtn.classList.add('invisible');
 
+            @*var delbtn = document.getElementById(btnDeleteID);
+            delbtn.classList.add('visible');
+            delbtn.classList.remove('invisible');
+
+            var addbtn = document.getElementById(btnAddID);
+            addbtn.classList.remove('visible');
+            addbtn.classList.add('invisible');*@
+
+        }
+
+
+        function DateValidation(val) {
+            var today = new Date();
+            var value = new Date(val);
+            if (value > today) {
+                alert("Please enter valid date");
+                document.getElementById('date').value = '';
+            }
+        }
+
+        function OutTimeValidation(val) {
+            inTime = document.getElementById('intime').value;
+
+
+            if (inTime == '') {
+                alert("Enter the Intime First");
+                document.getElementById('outtime').value = '';
+            }
+
+            if (val < inTime) {
+                alert("OutTime must be greater than the InTime");
+                document.getElementById('outtime').value = '';
+            }
         }
     </script>
 }

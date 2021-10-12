@@ -16,9 +16,12 @@ namespace DAL.Access
     {
         private readonly string _connectionString;
 
+        private readonly SqlConnection _connection;
+
         public Dapper(string connectionString)
         {
             this._connectionString = connectionString;
+            this._connection = new SqlConnection(connectionString);
         }
 
         //Get the Logged in user

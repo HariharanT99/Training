@@ -7,7 +7,7 @@
 
 @model DAL.ViewModel.StartWorkViewModel
 
-<h2>Start Work</h2>
+<h2>Work Space</h2>
 
 <div class="container">
     <form action="StartWork" method="post">
@@ -32,9 +32,9 @@
             </div>
 
             <div class="col-sm-6">
-                <button type="button" id="breakbtn-start" onclick="BreakStart()" class="btn btn-warning btn-lg">Break Start</button>
-                <button type="button" id="breakbtn-end" onclick="BreakEnd()" class="btn btn-warning btn-lg" disabled>Break End</button>
-                <button type="submit" id="btn-workoff" onclick="Save()" class="btn btn-warning btn-lg">Work off</button>
+                <button type="button" id="breakbtn-start" onclick="BreakStart()" class="btn btn-warning btn-lg w-50"><i class="fa fa-lg fa-pause-circle"> Break Start</i></button> <br />
+                <button type="button" id="breakbtn-end" onclick="BreakEnd()" class="btn btn-warning btn-lg w-50 mt-3" disabled><i class="fa fa-lg fa-play-circle"> Break End</i></button><br />
+                <button type="submit" id="btn-workoff" onclick="Save()" class="btn btn-warning btn-lg w-50 mt-3"><i class="fa fa-lg fa-power-off"> Work off</i></button>
             </div>
 
             <input type="hidden" id="hasLastIndex" value="0" />

@@ -24,7 +24,7 @@ namespace DAL.ViewModel
         [Required(ErrorMessage = "Required Feild")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
-        [Compare("Password", ErrorMessage = "Password and Confirmation password do not match")]
+        [Compare("Password", ErrorMessage = "Password and Confirmation password should be same")]
         public string ConfirmPassword { get; set; }
 
         //Employee Form

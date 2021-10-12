@@ -68,11 +68,8 @@ namespace Presentation.Controllers
         [HttpPost]
         public IActionResult CreateEntry(EntryViewModel model)
         {
-            //var breakList = model.BreakList;
 
-            //_entryBL.SetBreak(breakList);
-
-            _entryBL.SetEntry(model);
+            //_entryBL.SetEntry(model);
 
             return RedirectToAction("Index", "Employee");
         }

@@ -18,20 +18,17 @@ namespace DAL.ViewModel
 
         public string EmployeeId { get; set; }
 
-        [Column(TypeName = "date")]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = "Date is required")]
         public DateTime Date { get; set; }
-        [Column(TypeName = "datetime")]
 
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "InTime is required")]
-        public TimeSpan? InTime { get; set; }
-        [Column(TypeName = "datetime")]
+        public TimeSpan InTime { get; set; }
 
         [DataType(DataType.Time)]
         [Required(ErrorMessage = "OutTime is required")]
-        public TimeSpan? OutTime { get; set; }
+        public TimeSpan OutTime { get; set; }
 
         public List<Break> BreakList { get; set; } = new List<Break>();
     }
