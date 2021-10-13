@@ -69,7 +69,7 @@ namespace Presentation.Controllers
         public IActionResult CreateEntry(EntryViewModel model)
         {
 
-            //_entryBL.SetEntry(model);
+            _entryBL.SetEntry(model);
 
             return RedirectToAction("Index", "Employee");
         }
