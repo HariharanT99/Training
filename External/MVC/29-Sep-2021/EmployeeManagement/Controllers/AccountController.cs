@@ -31,6 +31,7 @@ namespace EmployeeManagement.Controllers
             if (ModelState.IsValid)
             {
                 var result = await _accountBL.CheckUser(model);
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Employee",result);
