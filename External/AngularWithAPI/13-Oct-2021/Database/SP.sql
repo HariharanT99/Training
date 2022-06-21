@@ -10,6 +10,8 @@ CREATE PROC uspInsertApplicant
 ,@MedicalStatus nvarchar(500)
 ,@NoticePeriod int
 ,@Resume varchar(200)
+,@Active bit = 1
+,@Deleted bit = 0
 as
 BEGIN
 	Insert Into Applicant ( [Name]
@@ -19,7 +21,9 @@ BEGIN
 							,[ReferedBy]
 							,[MedicalStatus]
 							,[NoticePeriod]
-							,[Resume])
+							,[Resume]
+							,IsActive
+							,IsDeleted)
 	Values ( @Name
 			 ,@LastEmployer
 			 ,@LastDesignation
@@ -27,7 +31,9 @@ BEGIN
 			 ,@ReferedBy
 			 ,@MedicalStatus
 			 ,@NoticePeriod
-			 ,@Resume)
+			 ,@Resume
+			 ,@Active
+			 ,@Deleted)
 END
 
 --Get all applicants
@@ -46,6 +52,12 @@ BEGIN
       ,[Resume]
       ,[CreatedBy]
       ,[CreatedOn]
+      ,[ModifiedBY]
+      ,[ModifiedOn]
       ,[IsActive]
+      ,[IsDeleted]
 	From Applicant
-	Where Is
+	Where IsActive = 1 AND IsDeleted = 0
+END
+
+exec uspGetApplicants

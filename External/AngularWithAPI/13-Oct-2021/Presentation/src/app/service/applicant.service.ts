@@ -1,25 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Applicant } from '../model/applicant';
-import { HttpClient } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApplicantServiceService {
+export class ApplicantService {
 
   constructor(private http: HttpClient) { }
 
   formData: Applicant = new Applicant();
   readonly baseURL = 'https://localhost:44339/Applicant';
 
-  list: Applicant[]=[];
+  applicantList: Applicant[]=[];
+
+  bllist: number[]= [1,34,44,2];
 
   refreshList(): void
   {
     this.http.get(this.baseURL)
     .subscribe(Response => {
-      this.list = Object.values(Response);
+      this.applicantList = Object.values(Response);
       console.log(Response);
       });
   }

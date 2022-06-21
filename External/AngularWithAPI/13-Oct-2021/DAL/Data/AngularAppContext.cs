@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using DAL.Model;
+using DAL.Models;
 
 #nullable disable
 
@@ -27,6 +27,7 @@ namespace DAL.Data
         public virtual DbSet<Rating> Ratings { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
+        public virtual DbSet<SkillRating> SkillRatings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -61,7 +62,7 @@ namespace DAL.Data
                 entity.HasOne(d => d.Role)
                     .WithMany()
                     .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK__EmployeeR__Emplo__300424B4");
+                    .HasConstraintName("FK__EmployeeR__RoleI__300424B4");
             });
 
             modelBuilder.Entity<Interview>(entity =>
@@ -84,22 +85,12 @@ namespace DAL.Data
                 entity.HasOne(d => d.Employee)
                     .WithMany()
                     .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK__Interview__Emplo__38996AB5");
+                    .HasConstraintName("FK__Interview__Emplo__3C69FB99");
 
                 entity.HasOne(d => d.Interview)
                     .WithMany()
                     .HasForeignKey(d => d.InterviewId)
-                    .HasConstraintName("FK__Interview__Inter__37A5467C");
-
-                entity.HasOne(d => d.Rating)
-                    .WithMany()
-                    .HasForeignKey(d => d.RatingId)
-                    .HasConstraintName("FK__Interview__Ratin__3A81B327");
-
-                entity.HasOne(d => d.Skill)
-                    .WithMany()
-                    .HasForeignKey(d => d.SkillId)
-                    .HasConstraintName("FK__Interview__Skill__398D8EEE");
+                    .HasConstraintName("FK__Interview__Inter__3B75D760");
             });
 
             modelBuilder.Entity<Rating>(entity =>
@@ -113,6 +104,24 @@ namespace DAL.Data
                     .WithMany(p => p.InverseParent)
                     .HasForeignKey(d => d.ParentId)
                     .HasConstraintName("FK__Skill__ParentID__33D4B598");
+            });
+
+            modelBuilder.Entity<SkillRating>(entity =>
+            {
+                entity.HasOne(d => d.Interview)
+                    .WithMany()
+                    .HasForeignKey(d => d.InterviewId)
+                    .HasConstraintName("FK__SkillRati__Inter__37A5467C");
+
+                entity.HasOne(d => d.Rating)
+                    .WithMany()
+                    .HasForeignKey(d => d.RatingId)
+                    .HasConstraintName("FK__SkillRati__Ratin__398D8EEE");
+
+                entity.HasOne(d => d.Skill)
+                    .WithMany()
+                    .HasForeignKey(d => d.SkillId)
+                    .HasConstraintName("FK__SkillRati__Skill__38996AB5");
             });
 
             OnModelCreatingPartial(modelBuilder);

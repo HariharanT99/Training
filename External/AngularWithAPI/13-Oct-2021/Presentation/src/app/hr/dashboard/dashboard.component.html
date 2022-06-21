@@ -1,0 +1,81 @@
+<div class="projects-status mt-2 mb-2">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="item-status">
+        <span class="status-number">45</span>
+        <span class="status-type">In Progress</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="item-status">
+        <span class="status-number">24</span>
+        <span class="status-type">Upcoming</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="item-status">
+        <span class="status-number">62</span>
+        <span class="status-type">Total Projects</span>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h4 class="text-center table-head">Applicants</h4>
+  </div>
+  <div class="col-md-4">
+    <h4 class="text-center table-head">Employees</h4>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Appliedfor</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <div *ngFor="let applicant of service.applicantList">
+            <tr>
+              <td></td>
+              <td>{{applicant.ID}}</td>
+              <td>{{applicant.Name}}</td>
+              <td>{{applicant.AppliedFor}}</td>
+              <td><i class="fa fa-edit"></i></td>
+            </tr>
+          </div>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+          <div *ngFor="let item of ">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </div>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div>

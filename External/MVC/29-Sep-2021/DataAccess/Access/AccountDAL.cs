@@ -33,7 +33,8 @@ namespace DataAccess.Access
                 Name = model.Name,
                 Gender = model.Gender,
                 DateOfBirth = model.DateOfBirth,
-                Address = model.Address
+                Address = model.Address,
+                
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);

@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-3">
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar" style="height: auto;">
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form mb-3 mt-2">
+          <div class="input-group">
+            <input type="text" name="q"  autocomplete="off" class="form-control search-input" placeholder="Search...">
+            <span class="input-group-btn inpt-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu navbar-nav">
+          <li class="header">Main Menu</li>
+          <li class="">
+            <a routerLinkActive='active-link' routerLink='dashboard'>
+              <span>Dashboard</span>
+            </a>      
+          </li>
+          <li class="" >
+            <a routerLinkActive='active' routerLink='applicants'>
+              <span>Applicants</span>
+            </a>      
+          </li>
+          <li class="">
+            <a href="/interviews">
+                <span>Interviews</span>
+            </a>      
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8">
+    <router-outlet></router-outlet>
+  </div>  
+</div>
+
+
+

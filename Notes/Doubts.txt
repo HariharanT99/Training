@@ -1,0 +1,4 @@
+what are to the available ways to retrive one to many relationship data from db?
+
+	JSON_QUERY
+

@@ -12,3 +12,4 @@ D:\Training\Assign\External\MVC\29-Sep-2021\DataAccess\obj\Debug\net5.0\DAL.dll
 D:\Training\Assign\External\MVC\29-Sep-2021\DataAccess\obj\Debug\net5.0\ref\DAL.dll
 D:\Training\Assign\External\MVC\29-Sep-2021\DataAccess\obj\Debug\net5.0\DAL.pdb
 D:\Training\Assign\External\MVC\29-Sep-2021\DataAccess\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+D:\Training\Assign\External\MVC\29-Sep-2021\DataAccess\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
